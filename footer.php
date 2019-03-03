@@ -5,6 +5,8 @@
 
 ?>
 
+test
+
 <?php wp_footer(); ?>
 
 </body>
