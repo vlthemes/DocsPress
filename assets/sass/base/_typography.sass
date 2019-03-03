@@ -1,0 +1,383 @@
+/* body
+
+body
+	height: 100%
+	min-width: 320px
+	margin: 0
+	padding: 0
+	font-family: $pf
+	font-size: 16px
+	line-height: 1.8
+	color: $c2
+	@if $smooth_font
+		-webkit-font-smoothing: antialiased
+		-moz-osx-font-smoothing: grayscale
+
+/* image
+
+img
+	max-width: 100%
+	height: auto
+
+.wp-block-image
+
+	@include markup
+		margin: 4% 0
+
+		img
+			border: 6px solid $c6
+			box-shadow: 0 0 8px 0 rgba($c1, .1)
+
+	figcaption
+		color: $c5
+		font-style: italic
+		font-size: 14px
+
+/* paragraph
+
+p
+	margin: 0
+
+	@include markup
+		margin-bottom: 1.5em
+
+		&:last-child
+			margin-bottom: 0
+
+	&:empty
+		display: none
+
+/* strong
+
+strong
+	font-weight: 700
+
+/* link
+
+a
+	color: $p2
+	text-decoration: underline
+	transition:
+		property: all
+		duration: 250ms
+
+	&:hover,
+	&:focus,
+	&:active
+		outline: none
+
+	&:hover
+		color: $p1
+
+/* headings
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6
+	padding: 0
+	margin: 0
+	font-weight: 500
+	line-height: 1.5
+	color: $c3
+
+	@include markup
+		margin: 15px 0
+
+h1,
+.h1
+	font-size: 34px
+	@media (max-width: 767px)
+		font-size: 26px
+
+h2,
+.h2
+	font-size: 22px
+	@media (max-width: 767px)
+		font-size: 20px
+
+h3,
+.h3
+	font-size: 20px
+	@media (max-width: 767px)
+		font-size: 18px
+
+	@include markup
+		margin-bottom: 15px
+		padding-bottom: 15px
+		border-bottom: 1px solid $c4
+
+h4,
+.h4
+	font-size: 18px
+	@media (max-width: 767px)
+		font-size: 16px
+
+h5,
+.h5
+	font-size: 16px
+
+h6,
+.h6
+	font-size: 14px
+
+/* list
+
+ul,
+ol
+	margin: 0
+	padding: 0
+	list-style-position: inside
+
+	@include markup
+		margin: 0 0 1.5em
+
+ol li,
+ul li
+	@include markup
+		margin-bottom: 0.6em
+		&:last-child
+			margin-bottom: 0
+
+ol ul,
+ul ol,
+ul ul,
+ol ol
+	@include markup
+		margin-top: 0.6em
+		margin-bottom: 0
+		padding-left: 1.5em
+
+ol
+	@include markup
+
+		ol,
+		ul
+			padding-left: 0
+
+		list-style-type: none
+		counter-reset: ol
+
+		> li
+			position: relative
+			padding-left: 2.5em
+
+			&::before
+				content: counter(ol)
+				display: flex
+				align-items: center
+				justify-content: center
+				position: absolute
+				top: 0
+				left: 0
+				width: 2em
+				height: 2em
+				font-size: 75%
+				line-height: 1
+				color: $c6
+				border-radius: 50%
+				background-color: $p1
+				counter-increment: ol
+
+/* divider
+
+hr
+	margin: 1.5em 0
+	border: none
+	border-bottom: 1px solid $c4
+
+
+/* blockquote
+
+blockquote
+	border-left: 3px solid currentColor
+	padding: 0 0 0 1.5em
+	margin: 0
+	color: $p1
+
+	@include markup
+		margin-bottom: 2em
+
+	code,
+	.code
+		color: $p1
+
+	p
+		margin-bottom: 0
+
+.wp-block-quote:not(.is-large):not(.is-style-large)
+	border-color: $p1
+
+/* dropcap
+
+p.has-drop-cap:not(:focus)::first-letter
+	font-size: 5.7em
+	font-weight: 400
+	color: $p2
+
+/* preformatted
+
+code,
+.code
+	background-color: $c7
+	border-radius: 3px
+	color: $c1
+	font: inherit
+	padding: 2px 7px
+	white-space: nowrap
+
+pre,
+.pre
+	background-color: $c7
+	clear: both
+	border-radius: 4px
+	display: block
+	font-size: 14px
+	overflow: auto
+	padding: 20px
+	white-space: pre-wrap
+	word-wrap: break-word
+
+pre + img
+	@include markup
+		margin-top: 2.4em
+
+/* gist
+
+.gist
+	@include markup
+		margin-top: 5%
+		margin-bottom: 5%
+
+/* form, input, textarea, select
+
+form
+	max-width: 100%
+
+label
+	display: block
+	margin-bottom: 5px
+	color: $c2
+	user-select: none
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+textarea,
+select
+	display: block
+	width: 100%
+	padding: 10px 12px
+	margin: 0
+	font-size: 14px
+	line-height: 1.4
+	border: 1px solid $c4
+	border-radius: 2px
+	background-color: transparent
+	box-shadow: none
+	appearance: none
+	transition:
+		property: all
+		duration: 250ms
+	outline: none
+
+select
+	padding-right: 35px
+	background:
+		image: url('../img/select.png')
+		position: right 12px bottom 50%
+		repeat: no-repeat
+		size: 10px 6px
+	appearance: none
+
+textarea
+	width: 100%
+	max-width: 100%
+	transition:
+		property: border-color
+		duration: 250ms
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+input[type="number"],
+textarea,
+select
+
+	&:focus
+		border-color: $p2
+		outline: none
+
+	@include placeholder
+		color: $c5
+		opacity: 1
+
+.vlt-form-group
+	display: block
+	position: relative
+	margin-bottom: 1em
+
+.vlt-form-row
+	display: grid
+	grid-gap: 1em
+	grid-template-columns: repeat(1, 1fr)
+
+	@media (max-width: 767px)
+		grid-gap: 0
+
+	&.three-col
+		grid-template-columns: repeat(3, 1fr)
+
+		@media (max-width: 767px)
+			grid-template-columns: repeat(1, 1fr)
+
+	&.two-col
+		grid-template-columns: repeat(2, 1fr)
+
+		@media (max-width: 767px)
+			grid-template-columns: repeat(1, 1fr)
+
+/* definition list
+
+dl
+	margin: 0 0 1.5em
+
+dt
+	font-weight: 500
+	color: $p2
+
+dd
+	padding: 0
+	margin: 8px 0 0 0
+
+dd + dt
+	margin-top: 1em
+
+/* table
+
+table
+	width: 100%
+	max-width: 100%
+	margin: 0 0 1em
+	text-align: left
+	border-collapse: collapse
+
+	td,
+	th
+		padding: 0.5em
+		border: 1px solid $c4
+
+	tr th,
+	thead th
+		color: $c2

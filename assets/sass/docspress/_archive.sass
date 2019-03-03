@@ -1,0 +1,52 @@
+/* Layout: archive
+
+.docspress-archive
+
+	// Doc items list
+	.docspress-archive-list
+		padding: 15px
+		margin: 0
+
+		.docspress-archive-list-category
+			margin-bottom: 15px
+			font-size: 18px
+			font-weight: 500
+
+		li + .docspress-archive-list-category
+			margin-top: 20px
+
+		> .docspress-archive-list-item
+
+			a
+				text-decoration: underline
+				transition:
+					property: all
+					duration: 250ms
+
+			> ul
+
+				a:hover
+					color: $p1
+
+				li
+					font-size: 14px
+
+					> a
+						display: inline-block
+						padding-left: 1em
+
+					&.more a
+						color: $c5
+						text-decoration: none
+
+						&:hover
+							color: $p1
+
+			.docspress-archive-list-item-title
+				text-decoration: none
+
+				span
+					color: $c5
+
+				&:hover
+					color: $p2

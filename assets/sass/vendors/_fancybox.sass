@@ -1,0 +1,54 @@
+/* Vendor: fancybox
+
+.fancybox-bg
+	background-color: $c1
+
+.fancybox-is-open .fancybox-bg
+	opacity: .8
+
+/* buttons
+
+.fancybox-button
+	display: inline-flex
+	align-items: center
+	justify-content: center
+	height: 45px
+	width: 45px
+	padding: 0
+	font-size: 22px
+	color: $c6
+	opacity: .5
+	background: none
+	transition:
+		property: all
+		duration: 250ms
+	cursor: pointer
+	overflow: hidden
+
+	&:hover
+		opacity: .8
+
+.fancybox-loading
+	border: 2px solid rgba($c6, 0.1)
+	border-top-color: $p2
+
+.fancybox-slide--image
+	padding: 10%
+
+@media (min-width: 783px)
+	.admin-bar
+		.fancybox-infobar,
+		.fancybox-toolbar
+			top: 32px !important
+
+@media (max-width: 782px)
+	.admin-bar
+		.fancybox-infobar,
+		.fancybox-toolbar
+			top: 46px !important
+
+@media (max-width: 600px)
+	.admin-bar
+		.fancybox-infobar,
+		.fancybox-toolbar
+			top: 0 !important

@@ -1,0 +1,69 @@
+/* Layout: sidebar
+
+/* search
+
+.docspress-search-form
+	font-size: 14px
+
+	.docspress-search-field
+		padding: 15px 30px
+		outline: none
+
+		&:focus
+			border-bottom-color: $p2
+
+		&::placeholder
+			color: $c5
+
+.docspress-search-form-result
+
+	mark
+		font-weight: 500
+		color: $p2
+
+	.docspress-search-list
+		list-style-type: none
+
+	.docspress-search-list-item > a
+		padding: 15px 30px
+		font-size: 14px
+
+		&:hover
+			color: $p2
+
+	.docspress-search-list-item-title
+		font-weight: 500
+
+	.docspress-search-list-item-excerpt
+		font-size: 14px
+
+/* single docs
+
+.docspress-single
+
+	// Single Doc Sidebar
+	.docspress-single-sidebar
+		padding-bottom: 30px
+
+		.docspress-single-sidebar-wrap
+			max-height: calc(100vh - 30px)
+
+			&::-webkit-scrollbar
+				display: none
+
+		.docspress-nav-list
+			padding: 0 15px
+			font-size: 14px
+			color: $p2
+
+			li a
+				padding: 3px 15px
+				font-weight: 400
+				&:hover
+					color: $p1
+
+			> li li.current_page_item > a,
+			li.current_page_item > a
+				text-decoration: underline
+				font-weight: 500
+				color: $p1

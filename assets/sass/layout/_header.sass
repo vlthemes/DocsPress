@@ -1,0 +1,133 @@
+/* Layout: header
+
+/* header
+
+.vlt-header
+	position: relative
+	margin: 2.5em 0
+	z-index: 2
+
+	@media (max-width: 767px)
+		margin: 2em 0
+
+	// logo
+
+	.vlt-logo
+		text-decoration: none
+
+		> *
+			display: block
+
+		&__name
+			font-size: 28px
+			font-weight: 700
+			line-height: 1
+			color: $c3
+
+		&__description
+			margin-top: 4px
+			color: $c5
+			font-size: 12px
+
+	// navigation
+
+	.vlt-default-navigation
+		margin-left: 3em
+
+		.vlt-no-menu-message
+			margin: 0
+
+		.sf-menu
+			font-size: 0 // fix offset between li element
+
+			> li
+				display: inline-flex
+				float: none
+
+			> li > a
+				padding: 20px 15px
+				font-size: 16px
+				line-height: 1
+				font-weight: 500
+				color: $c3
+				text-decoration: none
+
+			> li:last-child > a
+				padding-right: 0
+
+			> li:hover > a,
+			> li.current-menu-item > a,
+			> li.sfHover > a
+				color: $p2
+
+			ul.sub-menu
+				min-width: 150px
+				padding: 8px 0
+				font-size: 12px
+				background-color: $c2
+
+				ul.sub-menu
+					top: -8px
+
+				li
+					display: block
+					padding: 5px 15px
+
+				a
+					display: flex
+					line-height: 1.4
+					white-space: nowrap
+					color: rgba($c6, .8)
+					text-decoration: none
+
+					&::before
+						content: '-'
+						margin-right: 5px
+
+				li:hover > a,
+				li.sfHover > a
+					color: $c6
+
+	// button
+
+	.vlt-btn
+		margin-left: 3em
+
+/* mobile menu
+
+.vlt-mobile-navigation
+	margin-top: 2em
+
+	@media (max-width: 767px)
+		mask-type: 1.5em
+
+	.sf-menu
+		text-align: left
+
+		li
+			display: block
+			float: none
+
+		a
+			padding: 10px 0
+			font-size: 16px
+			line-height: 1
+			font-weight: 500
+			color: $c3
+			text-decoration: none
+
+		ul.sub-menu
+			position: static
+			padding-left: 10px
+
+			a
+				font-size: 14px
+				font-weight: 400
+
+		li.menu-item-has-children > a::after
+			content: '\eb79'
+			font-family: $if
+			float: right
+
+		li.sfHover > a::after
+			content: '\eb7a'

@@ -1,0 +1,114 @@
+/* Layout: content
+
+/* Single Doc Breadcrumbs
+
+.docspress-single-breadcrumbs
+	padding: 30px 30px 15px
+	margin: -30px -30px 0
+	font-size: 14px
+	color: $c2
+
+	li
+		margin-right: 4px
+		margin-left: 4px
+
+		&:last-of-type
+			color: $c5
+
+	> li:first-child > a::before
+		content: '\ed3b'
+		margin-right: 5px
+		font-family: $if
+
+	.delimiter
+		opacity: .2
+
+	a
+		text-decoration: none
+
+	a:hover,
+	a:focus,
+	a:active
+		color: $p2
+
+/* Single Doc Feedback
+
+.docspress-single-feedback
+	padding: 15px 19px
+	margin: 0 -29px
+
+/* Single Doc Adjacent Navigation
+
+.docspress-single-adjacent-nav
+	padding: 25px 29px
+	margin: 0 -29px
+
+	.nav-previous,
+	.nav-next
+
+		.icon
+			display: none
+
+	.nav-previous
+
+		a::before
+			content: '←'
+			margin-right: 4px
+
+	.nav-next
+		a::after
+			content: '→'
+			margin-left: 4px
+
+/* Single Doc Articles
+
+.vlt-link-pages + .docspress-single-articles
+	margin-top: 2.5em
+
+.docspress-single-articles 	ul
+
+	ul
+		margin-left: 1em
+		margin-bottom: 0
+
+	li
+		margin-bottom: 0
+		font-size: 14px
+
+		&::before
+			display: none !important
+
+		> a
+			display: inline-block
+			transition:
+				property: all
+				duration: 250ms
+
+			&:hover
+				color: $p1
+
+/* Single Doc Content
+
+.docspress-single
+
+	.docspress-single-content
+		padding: 30px 30px 0
+
+		.entry-header h1
+			margin: 0 0 0.6em
+			padding: 0 0 0.3em
+			line-height: 1.4
+			border-bottom: 1px solid $c4
+
+		.entry-content
+			margin-bottom: 30px
+
+		.entry-footer
+			margin-bottom: 30px
+			font-size: 12px
+
+			time
+				font-size: 12px
+				font-style: normal
+				font-weight: 400
+				color: $c5

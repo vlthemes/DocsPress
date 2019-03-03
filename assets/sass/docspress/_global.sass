@@ -1,0 +1,42 @@
+/* Layout: global
+
+/* anchor link
+
+.anchorjs-link
+	position: static !important
+	float: right
+	margin-left: 0 !important
+	padding-right: 0 !important
+
+/* button
+
+.docspress-btn
+	@extend .vlt-btn
+	@extend .vlt-btn--secondary
+
+	.badge
+		background-color: $p1
+
+	&[data-type="positive"],
+	&[data-type="negative"]
+		&::before
+			margin-right: 4px
+			font-family: $if
+			line-height: 1
+
+		&::before
+			content: '\f0f2'
+
+	&[data-type="negative"]
+		&::before
+			content: '\f0f1'
+
+/* Preloader block
+
+.docspress-preloader
+
+	> span
+		box-shadow: inset 0 0 0 2px rgba($c1, 0.1)
+
+		> span::after
+			box-shadow: inset 0 0 0 2px $p2

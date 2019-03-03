@@ -1,0 +1,38 @@
+/* Partial: preloader
+
+.vlt-site-preloader
+	display: flex
+	align-items: center
+	justify-content: center
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: $c6
+	transition:
+		property: all
+		duration: 250ms
+	z-index: 999
+
+.vlt-is-page-loaded
+	.vlt-site-preloader
+		opacity: 0
+		visibility: hidden
+
+/* spinner
+
+.vlt-site-preloader
+	.spinner
+		span
+			display: inline-block
+			width: 2em
+			height: 2em
+			border: 2px solid rgba($c1, 0.1)
+			border-bottom-color: $p2
+			border-radius: 50%
+			animation:
+				name: spin
+				duration: .75s
+				iteration-count: infinite
+				timing-function: linear

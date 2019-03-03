@@ -1,0 +1,15 @@
+// mixins
+
+@mixin placeholder
+	&::-webkit-input-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+@mixin markup
+	.vlt-content-markup &
+		@content
