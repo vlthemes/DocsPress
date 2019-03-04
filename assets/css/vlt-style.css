@@ -1460,9 +1460,7 @@ p.form-submit
 }
 .vlt-post-title a
 {
-    text-decoration: none; 
-
-    color: inherit;
+    text-decoration: none;
 }
 .vlt-post-title a:hover
 {
@@ -1473,13 +1471,23 @@ p.form-submit
 
 .vlt-post-meta
 {
-    font-size: 14px; 
+    font-size: 14px;
 
     margin-top: .25em;
+
+    color: #92989b;
 }
 .vlt-post-meta span + span
 {
     margin-left: 1em;
+}
+.vlt-post-meta a
+{
+    color: inherit;
+}
+.vlt-post-meta a:hover
+{
+    color: var(--p1);
 }
 
 .vlt-post-thumbnail
@@ -1521,21 +1529,23 @@ p.form-submit
 }
 .vlt-changelog-title a
 {
-    text-decoration: none; 
-
-    color: inherit;
-}
-.vlt-changelog-title a:hover
-{
-    text-decoration: underline; 
-
-    color: var(--p1);
+    text-decoration: none;
 }
 .vlt-changelog-meta
 {
-    font-size: 14px; 
+    font-size: 14px;
 
     margin-top: .25em;
+
+    color: #92989b;
+}
+.vlt-changelog-meta a
+{
+    color: inherit;
+}
+.vlt-changelog-meta a:hover
+{
+    color: var(--p1);
 }
 
 /* Partials */
@@ -2292,11 +2302,13 @@ p.form-submit
 
     padding: 6px 12px;
 
-    cursor: pointer; 
+    cursor: pointer;
     text-decoration: none;
     letter-spacing: 0;
 
     border-radius: 3px;
+    -webkit-box-shadow: inset 0 -2px 0 rgba(15, 20, 22, .1);
+            box-shadow: inset 0 -2px 0 rgba(15, 20, 22, .1); 
 
     -webkit-box-align: center;
     -webkit-align-items: center;
