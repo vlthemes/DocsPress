@@ -736,6 +736,43 @@ html
         padding: 2em;
     }
 }
+.vlt-main-title
+{
+    margin: 0 0 2em;
+    padding-bottom: 1em;
+
+    border-bottom: 1px solid #eee;
+}
+
+/* grid */
+.vlt-grid
+{
+    display: grid;
+
+    grid-gap: 1.5em;
+}
+.vlt-grid[data-col='2']
+{
+    grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 767px)
+{
+    .vlt-grid[data-col='2']
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.vlt-grid[data-col='3']
+{
+    grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 767px)
+{
+    .vlt-grid[data-col='3']
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
 
 /* Layout: header */
 /* header */
@@ -1438,7 +1475,7 @@ p.form-submit
 {
     font-size: 14px; 
 
-    margin-top: .5em;
+    margin-top: .25em;
 }
 .vlt-post-meta span + span
 {
@@ -1468,6 +1505,37 @@ p.form-submit
 .vlt-post-footer
 {
     margin-top: 1em;
+}
+
+/* Page: changelog */
+.vlt-changelog
+{
+    padding: 1.5em 2em;
+
+    border-radius: 4px; 
+    background-color: #f0f2f4;
+}
+.vlt-changelog-title
+{
+    font-size: 22px;
+}
+.vlt-changelog-title a
+{
+    text-decoration: none; 
+
+    color: inherit;
+}
+.vlt-changelog-title a:hover
+{
+    text-decoration: underline; 
+
+    color: var(--p1);
+}
+.vlt-changelog-meta
+{
+    font-size: 14px; 
+
+    margin-top: .25em;
 }
 
 /* Partials */

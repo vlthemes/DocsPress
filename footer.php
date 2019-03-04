@@ -5,8 +5,6 @@
 
 ?>
 
-test lol2
-
 <?php wp_footer(); ?>
 
 </body>
