@@ -1891,8 +1891,8 @@ p.form-submit
 
 .docspress-single-articles ul ul
 {
-    margin-bottom: 0; 
-    margin-left: 1em;
+    margin: 0 0 0 1em;
+    padding-left: 0;
 }
 
 .docspress-single-articles ul li
