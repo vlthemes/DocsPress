@@ -13,51 +13,55 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: comments.php:16
+#: archive-changelog.php:14, inc/theme-functions.php:236
+msgid "Changelogs"
+msgstr ""
+
+#: comments.php:18
 msgid "No Comments"
 msgstr ""
 
-#: comments.php:16
+#: comments.php:18
 msgid "One Comment"
 msgstr ""
 
-#: comments.php:16
+#: comments.php:18
 msgid "% Comments"
 msgstr ""
 
-#: comments.php:23
+#: comments.php:26
 msgid "Reply"
 msgstr ""
 
-#: comments.php:34
+#: comments.php:41
 msgid "Submit Comment"
 msgstr ""
 
-#: comments.php:35
+#: comments.php:42
 msgid "Leave a Comment"
 msgstr ""
 
-#: comments.php:40
+#: comments.php:47
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments.php:41
+#: comments.php:48
 msgid "Cancel Reply"
 msgstr ""
 
-#: comments.php:44
+#: comments.php:51
 msgid "Comment"
 msgstr ""
 
-#: comments.php:46
+#: comments.php:53
 msgid "Name*"
 msgstr ""
 
-#: comments.php:47
+#: comments.php:54
 msgid "E-mail*"
 msgstr ""
 
-#: comments.php:48
+#: comments.php:55
 msgid "Website"
 msgstr ""
 
@@ -121,7 +125,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: searchform.php:11
+#: searchform.php:12
 msgid "Search&hellip;"
 msgstr ""
 
@@ -133,15 +137,20 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: docspress/search.php:76, docspress/single.php:37, template-parts/content/content-page.php:51
+#. translators: %s search query.
+#: docspress/search.php:31
+msgid "Documentation search: \"%s\""
+msgstr ""
+
+#: docspress/search.php:81, docspress/single.php:37, template-parts/content/content-page.php:61
 msgid "Pages: "
 msgstr ""
 
-#: docspress/search.php:79, docspress/single.php:40, template-parts/content/content-page.php:54
+#: docspress/search.php:84, docspress/single.php:40, template-parts/content/content-page.php:64
 msgid "Next page"
 msgstr ""
 
-#: docspress/search.php:80, docspress/single.php:41, template-parts/content/content-page.php:55
+#: docspress/search.php:85, docspress/single.php:41, template-parts/content/content-page.php:65
 msgid "Previous page"
 msgstr ""
 
@@ -153,63 +162,59 @@ msgstr ""
 msgid "Blog Widget Area"
 msgstr ""
 
-#: inc/theme-filters.php:37
+#: inc/theme-filters.php:40
 msgid "This content is restricted access, please type the password below and get access."
 msgstr ""
 
-#: inc/theme-filters.php:39
+#: inc/theme-filters.php:42
 msgid "Password:"
 msgstr ""
 
-#: inc/theme-filters.php:41
+#: inc/theme-filters.php:44
 msgid "Get Access"
 msgstr ""
 
-#: inc/theme-functions.php:92
+#: inc/theme-functions.php:104
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/theme-functions.php:182
-msgid " Newer posts"
+#: inc/theme-functions.php:195
+msgid "Newer posts"
 msgstr ""
 
-#: inc/theme-functions.php:183
-msgid "Older posts "
+#: inc/theme-functions.php:196
+msgid "Older posts"
 msgstr ""
 
-#: inc/theme-functions.php:204
-msgid " Prev Page"
+#: inc/theme-functions.php:215
+msgid "Prev Page"
 msgstr ""
 
-#: inc/theme-functions.php:207
-msgid "Next Page "
+#: inc/theme-functions.php:218
+msgid "Next Page"
 msgstr ""
 
-#: inc/theme-functions.php:225
-msgid "Changelogs"
-msgstr ""
-
-#: inc/theme-functions.php:226
+#: inc/theme-functions.php:237
 msgid "Changelog"
 msgstr ""
 
-#: inc/theme-functions.php:227
+#: inc/theme-functions.php:238
 msgid "Edit Changelog Item"
 msgstr ""
 
-#: inc/theme-functions.php:228
+#: inc/theme-functions.php:239
 msgid "Update Changelog Item"
 msgstr ""
 
-#: inc/theme-functions.php:229
+#: inc/theme-functions.php:240
 msgid "Search Changelog Item"
 msgstr ""
 
-#: inc/theme-menus.php:13
+#: inc/theme-menus.php:14
 msgid "Please register navigation from"
 msgstr ""
 
-#: inc/theme-menus.php:13
+#: inc/theme-menus.php:14
 msgid "Appearance > Menus"
 msgstr ""
 
@@ -650,27 +655,27 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: template-parts/content/content-page-404.php:11
+#: template-parts/content/content-page-404.php:12
 msgid "Oops! That page can’t be found."
 msgstr ""
 
-#: template-parts/content/content-page-404.php:12
+#: template-parts/content/content-page-404.php:14
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: template-parts/content/content-page-empty.php:12
+#: template-parts/content/content-page-empty.php:14
 msgid "Ready to publish your first post?"
 msgstr ""
 
-#: template-parts/content/content-page-empty.php:13
+#: template-parts/content/content-page-empty.php:15
 msgid "Get started here"
 msgstr ""
 
-#: template-parts/content/content-page-empty.php:15
+#: template-parts/content/content-page-empty.php:19
 msgid "Sorry, but nothing matched your search terms."
 msgstr ""
 
-#: template-parts/content/content-page-empty.php:17
+#: template-parts/content/content-page-empty.php:23
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
 msgstr ""
 
@@ -678,7 +683,7 @@ msgstr ""
 msgid "Print Page"
 msgstr ""
 
-#: template-parts/content/content-page.php:60
+#: template-parts/content/content-page.php:70
 msgid "Edit"
 msgstr ""
 
@@ -686,7 +691,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: template-parts/header/header-default.php:42, template-parts/header/header-mobile.php:29
+#: template-parts/header/header-default.php:47, template-parts/header/header-mobile.php:32
 msgid "Portfolio"
 msgstr ""
 
