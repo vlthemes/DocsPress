@@ -8,6 +8,7 @@
 get_header(); ?>
 
 <main class="vlt-main vlt-main--padding">
+
 	<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) : the_post();

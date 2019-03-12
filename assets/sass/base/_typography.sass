@@ -17,6 +17,7 @@
 	font-style: normal
 	font-weight: 700
 	src: url('../fonts/proxima-nova-soft/mark_simonson_-_proxima_nova_soft_bold-webfont.woff') format('woff')
+
 /* body
 
 body
@@ -28,6 +29,7 @@ body
 	font-size: 16px
 	line-height: 1.8
 	color: $c2
+
 	@if $smooth_font
 		-webkit-font-smoothing: antialiased
 		-moz-osx-font-smoothing: grayscale
@@ -76,9 +78,7 @@ strong
 a
 	color: $p2
 	text-decoration: underline
-	transition:
-		property: all
-		duration: 250ms
+	transition: $transition
 
 	&:hover,
 	&:focus,
@@ -108,18 +108,21 @@ h6, .h6
 h1,
 .h1
 	font-size: 34px
+
 	@media (max-width: 767px)
 		font-size: 26px
 
 h2,
 .h2
 	font-size: 22px
+
 	@media (max-width: 767px)
 		font-size: 20px
 
 h3,
 .h3
 	font-size: 20px
+
 	@media (max-width: 767px)
 		font-size: 18px
 
@@ -131,6 +134,7 @@ h3,
 h4,
 .h4
 	font-size: 18px
+
 	@media (max-width: 767px)
 		font-size: 16px
 
@@ -171,13 +175,12 @@ ol ol
 
 ol
 	@include markup
+		list-style-type: none
+		counter-reset: ol
 
 		ol,
 		ul
 			padding-left: 0
-
-		list-style-type: none
-		counter-reset: ol
 
 		> li
 			position: relative
@@ -207,14 +210,13 @@ hr
 	border: none
 	border-bottom: 1px solid $c4
 
-
 /* blockquote
 
 blockquote
-	border-left: 3px solid currentColor
 	padding: 0 0 0 1.5em
 	margin: 0
 	color: $p1
+	border-left: 3px solid currentColor
 
 	@include markup
 		margin-bottom: 2em
@@ -302,9 +304,7 @@ select
 	background-color: transparent
 	box-shadow: none
 	appearance: none
-	transition:
-		property: all
-		duration: 250ms
+	transition: $transition
 	outline: none
 
 select
@@ -319,9 +319,7 @@ select
 textarea
 	width: 100%
 	max-width: 100%
-	transition:
-		property: border-color
-		duration: 250ms
+	transition: $transition
 
 input[type="text"],
 input[type="date"],

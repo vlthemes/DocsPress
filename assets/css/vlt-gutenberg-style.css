@@ -2,6 +2,7 @@
  * Version: 1.0
  *
  * Powered by VLThemes */
+/* body */
 .edit-post-visual-editor.editor-styles-wrapper
 {
     font-family: Proxima Nova Soft, Helvetica, Arial, sans-serif;
@@ -11,6 +12,7 @@
     color: #1e282c;
 }
 
+/* headings */
 .editor-post-title__block .editor-post-title__input,
 .editor-block-list__block h1,
 .wp-block-heading h1.editor-rich-text__tinymce,

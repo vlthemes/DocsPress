@@ -9,9 +9,12 @@ get_header(); ?>
 
 <main class="vlt-main vlt-main--padding">
 
-	<header class="vlt-main-title">
+	<header class="vlt-main-header">
+
 		<h1><?php esc_html_e( 'Changelogs', '@@textdomain' ); ?></h1>
+
 	</header>
+	<!-- /.vlt-main-title -->
 
 	<?php
 		if ( have_posts() ) :
@@ -24,6 +27,7 @@ get_header(); ?>
 			get_template_part( 'template-parts/content/content', 'page-empty' );
 		endif;
 	?>
+
 </main>
 <!-- /.vlt-main -->
 

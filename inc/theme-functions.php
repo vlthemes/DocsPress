@@ -12,14 +12,20 @@ if ( ! function_exists( 'docs_sanitize_class' ) ) {
 	function docs_sanitize_class( $class, $fallback = null ) {
 
 		if ( is_string( $class ) ) {
+
 			$class = explode( ' ', $class );
+
 		}
 
 		if ( is_array( $class ) && count( $class ) > 0 ) {
+
 			$class = array_map( 'sanitize_html_class', $class );
 			return implode( ' ', $class );
+
 		} else {
+
 			return sanitize_html_class( $class, $fallback );
+
 		}
 
 	}
@@ -55,8 +61,10 @@ if ( ! function_exists( 'docs_callback_custom_comment' ) ) {
 			<div class="vlt-comment-item__inner clearfix" id="comment-<?php comment_ID(); ?>">
 
 				<?php if ( 0 != $args['avatar_size'] && get_avatar( $comment ) ) : ?>
+
 					<a class="vlt-comment-avatar" href="<?php echo get_comment_author_url(); ?>"><?php echo get_avatar( $comment, $args['avatar_size'] ); ?></a>
 					<!-- /.vlt-comment-avatar -->
+
 				<?php endif; ?>
 
 				<div class="vlt-comment-content">
@@ -66,17 +74,20 @@ if ( ! function_exists( 'docs_callback_custom_comment' ) ) {
 						<h5><?php comment_author(); ?></h5>
 
 						<div class="vlt-comment-header__metas">
+
 							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID, $args ) ); ?>">
 								<time datetime="<?php comment_time( 'c' ); ?>">
 									<?php printf( get_comment_date() ); ?>
 								</time>
 							</a>
+
 							<?php
 								comment_reply_link( array_merge( $args, array(
 									'depth' => $depth,
 									'max_depth' => $args['max_depth'],
 								) ) );
 							?>
+
 						</div>
 						<!-- /.vlt-comment-header__metas -->
 
@@ -88,9 +99,11 @@ if ( ! function_exists( 'docs_callback_custom_comment' ) ) {
 						<?php comment_text(); ?>
 
 						<?php if ( '0' == $comment->comment_approved ): ?>
+
 							<p class="vlt-alert">
 								<?php esc_html_e( 'Your comment is awaiting moderation.', '@@textdomain' ); ?>
 							</p>
+
 						<?php endif; ?>
 
 					</div>
@@ -159,12 +172,14 @@ if ( ! function_exists( 'docs_get_post_taxonomy' ) ) {
  */
 if ( ! function_exists( 'docs_get_attachment_image' ) ) {
 	function docs_get_attachment_image( $imageID, $size = 'docs-830x630_crop', $class = '' ) {
+
 		$output = wp_get_attachment_image( $imageID, $size, false, array(
 			'class' => $class,
 			'src' => wp_get_attachment_image_src( $imageID, $size )[0],
 			'srcset' => wp_get_attachment_image_srcset( $imageID, $size )
 		) );
 		return apply_filters( 'docs/get_attachment_image', $output );
+
 	}
 }
 
@@ -173,14 +188,12 @@ if ( ! function_exists( 'docs_get_attachment_image' ) ) {
  */
 if ( ! function_exists( 'docs_the_posts_navigation' ) ) {
 	function docs_the_posts_navigation() {
-		$prev_icon = '←';
-		$next_icon = '→';
 
 		the_posts_pagination(
 			array(
 				'mid_size' => 2,
-				'prev_text' => sprintf( '%s <span class="nav-prev-text">%s</span>', $prev_icon, __( ' Newer posts', '@@textdomain' ) ),
-				'next_text' => sprintf( '<span class="nav-next-text">%s</span> %s', __( 'Older posts ', '@@textdomain' ), $next_icon ),
+				'prev_text' => sprintf( '<span class="nav-prev-text">%s</span>', __( 'Newer posts', '@@textdomain' ) ),
+				'next_text' => sprintf( '<span class="nav-next-text">%s</span>', __( 'Older posts', '@@textdomain' ) ),
 			)
 		);
 
@@ -194,17 +207,15 @@ if ( ! function_exists( 'docs_get_comment_navigation' ) ) {
 	function docs_get_comment_navigation() {
 
 		$output = '';
-		$prev_icon = '←';
-		$next_icon = '→';
 
 		if ( get_comment_pages_count() > 1 ) :
 
 			$output .= '<nav class="vlt-comments-navigation">';
 			if ( get_previous_comments_link() ) {
-				$output .= get_previous_comments_link( $prev_icon . esc_html__( ' Prev Page', '@@textdomain' ) );
+				$output .= get_previous_comments_link( esc_html__( 'Prev Page', '@@textdomain' ) );
 			}
 			if ( get_next_comments_link() ) {
-				$output .= get_next_comments_link( esc_html__( 'Next Page ', '@@textdomain' ) . $next_icon );
+				$output .= get_next_comments_link( esc_html__( 'Next Page', '@@textdomain' ) );
 			}
 			$output .= '</nav>';
 

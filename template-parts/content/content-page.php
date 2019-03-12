@@ -47,17 +47,27 @@
 	<footer class="vlt-page-footer">
 
 		<?php
+
+			if ( get_the_tags() ) {
+				echo '<div class="vlt-tags">';
+				the_tags();
+				echo '</div>';
+			}
+
+		?>
+
+		<?php
 			wp_link_pages( array(
 				'before' => '<div class="vlt-link-pages"><h5>' . esc_html__( 'Pages: ', '@@textdomain' ) . '</h5>',
 				'after' => '</div>',
 				'separator' => '<span class="sep">|</span>',
-				'nextpagelink' => esc_html__( 'Next page →', '@@textdomain' ),
-				'previouspagelink' => esc_html__( '← Previous page', '@@textdomain' ),
+				'nextpagelink' => esc_html__( 'Next page', '@@textdomain' ),
+				'previouspagelink' => esc_html__( 'Previous page', '@@textdomain' ),
 				'next_or_number' => 'next'
 			) );
 		?>
 
-		<?php edit_post_link( __( 'Edit', '@@textdomain' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', '@@textdomain' ), '<span class="vlt-edit-link">', '</span>' ); ?>
 
 	</footer>
 	<!-- /.vlt-page-footer -->

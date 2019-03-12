@@ -40,6 +40,7 @@ if ( ! function_exists( 'docs_tgm_plugins' ) ) {
 		);
 
 		tgmpa( $plugins );
+
 	}
 }
 add_action( 'tgmpa_register', 'docs_tgm_plugins' );
