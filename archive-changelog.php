@@ -9,7 +9,9 @@ get_header(); ?>
 
 <main class="vlt-main vlt-main--padding">
 
-	<h1 class="vlt-main-title"><?php esc_html_e( 'Changelogs', '@@textdomain' ); ?></h1>
+	<header class="vlt-main-title">
+		<h1><?php esc_html_e( 'Changelogs', '@@textdomain' ); ?></h1>
+	</header>
 
 	<?php
 		if ( have_posts() ) :

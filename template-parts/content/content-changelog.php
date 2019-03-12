@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="vlt-changelog-meta">
-		<span><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
+		<span><i class="icofont icofont-ui-calendar"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_modified_date( 'c' ); ?>"><?php the_modified_date('F j, Y'); ?></time></a></span>
 	</div>
 
 </article>

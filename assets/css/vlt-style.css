@@ -55,10 +55,38 @@
     color: #eee;
 }
 
+/* add fonts */
+@font-face
+{
+    font-family: 'Proxima Nova Soft';
+    font-weight: 400;
+    font-style: normal;
+
+    src: url('../fonts/proxima-nova-soft/mark_simonson_-_proxima_nova_soft_regular-webfont.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Proxima Nova Soft';
+    font-weight: 500;
+    font-style: normal;
+
+    src: url('../fonts/proxima-nova-soft/mark_simonson_-_proxima_nova_soft_medium-webfont.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Proxima Nova Soft';
+    font-weight: 700;
+    font-style: normal;
+
+    src: url('../fonts/proxima-nova-soft/mark_simonson_-_proxima_nova_soft_bold-webfont.woff') format('woff');
+}
+
 /* body */
 body
 {
-    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: Proxima Nova Soft, Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.8;
 
@@ -1428,6 +1456,10 @@ p.form-submit
 {
     margin-top: 1em;
 }
+.vlt-page-footer a + a
+{
+    margin-left: 1em;
+}
 
 .vlt-page + .vlt-comments
 {
@@ -1481,8 +1513,14 @@ p.form-submit
 {
     margin-left: 1em;
 }
+.vlt-post-meta i
+{
+    margin-right: 6px;
+}
 .vlt-post-meta a
 {
+    text-decoration: none; 
+
     color: inherit;
 }
 .vlt-post-meta a:hover
@@ -1539,8 +1577,14 @@ p.form-submit
 
     color: #92989b;
 }
+.vlt-changelog-meta i
+{
+    margin-right: 6px;
+}
 .vlt-changelog-meta a
 {
+    text-decoration: none; 
+
     color: inherit;
 }
 .vlt-changelog-meta a:hover
@@ -1911,7 +1955,7 @@ p.form-submit
 {
     font-family: icofont; 
 
-    margin-right: 5px;
+    margin-right: 6px;
 
     content: '\ed3b';
 }
@@ -1948,18 +1992,6 @@ p.form-submit
 {
     display: none;
 }
-.docspress-single-adjacent-nav .nav-previous a::before
-{
-    margin-right: 4px; 
-
-    content: '←';
-}
-.docspress-single-adjacent-nav .nav-next a::after
-{
-    margin-left: 4px; 
-
-    content: '→';
-}
 
 /* Single Doc Articles */
 .vlt-link-pages + .docspress-single-articles
@@ -1975,22 +2007,34 @@ p.form-submit
 
 .docspress-single-articles ul li
 {
-    font-size: 14px; 
+    font-size: inherit; 
 
     margin-bottom: 0;
 }
 .docspress-single-articles ul li::before
 {
-    display: none !important;
+    font-family: icofont;
+
+    margin-right: 10px;
+
+    content: '\ec1e';
+
+    color: #92989b;
 }
 .docspress-single-articles ul li > a
 {
     display: inline-block;
 
+    padding-left: 0;
+
     -webkit-transition-duration: 250ms;
             transition-duration: 250ms; 
     -webkit-transition-property: all;
             transition-property: all;
+}
+.docspress-single-articles ul li > a::before
+{
+    display: none;
 }
 .docspress-single-articles ul li > a:hover
 {
@@ -2290,7 +2334,7 @@ p.form-submit
 .vlt-search-form button,
 .docspress-btn
 {
-    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: Proxima Nova Soft, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.3;
