@@ -17,7 +17,7 @@
 
 	> li:first-child > a::before
 		content: '\ed3b'
-		margin-right: 5px
+		margin-right: 6px
 		font-family: $if
 
 	.delimiter
@@ -49,40 +49,34 @@
 		.icon
 			display: none
 
-	.nav-previous
-
-		a::before
-			content: '←'
-			margin-right: 4px
-
-	.nav-next
-		a::after
-			content: '→'
-			margin-left: 4px
-
 /* Single Doc Articles
 
 .vlt-link-pages + .docspress-single-articles
 	margin-top: 2.5em
 
-.docspress-single-articles 	ul
+.docspress-single-articles ul
 
 	ul
-		margin-left: 1em
-		margin-bottom: 0
+		margin: 0 0 0 1em
+		padding-left: 0
 
 	li
 		margin-bottom: 0
-		font-size: 14px
+		font-size: inherit
 
 		&::before
-			display: none !important
+			content: '\ec1e'
+			font-family: $if
+			margin-right: 10px
+			color: $c5
 
 		> a
 			display: inline-block
-			transition:
-				property: all
-				duration: 250ms
+			padding-left: 0
+			transition: $transition
+
+			&::before
+				display: none
 
 			&:hover
 				color: $p1

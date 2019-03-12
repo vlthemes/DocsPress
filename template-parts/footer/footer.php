@@ -22,7 +22,10 @@
 <?php if ( get_theme_mod( 'back_to_top', 'show' ) == 'show' ) : ?>
 
 	<div class="hidden-sm-down">
+
 		<a href="#" class="vlt-back-to-top hidden"><i class="icofont icofont-square-up"></i></a>
+		<!-- /.vlt-back-to-top -->
+
 	</div>
 	<!-- /.hidden-sm-down -->
 

@@ -138,11 +138,11 @@ msgid "Pages: "
 msgstr ""
 
 #: docspress/search.php:79, docspress/single.php:40, template-parts/content/content-page.php:54
-msgid "Next page →"
+msgid "Next page"
 msgstr ""
 
 #: docspress/search.php:80, docspress/single.php:41, template-parts/content/content-page.php:55
-msgid "← Previous page"
+msgid "Previous page"
 msgstr ""
 
 #: inc/theme-actions.php:15

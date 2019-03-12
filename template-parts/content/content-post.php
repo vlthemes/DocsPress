@@ -15,8 +15,8 @@
 		<!-- /.vlt-post-title -->
 
 		<div class="vlt-post-meta">
-			<span><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
-			<span><?php echo docs_get_post_taxonomy( get_the_ID(), 'category', ', ' ); ?></span>
+			<span><i class="icofont icofont-ui-calendar"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
+			<span><i class="icofont icofont-ui-tag"></i><?php echo docs_get_post_taxonomy( get_the_ID(), 'category', ', ' ); ?></span>
 		</div>
 		<!-- /.vlt-post-meta -->
 

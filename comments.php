@@ -12,8 +12,11 @@ if ( post_password_required() ) {
 ?>
 
 <div class="vlt-comments">
+
 	<?php if ( have_comments() ) : ?>
+
 		<h3 class="vlt-comments__title" ><?php comments_number( esc_html__( 'No Comments', '@@textdomain' ) , esc_html__( 'One Comment', '@@textdomain' ), esc_html__( '% Comments', '@@textdomain' ) ); ?></h3>
+
 		<ul class="vlt-comments__list">
 			<?php
 				wp_list_comments( array(
@@ -25,9 +28,13 @@ if ( post_password_required() ) {
 				) );
 			?>
 		</ul>
+
 		<?php echo docs_get_comment_navigation(); ?>
+
 	<?php endif; ?>
+
 	<div class="vlt-comment-form">
+
 		<?php
 			$commenter = wp_get_current_commenter();
 			$args = array(
@@ -49,7 +56,11 @@ if ( post_password_required() ) {
 				),
 			);
 		?>
+
 		<?php comment_form( $args ); ?>
+
 	</div>
 	<!-- /.vlt-comments__reply -->
+
 </div>
+<!-- /.vlt-comments -->

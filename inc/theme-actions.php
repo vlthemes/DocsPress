@@ -48,6 +48,7 @@ if ( ! function_exists( 'docs_after_site' ) ) {
 	function docs_after_site() {
 
 		echo '</div><!-- ./vlt-site-wrapper -->';
+
 	}
 }
 add_action( 'docs/after_site', 'docs_after_site' );
@@ -57,6 +58,7 @@ add_action( 'docs/after_site', 'docs_after_site' );
  */
 if ( ! function_exists( 'docs_change_admin_logo' ) ) {
 	function docs_change_admin_logo() {
+
 		if ( ! get_theme_mod( 'login_logo_image', DOCS_THEME_DIRECTORY . 'assets/img/vlthemes.png' ) ) {
 			return;
 		}
@@ -71,6 +73,7 @@ if ( ! function_exists( 'docs_change_admin_logo' ) ) {
 				background-size: cover !important;
 			}
 		</style>';
+
 	}
 }
 add_action( 'login_head', 'docs_change_admin_logo' );

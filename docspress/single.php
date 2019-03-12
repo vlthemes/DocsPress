@@ -37,8 +37,8 @@ while ( have_posts() ) :
 					'before' => '<div class="vlt-link-pages"><h5>' . esc_html__( 'Pages: ', '@@textdomain' ) . '</h5>',
 					'after' => '</div>',
 					'separator' => '<span class="sep">|</span>',
-					'nextpagelink' => esc_html__( 'Next page →', '@@textdomain' ),
-					'previouspagelink' => esc_html__( '← Previous page', '@@textdomain' ),
+					'nextpagelink' => esc_html__( 'Next page', '@@textdomain' ),
+					'previouspagelink' => esc_html__( 'Previous page', '@@textdomain' ),
 					'next_or_number' => 'next'
 				) );
 

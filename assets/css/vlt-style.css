@@ -55,10 +55,38 @@
     color: #eee;
 }
 
+/* add fonts */
+@font-face
+{
+    font-family: 'Proxima Nova Soft';
+    font-weight: 400;
+    font-style: normal;
+
+    src: url('../fonts/proxima-nova-soft/mark_simonson_-_proxima_nova_soft_regular-webfont.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Proxima Nova Soft';
+    font-weight: 500;
+    font-style: normal;
+
+    src: url('../fonts/proxima-nova-soft/mark_simonson_-_proxima_nova_soft_medium-webfont.woff') format('woff');
+}
+
+@font-face
+{
+    font-family: 'Proxima Nova Soft';
+    font-weight: 700;
+    font-style: normal;
+
+    src: url('../fonts/proxima-nova-soft/mark_simonson_-_proxima_nova_soft_bold-webfont.woff') format('woff');
+}
+
 /* body */
 body
 {
-    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: Proxima Nova Soft, Helvetica, Arial, sans-serif;
     font-size: 16px;
     line-height: 1.8;
 
@@ -123,10 +151,8 @@ strong
 /* link */
 a
 {
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms; 
-    -webkit-transition-property: all;
-            transition-property: all;
+    -webkit-transition: all 300ms linear;
+            transition: all 300ms linear; 
     text-decoration: underline;
 
     color: var(--p2);
@@ -370,7 +396,7 @@ blockquote
     margin: 0;
     padding: 0 0 0 1.5em;
 
-    color: var(--p1); 
+    color: var(--p1);
     border-left: 3px solid currentColor;
 }
 .vlt-content-markup blockquote
@@ -486,10 +512,8 @@ select
     margin: 0;
     padding: 10px 12px;
 
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms;
-    -webkit-transition-property: all;
-            transition-property: all;
+    -webkit-transition: all 300ms linear;
+            transition: all 300ms linear;
 
     border: 1px solid #eee;
     border-radius: 2px;
@@ -522,10 +546,8 @@ textarea
     width: 100%;
     max-width: 100%;
 
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms; 
-    -webkit-transition-property: border-color;
-            transition-property: border-color;
+    -webkit-transition: all 300ms linear;
+            transition: all 300ms linear;
 }
 
 input[type='text']:focus,
@@ -734,6 +756,43 @@ html
     .vlt-main--padding
     {
         padding: 2em;
+    }
+}
+.vlt-main-header
+{
+    margin: 0 0 2em;
+    padding-bottom: 1em;
+
+    border-bottom: 1px solid #eee;
+}
+
+/* grid */
+.vlt-grid
+{
+    display: grid;
+
+    grid-gap: 1.5em;
+}
+.vlt-grid[data-col='2']
+{
+    grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 767px)
+{
+    .vlt-grid[data-col='2']
+    {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+.vlt-grid[data-col='3']
+{
+    grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 767px)
+{
+    .vlt-grid[data-col='3']
+    {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
@@ -1391,6 +1450,19 @@ p.form-submit
 {
     margin-top: 1em;
 }
+.vlt-page-footer .vlt-tags,
+.vlt-page-footer .vlt-edit-link
+{
+    display: block;
+}
+.vlt-page-footer .vlt-tags + .vlt-edit-link
+{
+    margin-top: 1em;
+}
+.vlt-page-footer .vlt-edit-link a + a
+{
+    margin-left: 1em;
+}
 
 .vlt-page + .vlt-comments
 {
@@ -1423,9 +1495,7 @@ p.form-submit
 }
 .vlt-post-title a
 {
-    text-decoration: none; 
-
-    color: inherit;
+    text-decoration: none;
 }
 .vlt-post-title a:hover
 {
@@ -1436,13 +1506,29 @@ p.form-submit
 
 .vlt-post-meta
 {
-    font-size: 14px; 
+    font-size: 14px;
 
-    margin-top: .5em;
+    margin-top: .25em;
+
+    color: #92989b;
 }
 .vlt-post-meta span + span
 {
     margin-left: 1em;
+}
+.vlt-post-meta i
+{
+    margin-right: 6px;
+}
+.vlt-post-meta a
+{
+    text-decoration: none; 
+
+    color: inherit;
+}
+.vlt-post-meta a:hover
+{
+    color: var(--p1);
 }
 
 .vlt-post-thumbnail
@@ -1470,6 +1556,45 @@ p.form-submit
     margin-top: 1em;
 }
 
+/* Page: changelog */
+.vlt-changelog
+{
+    padding: 1.5em 2em;
+
+    border-radius: 4px; 
+    background-color: #f0f2f4;
+}
+.vlt-changelog-title
+{
+    font-size: 22px;
+}
+.vlt-changelog-title a
+{
+    text-decoration: none;
+}
+.vlt-changelog-meta
+{
+    font-size: 14px;
+
+    margin-top: .25em;
+
+    color: #92989b;
+}
+.vlt-changelog-meta i
+{
+    margin-right: 6px;
+}
+.vlt-changelog-meta a
+{
+    text-decoration: none; 
+
+    color: inherit;
+}
+.vlt-changelog-meta a:hover
+{
+    color: var(--p1);
+}
+
 /* Partials */
 /* Partial: back to top */
 .vlt-back-to-top
@@ -1482,10 +1607,8 @@ p.form-submit
     right: 30px;
     bottom: 1.5em;
 
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms;
-    -webkit-transition-property: all;
-            transition-property: all;
+    -webkit-transition: all 300ms linear;
+            transition: all 300ms linear;
 
     color: #92989b;
 }
@@ -1578,10 +1701,8 @@ p.form-submit
 
     height: 100%;
 
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms; 
-    -webkit-transition-property: all;
-            transition-property: all;
+    -webkit-transition: all 300ms linear;
+            transition: all 300ms linear; 
 
     border-radius: 0 3px 3px 0 !important;
 }
@@ -1601,10 +1722,8 @@ p.form-submit
     display: -ms-flexbox;
     display:         flex;
 
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms;
-    -webkit-transition-property: all;
-            transition-property: all;
+    -webkit-transition: all 300ms linear;
+            transition: all 300ms linear;
 
     background-color: #fff;
 
@@ -1833,7 +1952,7 @@ p.form-submit
 {
     font-family: icofont; 
 
-    margin-right: 5px;
+    margin-right: 6px;
 
     content: '\ed3b';
 }
@@ -1870,18 +1989,6 @@ p.form-submit
 {
     display: none;
 }
-.docspress-single-adjacent-nav .nav-previous a::before
-{
-    margin-right: 4px; 
-
-    content: '←';
-}
-.docspress-single-adjacent-nav .nav-next a::after
-{
-    margin-left: 4px; 
-
-    content: '→';
-}
 
 /* Single Doc Articles */
 .vlt-link-pages + .docspress-single-articles
@@ -1891,28 +1998,38 @@ p.form-submit
 
 .docspress-single-articles ul ul
 {
-    margin-bottom: 0; 
-    margin-left: 1em;
+    margin: 0 0 0 1em;
+    padding-left: 0;
 }
 
 .docspress-single-articles ul li
 {
-    font-size: 14px; 
+    font-size: inherit; 
 
     margin-bottom: 0;
 }
 .docspress-single-articles ul li::before
 {
-    display: none !important;
+    font-family: icofont;
+
+    margin-right: 10px;
+
+    content: '\ec1e';
+
+    color: #92989b;
 }
 .docspress-single-articles ul li > a
 {
     display: inline-block;
 
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms; 
-    -webkit-transition-property: all;
-            transition-property: all;
+    padding-left: 0;
+
+    -webkit-transition: all 300ms linear;
+            transition: all 300ms linear;
+}
+.docspress-single-articles ul li > a::before
+{
+    display: none;
 }
 .docspress-single-articles ul li > a:hover
 {
@@ -1971,10 +2088,8 @@ p.form-submit
 }
 .docspress-archive .docspress-archive-list > .docspress-archive-list-item a
 {
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms; 
-    -webkit-transition-property: all;
-            transition-property: all;
+    -webkit-transition: all 300ms linear;
+            transition: all 300ms linear; 
     text-decoration: underline;
 }
 .docspress-archive .docspress-archive-list > .docspress-archive-list-item > ul a:hover
@@ -2123,10 +2238,8 @@ p.form-submit
     padding: 0;
 
     cursor: pointer;
-    -webkit-transition-duration: 250ms;
-            transition-duration: 250ms;
-    -webkit-transition-property: all;
-            transition-property: all;
+    -webkit-transition: all 300ms linear;
+            transition: all 300ms linear;
 
     opacity: .5;
     color: #fff;
@@ -2212,7 +2325,7 @@ p.form-submit
 .vlt-search-form button,
 .docspress-btn
 {
-    font-family: BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    font-family: Proxima Nova Soft, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.3;
@@ -2224,11 +2337,13 @@ p.form-submit
 
     padding: 6px 12px;
 
-    cursor: pointer; 
+    cursor: pointer;
     text-decoration: none;
     letter-spacing: 0;
 
     border-radius: 3px;
+    -webkit-box-shadow: inset 0 -2px 0 rgba(15, 20, 22, .1);
+            box-shadow: inset 0 -2px 0 rgba(15, 20, 22, .1); 
 
     -webkit-box-align: center;
     -webkit-align-items: center;
