@@ -1,3 +1,5 @@
+![alt text](https://github.com/vlthemes/DocsPress/blob/master/screenshot.jpg "DocsPress")
+
 # DocsPress
 This is the knowledge base documentation theme for WordPress.
 

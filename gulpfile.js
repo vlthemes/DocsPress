@@ -10,7 +10,7 @@ var version = pkg.version;
 var textdomain = pkg.textdomain;
 
 // Build files.
-var buildFiles = ['./**', '!node_modules/**', '!dist/', '!package.json', '!package-lock.json', '!gulpfile.js', '!assets/sass/**'];
+var buildFiles = ['./**', '!node_modules/**', '!dist/', '!package.json', '!package-lock.json', '!gulpfile.js', '!README.md', '!assets/sass/**'];
 var buildDestination = './dist/' + slug + '/';
 var distributionFiles = './dist/' + slug + '/**/*';
 
