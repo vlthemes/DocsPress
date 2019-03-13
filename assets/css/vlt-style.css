@@ -2041,12 +2041,10 @@ p.form-submit
 {
     padding: 30px 30px 0;
 }
-.docspress-single .docspress-single-content .entry-header h1
+.docspress-single .docspress-single-content .entry-header
 {
-    line-height: 1.4;
-
-    margin: 0 0 .6em;
-    padding: 0 0 .3em;
+    margin: 0 0 2em;
+    padding: 0 0 1em;
 
     border-bottom: 1px solid #eee;
 }
