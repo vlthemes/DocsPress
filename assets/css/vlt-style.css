@@ -95,6 +95,8 @@ body
     margin: 0;
     padding: 0;
 
+    letter-spacing: .025em;
+
     color: #1e282c;
 }
 
