@@ -26,8 +26,8 @@
 
 		&__description
 			margin-top: 4px
-			color: $c5
 			font-size: 12px
+			color: $c5
 
 	// navigation
 
@@ -88,7 +88,7 @@
 				li.sfHover > a
 					color: $c6
 
-	// button
+	// buttons
 
 	.vlt-btn
 		margin-left: 2.5em
@@ -114,7 +114,7 @@
 	margin-top: 2em
 
 	@media (max-width: 767px)
-		mask-type: 1.5em
+		margin-top: 1.5em
 
 	.sf-menu
 		text-align: left
@@ -135,14 +135,14 @@
 			position: static
 			padding-left: 10px
 
-			a
-				font-size: 14px
-				font-weight: 400
-
 		li.menu-item-has-children > a::after
-			content: '\f0d7'
-			font-family: $fa5
+			content: '\f054'
+			position: relative
+			top: 2px
 			float: right
+			font-family: $fa5
+			font-weight: 900
+			font-size: 12px
 
 		li.sfHover > a::after
-			content: '\eb7a'
+			content: '\f078'

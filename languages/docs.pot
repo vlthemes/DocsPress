@@ -162,6 +162,14 @@ msgstr ""
 msgid "Blog Widget Area"
 msgstr ""
 
+#: inc/theme-actions.php:25
+msgid "Subscribe Popup"
+msgstr ""
+
+#: inc/theme-actions.php:27
+msgid "Subscribe popup Widget Area"
+msgstr ""
+
 #: inc/theme-filters.php:40
 msgid "This content is restricted access, please type the password below and get access."
 msgstr ""
@@ -236,6 +244,14 @@ msgstr ""
 
 #: inc/theme-required-plugins.php:36
 msgid "MailChimp for WordPress"
+msgstr ""
+
+#: docspress/single/content-title.php:23
+msgid " view"
+msgstr ""
+
+#: docspress/single/content-title.php:23
+msgid " views"
 msgstr ""
 
 #: inc/framework/customizer.php:25
@@ -691,7 +707,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: template-parts/header/header-default.php:47, template-parts/header/header-mobile.php:32
+#: template-parts/header/header-default.php:56, template-parts/header/header-mobile.php:41
 msgid "Portfolio"
 msgstr ""
 

@@ -10,28 +10,28 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-    exit;
+	exit;
 }
 
 docspress()->get_template_part( 'global/wrap-start' );
 
 while ( have_posts() ) :
-    the_post(); ?>
+	the_post(); ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class( 'docspress-single' . ( docspress()->get_option( 'ajax', 'docspress_single', true ) ? ' docspress-single-ajax' : '' ) ); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'docspress-single' . ( docspress()->get_option( 'ajax', 'docspress_single', true ) ? ' docspress-single-ajax' : '' ) ); ?>>
 
-        <?php docspress()->get_template_part( 'single/sidebar' ); ?>
+		<?php docspress()->get_template_part( 'single/sidebar' ); ?>
 
-        <div class="docspress-single-content">
-            <?php
-            docspress()->get_template_part( 'single/content-breadcrumbs' );
+		<div class="docspress-single-content">
+			<?php
+			docspress()->get_template_part( 'single/content-breadcrumbs' );
 
-            docspress()->get_template_part( 'single/content-title' );
-            ?>
+			docspress()->get_template_part( 'single/content-title' );
+			?>
 
-            <div class="entry-content vlt-content-markup">
-                <?php
-                the_content();
+			<div class="entry-content vlt-content-markup">
+				<?php
+				the_content();
 
 				wp_link_pages( array(
 					'before' => '<div class="vlt-link-pages"><h5>' . esc_html__( 'Pages: ', '@@textdomain' ) . '</h5>',
@@ -42,26 +42,26 @@ while ( have_posts() ) :
 					'next_or_number' => 'next'
 				) );
 
-                docspress()->get_template_part( 'single/content-articles' );
-                ?>
-            </div><!-- .entry-content -->
+				docspress()->get_template_part( 'single/content-articles' );
+				?>
+			</div><!-- .entry-content -->
 
-            <?php
+			<?php
 
-            docspress()->get_template_part( 'single/footer' );
+			docspress()->get_template_part( 'single/footer' );
 
-            docspress()->get_template_part( 'single/adjacent-links' );
+			docspress()->get_template_part( 'single/adjacent-links' );
 
-            docspress()->get_template_part( 'single/feedback' );
+			docspress()->get_template_part( 'single/feedback' );
 
-            if ( docspress()->get_option( 'show_comments', 'docspress_single', true ) ) {
-                docspress()->get_template_part( 'single/comments' );
-            }
+			if ( docspress()->get_option( 'show_comments', 'docspress_single', true ) ) {
+				docspress()->get_template_part( 'single/comments' );
+			}
 
-            ?>
-        </div><!-- .docspress-single-content -->
-    </article><!-- #post-## -->
-    <?php
+			?>
+		</div><!-- .docspress-single-content -->
+	</article><!-- #post-## -->
+	<?php
 
 endwhile;
 

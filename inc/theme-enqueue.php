@@ -29,15 +29,22 @@ if ( ! class_exists( 'ThemeEnqueueAssets' ) ) {
 		}
 
 		public function enqueue_gutenberg_formats() {
+
+			// Enqueue gutenberg scripts
 			wp_enqueue_style( 'vlt-gutenberg', $this->assets_dir .'css/vlt-gutenberg-style.min.css', array(), $this->theme_version );
 			wp_enqueue_script( 'vlt-gutenberg-formats', $this->assets_dir .'scripts/vlt-gutenberg-formats.js', array( 'wp-rich-text' ), $this->theme_version, true );
+
 		}
 
 		public function enqueue_admin_scripts() {
+
+			// Enqueue admin scripts
 			wp_enqueue_script( 'vlt-admin-script', $this->assets_dir .'scripts/vlt-admin.js', array( 'jquery' ), $this->theme_version, true );
+
 		}
 
 		public function enqueue_frontend_scripts() {
+
 			if ( is_singular() && comments_open() ) {
 				wp_enqueue_script( 'comment-reply' );
 			}
@@ -60,32 +67,36 @@ if ( ! class_exists( 'ThemeEnqueueAssets' ) ) {
 		}
 
 		public function enqueue_frontend_styles() {
-			wp_enqueue_style( 'style', get_stylesheet_uri() );
+
+			// Plugins
 			wp_enqueue_style( 'normalize', $this->assets_dir .'css/plugins/normalize.css', array(), $this->theme_version );
 			wp_enqueue_style( 'grid', $this->assets_dir .'css/plugins/grid.css', array(), $this->theme_version );
 			wp_enqueue_style( 'superfish', $this->assets_dir .'css/plugins/superfish.css', array(), $this->theme_version );
 			wp_enqueue_style( 'fancybox', $this->assets_dir .'css/plugins/jquery.fancybox.min.css', array(), $this->theme_version );
 
-
+			// FontAwesome
+			wp_enqueue_style( 'fontawesome-solid', 'https://use.fontawesome.com/releases/v5.7.2/css/solid.css', array(), $this->theme_version );
 			wp_enqueue_style( 'fontawesome-regular', 'https://use.fontawesome.com/releases/v5.7.2/css/regular.css', array(), $this->theme_version );
 			wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css', array(), $this->theme_version );
 
-
-
-
-
+			// Main CSS
+			wp_enqueue_style( 'style', get_stylesheet_uri() );
 			wp_enqueue_style( 'vlt-style-css', $this->assets_dir .'css/vlt-style.min.css', array(), $this->theme_version );
 			if ( ! class_exists( 'Kirki' ) ) {
 				wp_enqueue_style( 'vlt-customizer-frontend', $this->customizer_frontend_css, array(), $this->theme_version );
 			}
+
 		}
 
 		public function enqueue_admin_styles() {
+
+			// Admin styles
 			wp_enqueue_style( 'vlt-admin-style', $this->assets_dir .'css/vlt-admin.css', array(), $this->theme_version );
 
 			if ( ! class_exists( 'Kirki' ) ) {
 				wp_enqueue_style( 'vlt-customizer-editor', $this->customizer_editor_css, array(), $this->theme_version );
 			}
+
 		}
 
 	}

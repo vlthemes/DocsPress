@@ -73,11 +73,11 @@
 /* preformatted */
 .code
 {
-    font: inherit;
+    font-family: inherit;
 
     padding: 2px 7px;
 
-    white-space: nowrap; 
+    white-space: nowrap;
 
     color: #0f1416;
     border-radius: 3px;
