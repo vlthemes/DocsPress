@@ -23,7 +23,7 @@
 
 	<div class="hidden-sm-down">
 
-		<a href="#" class="vlt-back-to-top hidden"><i class="icofont icofont-square-up"></i></a>
+		<a href="#" class="vlt-back-to-top hidden"><i class="fas fa-caret-square-up"></i></a>
 		<!-- /.vlt-back-to-top -->
 
 	</div>

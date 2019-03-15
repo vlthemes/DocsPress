@@ -15,7 +15,7 @@
 	<!-- /.vlt-changelog-title -->
 
 	<div class="vlt-changelog-meta">
-		<span><i class="icofont icofont-ui-calendar"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_modified_date( 'c' ); ?>"><?php the_modified_date(); ?></time></a></span>
+		<span><i class="fas fa-calendar-plus"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_modified_date( 'c' ); ?>"><?php the_modified_date(); ?></time></a></span>
 	</div>
 	<!-- /.vlt-changelog-meta -->
 

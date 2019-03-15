@@ -1,11 +1,7 @@
 /* Vendor: Mailchimp Form
 
-.mc4wp-form
-
-	input
-		max-width: 320px
-
-.mc4wp-notice
+.mc4wp-notice,
+.mc4wp-alert
 	position: relative
 	margin: 2em 0 0
 	padding: 0 0 0 1.5em !important
@@ -14,3 +10,27 @@
 	color: $p1
 	border: none
 	border-left: 2px solid $p1
+	p
+		margin-bottom: 0
+
+#vlt-subscribe-popup
+
+	.vlt-widget
+		max-width: 320px
+
+	h2 + p
+		margin-top: .5em
+		margin-bottom: 1.5em
+
+	.vlt-form-group
+		display: flex
+		margin-bottom: 0
+
+		input
+			border-top-right-radius: 0
+			border-bottom-right-radius: 0
+
+		button
+			flex-shrink: 0
+			border-top-left-radius: 0
+			border-bottom-left-radius: 0

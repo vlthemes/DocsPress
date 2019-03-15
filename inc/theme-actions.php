@@ -21,6 +21,16 @@ if ( ! function_exists( 'docs_register_sidebar' ) ) {
 			'after_title' => '</h5>'
 		) );
 
+		register_sidebar( array(
+			'name' => esc_html__( 'Subscribe Popup', '@@textdomain' ),
+			'id' => 'subscribe_popup_sidebar',
+			'description' => esc_html__( 'Subscribe popup Widget Area', '@@textdomain' ),
+			'before_widget' => '<div id="%1$s" class="vlt-widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h5 class="vlt-widget__title">',
+			'after_title' => '</h5>'
+		) );
+
 	}
 }
 add_action( 'widgets_init', 'docs_register_sidebar' );

@@ -37,19 +37,28 @@
 
 	// Fancybox
 	if (typeof $.fn.fancybox !== 'undefined') {
-		$().fancybox({
-			selector: '.wp-block-image > a',
-			animationEffect: 'fade',
-			infobar: false,
-			clickContent: function(current, event) {
-				return false;
-			},
+
+		$.fancybox.defaults.animationEffect = 'fade';
+		$.fancybox.defaults.infobar = false;
+
+		$('.wp-block-image a:has(img)').fancybox({
 			buttons: [
 				'close'
 			],
 			btnTpl: {
 				close: '<button data-fancybox-close class="fancybox-button fancybox-button--close">' +
-					'<span><i class="icofont icofont-close"></i></span>' +
+					'<span>✕</span>' +
+					'</button>'
+			}
+		});
+
+		$('.vlt-subscribe-form-toggle').fancybox({
+			buttons: [
+				'close'
+			],
+			btnTpl: {
+				smallBtn: '<button data-fancybox-close class="fancybox-button fancybox-close-small">' +
+					'<span>✕</span>' +
 					'</button>'
 			}
 		});

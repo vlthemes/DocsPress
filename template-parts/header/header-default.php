@@ -42,6 +42,15 @@ $portfolio_link = get_theme_mod( 'portfolio_link' );
 				</nav>
 				<!-- /.vlt-default-navigation -->
 
+				<?php if ( is_active_sidebar( 'subscribe_popup_sidebar' ) ) : ?>
+
+					<a data-src="#vlt-subscribe-popup" href="javascript:;" class="vlt-subscribe-form-toggle">
+						<i class="fas fa-bell"></i>
+					</a>
+					<!-- /.vlt-subscribe-form-toggle -->
+
+				<?php endif; ?>
+
 				<?php if ( $portfolio_link ) : ?>
 
 					<a href="<?php echo esc_url( $portfolio_link ); ?>" class="vlt-btn vlt-btn--primary"><?php esc_html_e( 'Portfolio', '@@textdomain' ); ?></a>

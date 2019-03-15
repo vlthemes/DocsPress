@@ -15,10 +15,8 @@
 		&:last-of-type
 			color: $c5
 
-	> li:first-child > a::before
-		content: '\ed3b'
-		margin-right: 6px
-		font-family: $if
+		&:first-of-type
+			margin-left: 0
 
 	.delimiter
 		opacity: .2
@@ -65,8 +63,8 @@
 		font-size: inherit
 
 		&::before
-			content: '\ec1e'
-			font-family: $if
+			content: '\f15c'
+			font-family: $fa5
 			margin-right: 10px
 			color: $c5
 
@@ -88,10 +86,9 @@
 	.docspress-single-content
 		padding: 30px 30px 0
 
-		.entry-header h1
-			margin: 0 0 0.6em
-			padding: 0 0 0.3em
-			line-height: 1.4
+		.entry-header
+			margin: 0 0 2em
+			padding: 0 0 1em
 			border-bottom: 1px solid $c4
 
 		.entry-content

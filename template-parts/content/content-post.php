@@ -11,12 +11,12 @@
 
 	<header class="vlt-post-header">
 
-		<h3 class="vlt-post-title"><a href="<?php the_permalink(); ?>"><?php if ( is_sticky() ) { echo '<i class="icofont icofont-star"></i>'; } the_title(); ?></a></h3>
+		<h3 class="vlt-post-title"><a href="<?php the_permalink(); ?>"><?php if ( is_sticky() ) { echo '<i class="fas fa-bookmark"></i>'; } the_title(); ?></a></h3>
 		<!-- /.vlt-post-title -->
 
 		<div class="vlt-post-meta">
-			<span><i class="icofont icofont-ui-calendar"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
-			<span><i class="icofont icofont-ui-tag"></i><?php echo docs_get_post_taxonomy( get_the_ID(), 'category', ', ' ); ?></span>
+			<span><i class="fas fa-calendar-alt"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
+			<span><i class="fas fa-tag"></i><?php echo docs_get_post_taxonomy( get_the_ID(), 'category', ', ' ); ?></span>
 		</div>
 		<!-- /.vlt-post-meta -->
 
