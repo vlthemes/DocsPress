@@ -65,7 +65,15 @@ if ( ! class_exists( 'ThemeEnqueueAssets' ) ) {
 			wp_enqueue_style( 'grid', $this->assets_dir .'css/plugins/grid.css', array(), $this->theme_version );
 			wp_enqueue_style( 'superfish', $this->assets_dir .'css/plugins/superfish.css', array(), $this->theme_version );
 			wp_enqueue_style( 'fancybox', $this->assets_dir .'css/plugins/jquery.fancybox.min.css', array(), $this->theme_version );
-			wp_enqueue_style( 'icofont', $this->assets_dir .'fonts/icofont/icofont.css', array(), $this->theme_version );
+
+
+			wp_enqueue_style( 'fontawesome-regular', 'https://use.fontawesome.com/releases/v5.7.2/css/regular.css', array(), $this->theme_version );
+			wp_enqueue_style( 'fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css', array(), $this->theme_version );
+
+
+
+
+
 			wp_enqueue_style( 'vlt-style-css', $this->assets_dir .'css/vlt-style.min.css', array(), $this->theme_version );
 			if ( ! class_exists( 'Kirki' ) ) {
 				wp_enqueue_style( 'vlt-customizer-frontend', $this->customizer_frontend_css, array(), $this->theme_version );

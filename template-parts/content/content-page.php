@@ -16,7 +16,7 @@
 
 		<?php if ( ! is_single() ) : ?>
 			<div class="hidden-sm-down">
-				<a href="javascript:window.print()" class="vlt-btn vlt-btn--secondary"><i class="icofont icofont-print" style="margin-right: 4px;"></i><?php esc_html_e( 'Print Page', '@@textdomain' ); ?></a>
+				<a href="javascript:window.print()" class="vlt-btn vlt-btn--secondary"><i class="fas fa-print" style="margin-right: 4px;"></i><?php esc_html_e( 'Print Page', '@@textdomain' ); ?></a>
 			</div>
 		<?php endif; ?>
 
