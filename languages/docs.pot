@@ -246,14 +246,6 @@ msgstr ""
 msgid "MailChimp for WordPress"
 msgstr ""
 
-#: docspress/single/content-title.php:23
-msgid " view"
-msgstr ""
-
-#: docspress/single/content-title.php:23
-msgid " views"
-msgstr ""
-
 #: inc/framework/customizer.php:25
 msgid "Global Options"
 msgstr ""
