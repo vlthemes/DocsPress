@@ -1947,6 +1947,10 @@ p.form-submit
 {
     color: var(--p1);
 }
+.docspress-single .docspress-single-sidebar .docspress-nav-list li ul.children
+{
+    padding-bottom: 3px;
+}
 .docspress-single .docspress-single-sidebar .docspress-nav-list > li li.current_page_item > a,
 .docspress-single .docspress-single-sidebar .docspress-nav-list li.current_page_item > a
 {

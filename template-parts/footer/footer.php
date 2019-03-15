@@ -5,13 +5,15 @@
  * @version: @@version
  */
 
+$footer_copyright = get_theme_mod( 'footer_copyright', '<p>© 2019 DocsPress. All rights reserved.</p>' );
+
 ?>
 
-<?php if ( get_theme_mod( 'footer_copyright', '<p>© 2019 DocsPress. All rights reserved.</p>' ) ) : ?>
+<?php if ( $footer_copyright ) : ?>
 
 	<footer class="vlt-footer">
 
-		<div class="vlt-footer-copyright"><?php echo get_theme_mod( 'footer_copyright', '<p>© 2019 DocsPress. All rights reserved.</p>' ); ?></div>
+		<div class="vlt-footer-copyright"><?php echo wp_kses_post( $footer_copyright ); ?></div>
 		<!-- /.vlt-footer-copyright -->
 
 	</footer>

@@ -131,9 +131,7 @@
 
 	VLTJS.window.on('load', function() {
 		VLTJS.window.trigger('vlt.preloader_done');
-		setTimeout(function() {
-			VLTJS.html.addClass('vlt-is-page-loaded');
-		}, 500);
+		VLTJS.html.addClass('vlt-is-page-loaded');
 	});
 
 })(jQuery);
