@@ -41,7 +41,8 @@
 		$.fancybox.defaults.animationEffect = 'fade';
 		$.fancybox.defaults.infobar = false;
 
-		$('.wp-block-image a:has(img)').fancybox({
+		$().fancybox({
+			selector : '.wp-block-image a:has(img)',
 			buttons: [
 				'close'
 			],
