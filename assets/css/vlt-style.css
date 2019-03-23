@@ -506,6 +506,7 @@ input[type='number'],
 textarea,
 select
 {
+    font-family: inherit;
     font-size: 14px;
     line-height: 1.4;
 
@@ -733,7 +734,7 @@ html
 /* wrapper */
 .vlt-site-wrapper
 {
-    max-width: 915px;
+    max-width: 1015px;
     margin: 0 auto;
     padding: 0 15px;
 }
@@ -1811,6 +1812,8 @@ p.form-submit
 /* button */
 .docspress-btn .badge
 {
+    line-height: 16px; 
+
     background-color: var(--p1);
 }
 
@@ -2395,6 +2398,7 @@ p.form-submit
 .vlt-search-form button,
 .docspress-btn
 {
+    font-family: inherit;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.3;
