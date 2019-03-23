@@ -20,9 +20,10 @@ get_header(); ?>
 		if ( have_posts() ) :
 			echo '<div class="vlt-grid" data-col="2">';
 				while ( have_posts() ) : the_post();
-					get_template_part( 'template-parts/content/content', 'changelog' );
+					get_template_part( 'template-parts/content/post/content', 'changelog' );
 				endwhile;
 			echo '</div>';
+			docs_the_posts_navigation();
 		else:
 			get_template_part( 'template-parts/content/content', 'page-empty' );
 		endif;

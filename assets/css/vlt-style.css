@@ -1454,6 +1454,15 @@ p.form-submit
             justify-content: space-between;
 }
 
+.vlt-page-title svg
+{
+    font-size: 90%; 
+
+    margin-right: .4em;
+
+    color: #92989b;
+}
+
 .vlt-page-thumbnail
 {
     position: relative;
@@ -1587,10 +1596,39 @@ p.form-submit
 /* Page: changelog */
 .vlt-changelog
 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
     padding: 1.5em 2em;
 
     border-radius: 4px;
-    background-color: #f0f2f4;
+    background-color: #f0f2f4; 
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+}
+.vlt-changelog-thumbnail
+{
+    line-height: 0; 
+
+    position: relative;
+
+    max-width: 60px;
+    margin-right: 1.5em;
+}
+.vlt-changelog-thumbnail a
+{
+    position: absolute;
+    z-index: 1; 
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
 }
 .vlt-changelog-title
 {

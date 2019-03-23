@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<?php
 		while ( have_posts() ) : the_post();
-			get_template_part( 'template-parts/content/content', 'page' );
+			get_template_part( 'template-parts/content/single/content', 'single-post' );
 		endwhile;
 	?>
 
