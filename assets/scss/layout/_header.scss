@@ -175,6 +175,12 @@
 			text-decoration: none;
 		}
 
+		li:hover > a,
+		li.current-menu-item > a,
+		li.sfHover > a {
+			color: var(--vlt-accent-2);
+		}
+
 		ul.sub-menu {
 			position: static;
 			padding-left: 10px;

@@ -17569,6 +17569,12 @@ html
 
     color: var(--vlt-color-3);
 }
+.vlt-mobile-navigation .sf-menu li:hover > a,
+.vlt-mobile-navigation .sf-menu li.current-menu-item > a,
+.vlt-mobile-navigation .sf-menu li.sfHover > a
+{
+    color: var(--vlt-accent-2);
+}
 .vlt-mobile-navigation .sf-menu ul.sub-menu
 {
     position: static;
