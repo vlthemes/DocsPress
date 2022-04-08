@@ -18794,7 +18794,7 @@ p.form-submit
 .docspress-btn[data-type=positive]::before,
 .docspress-btn[data-type=negative]::before
 {
-    font-family: var(font-awesome-5-free);
+    font-family: var(--font-awesome-5-free);
     line-height: 1;
 
     margin-right: 4px;
@@ -19005,7 +19005,7 @@ p.form-submit
 }
 .docspress-single-articles ul li::before
 {
-    font-family: var(font-awesome-5-free);
+    font-family: var(--font-awesome-5-free);
 
     margin-right: 10px;
 
