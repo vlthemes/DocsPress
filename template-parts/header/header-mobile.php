@@ -16,13 +16,13 @@ $portfolio_link = docs_get_theme_mod( 'portfolio_link' );
 		<a class="vlt-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php if ( docs_get_theme_mod( 'header_logo' ) ) : ?>
 				<span class="vlt-logo__icon">
-					<img src="<?php echo docs_get_theme_mod( 'header_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>">
+					<?php echo docs_get_theme_mod( 'header_logo' ); ?>
 				</span>
 			<?php endif; ?>
 			<span class="vlt-logo__description">
 				<span><?php bloginfo( 'name' ); ?></span>
 				<span><?php bloginfo( 'description' ); ?></span>
-			<span>
+			</span>
 		</a>
 		<!-- /.vlt-logo -->
 

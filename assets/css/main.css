@@ -16519,7 +16519,7 @@ fieldset:disabled .btn
 {
     --vlt-transition-duration: 250ms;
     --vlt-transition-easing: linear;
-    --font-awesome-5-free: 'Font Awesome 5 Free';
+    --vlt-font-awesome-5-free: 'Font Awesome 5 Free';
     --vlt-primary-font: 'Proxima Nova Soft', Helvetica, Arial, sans-serif;
     --vlt-radius-1: 3px;
     --vlt-radius-2: 6px;
@@ -16539,6 +16539,12 @@ fieldset:disabled .btn
     --vlt-success-color: hsl(144, 58%, 51%);
     --vlt-warning-color: hsl(25, 78%, 55%);
     --vlt-danger-color: hsl(5, 77%, 58%);
+}
+
+:root
+{
+    --vlt-accent-1: hsl(159, 73%, 53%);
+    --vlt-accent-2: hsl(244, 81%, 59%);
 }
 
 @-webkit-keyframes vlt_spin
@@ -16726,7 +16732,7 @@ h6,
     margin: 0;
     padding: 0;
 
-    color: var(--vlt-color-3);
+    color: var(--vlt-color-1);
 }
 .vlt-content-markup h1,
 .vlt-content-markup .h1,
@@ -17388,16 +17394,18 @@ html
 .vlt-header .vlt-logo__icon
 {
     margin-right: 16px;
+
+    color: var(--vlt-color-1);
 }
 .vlt-header .vlt-logo__description span:nth-child(1)
 {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1;
 
     display: block;
 
-    color: var(--vlt-color-3);
+    color: var(--vlt-color-1);
 }
 .vlt-header .vlt-logo__description span:nth-child(2)
 {
@@ -17437,7 +17445,7 @@ html
 
     text-decoration: none;
 
-    color: var(--vlt-color-3);
+    color: var(--vlt-color-1);
 }
 .vlt-header .vlt-default-navigation .sf-menu > li:last-child > a
 {
@@ -17550,6 +17558,8 @@ html
 }
 .vlt-mobile-navigation .sf-menu
 {
+    width: 100%;
+
     text-align: left;
 }
 .vlt-mobile-navigation .sf-menu li
@@ -17567,7 +17577,7 @@ html
 
     text-decoration: none;
 
-    color: var(--vlt-color-3);
+    color: var(--vlt-color-1);
 }
 .vlt-mobile-navigation .sf-menu li:hover > a,
 .vlt-mobile-navigation .sf-menu li.current-menu-item > a,
@@ -18800,7 +18810,7 @@ p.form-submit
 .docspress-btn[data-type=positive]::before,
 .docspress-btn[data-type=negative]::before
 {
-    font-family: var(--font-awesome-5-free);
+    font-family: var(--vlt-font-awesome-5-free);
     line-height: 1;
 
     margin-right: 4px;
@@ -19011,7 +19021,7 @@ p.form-submit
 }
 .docspress-single-articles ul li::before
 {
-    font-family: var(--font-awesome-5-free);
+    font-family: var(--vlt-font-awesome-5-free);
 
     margin-right: 10px;
 

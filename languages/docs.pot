@@ -775,7 +775,7 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: inc/framework/setup/section-header.php:27
+#: inc/framework/setup/section-header.php:30
 msgid "Link to Portfolio"
 msgstr ""
 

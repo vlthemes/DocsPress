@@ -8,7 +8,7 @@
 {
     --vlt-transition-duration: 250ms;
     --vlt-transition-easing: linear;
-    --font-awesome-5-free: 'Font Awesome 5 Free';
+    --vlt-font-awesome-5-free: 'Font Awesome 5 Free';
     --vlt-primary-font: 'Proxima Nova Soft', Helvetica, Arial, sans-serif;
     --vlt-radius-1: 3px;
     --vlt-radius-2: 6px;
@@ -28,6 +28,12 @@
     --vlt-success-color: hsl(144, 58%, 51%);
     --vlt-warning-color: hsl(25, 78%, 55%);
     --vlt-danger-color: hsl(5, 77%, 58%);
+}
+
+:root
+{
+    --vlt-accent-1: hsl(159, 73%, 53%);
+    --vlt-accent-2: hsl(244, 81%, 59%);
 }
 
 .edit-post-visual-editor.editor-styles-wrapper
@@ -57,7 +63,7 @@
     font-weight: 500;
     line-height: 1.5;
 
-    color: var(--vlt-color-3);
+    color: var(--vlt-color-1);
 }
 
 .editor-block-list__block h1,

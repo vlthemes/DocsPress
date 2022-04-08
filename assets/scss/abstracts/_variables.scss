@@ -5,14 +5,11 @@ $smooth_font: false;
 	--vlt-transition-duration: 250ms;
 	--vlt-transition-easing: linear;
 
-	--font-awesome-5-free: "Font Awesome 5 Free";
+	--vlt-font-awesome-5-free: "Font Awesome 5 Free";
 	--vlt-primary-font: "Proxima Nova Soft", Helvetica, Arial, sans-serif;
 
 	--vlt-radius-1: 3px;
 	--vlt-radius-2: 6px;
-
-	// --vlt-accent-1: #31dfa2;
-	// --vlt-accent-2: #4a40eb;
 
 	@include defineColorHSL(--vlt-accent-1, var(--vlt-accent-1-h), var(--vlt-accent-1-s), var(--vlt-accent-1-l)); // #d54e21
 	@include defineColorHSL(--vlt-accent-2, var(--vlt-accent-2-h), var(--vlt-accent-2-s), var(--vlt-accent-2-l)); // #1e8cbe
@@ -28,9 +25,13 @@ $smooth_font: false;
 	@include defineColorHSLA(--vlt-color-6-0p1, 0, 100%, 100%, .1); // #ffffff, op .1
 	@include defineColorHSLA(--vlt-color-6-0p8, 0, 100%, 100%, .8); // #ffffff, op .8
 
-
 	@include defineColorHSL(--vlt-success-color, 144, 58%, 51%); // #3acb74
 	@include defineColorHSL(--vlt-warning-color, 25, 78%, 55%); // #e67c30
 	@include defineColorHSL(--vlt-danger-color, 5, 77%, 58%); // #e74f42
 
+}
+
+:root {
+	@include defineColorHSL(--vlt-accent-1, 159, 73%, 53%); // #31dfa2
+	@include defineColorHSL(--vlt-accent-2, 244, 81%, 59%); // #4a40eb
 }

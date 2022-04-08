@@ -22,16 +22,17 @@
 
 		&__icon {
 			margin-right: 16px;
+			color: var(--vlt-color-1);
 		}
 
 		&__description {
 
 			span:nth-child(1) {
 				display: block;
-				font-size: 28px;
+				font-size: 24px;
 				font-weight: 700;
 				line-height: 1;
-				color: var(--vlt-color-3);
+				color: var(--vlt-color-1);
 			}
 
 			span:nth-child(2) {
@@ -65,7 +66,7 @@
 				font-size: 16px;
 				font-weight: 500;
 				line-height: 1;
-				color: var(--vlt-color-3);
+				color: var(--vlt-color-1);
 				text-decoration: none;
 			}
 
@@ -159,6 +160,7 @@
 	}
 
 	.sf-menu {
+		width: 100%;
 		text-align: left;
 
 		li {
@@ -171,7 +173,7 @@
 			font-size: 16px;
 			font-weight: 500;
 			line-height: 1;
-			color: var(--vlt-color-3);
+			color: var(--vlt-color-1);
 			text-decoration: none;
 		}
 
