@@ -11,7 +11,7 @@ const textdomain = pkg.textdomain;
 const compressing = true;
 
 // Build files.
-const buildFiles = ['./**', '!node_modules/**', '!dist/', '!package-lock.json'];
+const buildFiles = ['./**', '!node_modules/**', '!dist/', '!package-lock.json', '!README.md'];
 const buildDestination = './dist/' + slug + '/';
 const distributionFiles = './dist/' + slug + '/**/*';
 
