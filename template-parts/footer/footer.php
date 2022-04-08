@@ -19,12 +19,12 @@
 
 <?php if ( docs_get_theme_mod( 'back_to_top' ) == 'show' ) : ?>
 
-	<div class="hidden-sm-down">
+	<div class="d-none d-sm-block">
 
 		<a href="#" class="vlt-back-to-top hidden"><i class="fas fa-caret-square-up"></i></a>
 		<!-- /.vlt-back-to-top -->
 
 	</div>
-	<!-- /.hidden-sm-down -->
+	<!-- /.d-none d-sm-block -->
 
 <?php endif; ?>

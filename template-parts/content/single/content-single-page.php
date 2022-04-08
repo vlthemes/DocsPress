@@ -15,7 +15,7 @@
 		<!-- /.vlt-page-title -->
 
 		<?php if ( ! is_single() ) : ?>
-			<div class="hidden-sm-down">
+			<div class="d-none d-sm-block">
 				<a href="javascript:window.print()" class="vlt-btn vlt-btn--secondary"><i class="fas fa-print" style="margin-right: 4px;"></i><?php esc_html_e( 'Print Page', '@@textdomain' ); ?></a>
 			</div>
 		<?php endif; ?>

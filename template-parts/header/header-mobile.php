@@ -61,4 +61,4 @@ $portfolio_link = docs_get_theme_mod( 'portfolio_link' );
 	<!-- /.vlt-header--default -->
 
 </div>
-<!-- /.hidden-lg-up -->
+<!-- /.d-lg-none -->

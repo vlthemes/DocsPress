@@ -1,7 +1,7 @@
 ![alt text](https://github.com/vlthemes/DocsPress/blob/master/assets/img/description.jpg "DocsPress")
 
 # DocsPress
-This is the knowledge base documentation theme for WordPress.
+This is the knowledge base documentation theme for WordPress (v2.0).
 
 ## [Demo](https://docs.vlthemes.com/)
 
