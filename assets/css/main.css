@@ -16519,8 +16519,8 @@ fieldset:disabled .btn
 {
     --vlt-transition-duration: 250ms;
     --vlt-transition-easing: linear;
-    --font-awesome-5-free: Font Awesome 5 Free;
-    --vlt-primary-font: Proxima Nova Soft, Helvetica, Arial, sans-serif;
+    --font-awesome-5-free: 'Font Awesome 5 Free';
+    --vlt-primary-font: 'Proxima Nova Soft', Helvetica, Arial, sans-serif;
     --vlt-radius-1: 3px;
     --vlt-radius-2: 6px;
     --vlt-accent-1: hsl(var(--vlt-accent-1-h), var(--vlt-accent-1-s), var(--vlt-accent-1-l));
