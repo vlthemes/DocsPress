@@ -1,0 +1,31 @@
+@mixin defineColorHSL($color, $hue, $saturation, $lightness) {
+	#{$color}: unquote("hsl(#{$hue}, #{$saturation}, #{$lightness})");
+}
+
+@mixin defineColorHSLA($color, $hue, $saturation, $lightness, $alpha) {
+	#{$color}: unquote("hsla(#{$hue}, #{$saturation}, #{$lightness}, #{$alpha})");
+}
+
+@mixin clearfix {
+
+	&::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+}
+
+@mixin input-placeholder {
+	&.placeholder { @content; }
+	&:-moz-placeholder { @content; }
+	&::-moz-placeholder { @content; }
+	&:-ms-input-placeholder { @content; }
+	&::-webkit-input-placeholder { @content; }
+}
+
+@mixin markup {
+	.vlt-content-markup & {
+		@content;
+	}
+}

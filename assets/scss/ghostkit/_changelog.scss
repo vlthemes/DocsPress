@@ -1,0 +1,55 @@
+/* GHOSTKIT: CHANGELOG
+-------------------------------------------- */
+
+.ghostkit-changelog {
+
+	&::before {
+		width: 1px;
+		background-color: var(--vlt-color-4);
+
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+
+	}
+
+	.ghostkit-changelog-version {
+		width: 60px;
+		min-width: 60px;
+		padding: 2px;
+		font-size: 14px;
+		font-weight: 500;
+		border-radius: var(--vlt-radius-1);
+		background-color: var(--vlt-color-2);
+	}
+
+	.ghostkit-badge {
+		font-size: 10px;
+		font-weight: 500;
+	}
+
+	.ghostkit-changelog-date {
+		margin-left: 1.5em;
+	}
+
+	.ghostkit-changelog-more {
+		padding-left: calc(60px + 1.5em);
+
+		@include media-breakpoint-down(md) {
+			padding-left: 0;
+		}
+
+		> ul li,
+		> ol li {
+			align-items: center;
+			flex-wrap: wrap;
+		}
+
+		code,
+		.code {
+			margin: 0 6px;
+		}
+
+	}
+
+}

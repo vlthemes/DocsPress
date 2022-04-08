@@ -1,0 +1,15 @@
+/* LAYOUT: FOOTER
+-------------------------------------------- */
+
+.vlt-footer {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	padding: 2em 0;
+	font-size: 14px;
+	color: var(--vlt-color-5);
+}
+
+.vlt-footer__copyright p {
+	margin-bottom: 0;
+}

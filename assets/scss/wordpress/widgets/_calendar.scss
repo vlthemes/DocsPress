@@ -1,0 +1,23 @@
+/* WIDGET: CALENDAR
+-------------------------------------------- */
+
+.vlt-widget.widget_calendar {
+
+	tr,
+	td,
+	th {
+		text-align: center;
+	}
+
+	caption {
+		padding: 0 0 15px;
+		font-weight: 500;
+		color: var(--vlt-color-2);
+	}
+
+	#today {
+		color: var(--vlt-color-6);
+		background-color: var(--vlt-accent-1);
+	}
+
+}

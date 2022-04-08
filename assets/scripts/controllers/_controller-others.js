@@ -26,15 +26,6 @@
 		});
 	}
 
-	// Remove p / br tags from contact form 7
-	$('.wpcf7-form').find('p').contents().unwrap();
-	$('.wpcf7-form').find('p, br').remove();
-
-	// Fast click
-	if (typeof FastClick === 'function') {
-		FastClick.attach(document.body);
-	}
-
 	// Fancybox
 	if (typeof $.fn.fancybox !== 'undefined') {
 

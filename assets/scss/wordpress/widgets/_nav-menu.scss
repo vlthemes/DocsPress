@@ -1,0 +1,21 @@
+/* WIDGET: NAV MENU
+-------------------------------------------- */
+
+.vlt-widget.widget_nav_menu {
+	@extend %vlt-widget-categories;
+
+	.sf-with-ul::after {
+		content: '+';
+		padding-left: 5px;
+	}
+
+	.sfHover > .sf-with-ul::after {
+		content: '-';
+	}
+
+	ul.sub-menu {
+		display: none;
+		padding-top: 5px;
+	}
+
+}

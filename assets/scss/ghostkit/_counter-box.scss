@@ -1,0 +1,12 @@
+/* GHOSTKIT: COUNTER BOX
+-------------------------------------------- */
+
+.ghostkit-counter-box {
+	border-radius: var(--vlt-radius-1);
+	border-color: var(--vlt-color-4);
+
+	.ghostkit-counter-box-number-wrap {
+		line-height: 1.1;
+	}
+
+}

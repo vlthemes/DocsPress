@@ -1,0 +1,61 @@
+/* DOCSPRESS: GLOBAL
+-------------------------------------------- */
+
+// anchor link
+
+.anchorjs-link {
+	position: static !important;
+	float: right;
+	margin-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+// button
+
+.docspress-btn {
+	@extend .vlt-btn, .vlt-btn--secondary;
+
+	.badge {
+		background-color: var(--vlt-accent-1);
+		line-height: 16px;
+	}
+
+	&[data-type="positive"],
+	&[data-type="negative"] {
+
+		&::before {
+			margin-right: 4px;
+			font-family: var(font-awesome-5-free);
+			line-height: 1;
+		}
+
+		&::before {
+			content: '\f164';
+		}
+
+	}
+
+	&[data-type="negative"] {
+
+		&::before {
+			content: '\f165';
+		}
+
+	}
+
+}
+
+// Preloader block
+
+.docspress-preloader {
+
+	> span {
+		box-shadow: inset 0 0 0 2px var(--vlt-color-1-0p1);
+
+		> span::after {
+			box-shadow: inset 0 0 0 2px var(--vlt-accent-2);
+		}
+
+	}
+
+}

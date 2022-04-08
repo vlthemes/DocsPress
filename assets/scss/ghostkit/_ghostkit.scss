@@ -1,0 +1,27 @@
+/* GHOSTKIT: GENERAL
+-------------------------------------------- */
+
+.ghostkit-progress,
+.ghostkit-button-wrapper,
+.ghostkit-icon-box,
+.ghostkit-tabs,
+.ghostkit-accordion,
+.ghostkit-counter-box,
+.ghostkit-alert,
+.ghostkit-carousel,
+.ghostkit-video,
+.ghostkit-testimonial,
+.ghostkit-gist,
+.ghostkit-google-maps,
+.ghostkit-changelog,
+.ghostkit-pricing-table,
+.ghostkit-widgetized-area,
+.ghostkit-instagram,
+.ghostkit-twitter {
+	margin-bottom: 1.5em;
+}
+
+.ghostkit-video-spinner {
+	border: 2px solid var(--vlt-color-1-0p1);
+	border-left: 2px solid var(--vlt-color-6);
+}

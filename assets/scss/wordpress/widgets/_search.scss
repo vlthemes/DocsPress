@@ -1,0 +1,19 @@
+/* WIDGET: SEARCH
+-------------------------------------------- */
+
+.vlt-search-form {
+	position: relative;
+
+	button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		padding: 6px 16px;
+		border-top-left-radius: 0 !important;
+		border-bottom-left-radius: 0 !important;
+		transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
+		@extend .vlt-btn, .vlt-btn--primary;
+	}
+
+}

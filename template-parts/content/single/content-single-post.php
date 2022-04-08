@@ -57,6 +57,7 @@
 		?>
 
 		<?php
+
 			wp_link_pages( array(
 				'before' => '<div class="vlt-link-pages"><h5>' . esc_html__( 'Pages: ', '@@textdomain' ) . '</h5>',
 				'after' => '</div>',
@@ -65,6 +66,7 @@
 				'previouspagelink' => esc_html__( 'Previous page', '@@textdomain' ),
 				'next_or_number' => 'next'
 			) );
+
 		?>
 
 		<?php edit_post_link( __( 'Edit', '@@textdomain' ), '<span class="vlt-edit-link">', '</span>' ); ?>

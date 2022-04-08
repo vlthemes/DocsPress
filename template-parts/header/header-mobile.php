@@ -5,47 +5,42 @@
  * @version: @@version
  */
 
-$portfolio_link = get_theme_mod( 'portfolio_link' );
+$portfolio_link = docs_get_theme_mod( 'portfolio_link' );
 
 ?>
 
-<div class="hidden-lg-up">
+<div class="d-lg-none">
 
 	<header class="vlt-header vlt-header--default">
 
-		<div class="d-flex align-items-center justify-content-between">
+		<a class="vlt-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<?php if ( docs_get_theme_mod( 'header_logo' ) ) : ?>
+				<span class="vlt-logo__icon">
+					<img src="<?php echo docs_get_theme_mod( 'header_logo' ); ?>" alt="<?php bloginfo( 'name' ); ?>">
+				</span>
+			<?php endif; ?>
+			<span class="vlt-logo__description">
+				<span><?php bloginfo( 'name' ); ?></span>
+				<span><?php bloginfo( 'description' ); ?></span>
+			<span>
+		</a>
+		<!-- /.vlt-logo -->
 
-			<div>
+		<?php if ( is_active_sidebar( 'subscribe_popup_sidebar' ) ) : ?>
 
-				<a class="vlt-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<span class="vlt-logo__name"><?php bloginfo( 'name' ); ?></span>
-					<span class="vlt-logo__description hidden-sm-down"><?php bloginfo( 'description' ); ?></span>
-				</a>
-				<!-- /.vlt-logo -->
+			<a data-src="#vlt-subscribe-popup" href="javascript:;" class="vlt-subscribe-form-toggle">
+				<i class="fas fa-bell"></i>
+			</a>
+			<!-- /.vlt-subscribe-form-toggle -->
 
-			</div>
+		<?php endif; ?>
 
-			<div class="d-flex align-items-center">
+		<?php if ( $portfolio_link ) : ?>
 
-				<?php if ( is_active_sidebar( 'subscribe_popup_sidebar' ) ) : ?>
+			<a href="<?php echo esc_url( $portfolio_link ); ?>" class="vlt-btn vlt-btn--primary"><?php esc_html_e( 'Portfolio', '@@textdomain' ); ?></a>
+			<!-- /.vlt-btn -->
 
-					<a data-src="#vlt-subscribe-popup" href="javascript:;" class="vlt-subscribe-form-toggle">
-						<i class="fas fa-bell"></i>
-					</a>
-					<!-- /.vlt-subscribe-form-toggle -->
-
-				<?php endif; ?>
-
-				<?php if ( $portfolio_link ) : ?>
-
-					<a href="<?php echo esc_url( $portfolio_link ); ?>" class="vlt-btn vlt-btn--primary"><?php esc_html_e( 'Portfolio', '@@textdomain' ); ?></a>
-					<!-- /.vlt-btn -->
-
-				<?php endif; ?>
-
-			</div>
-
-		</div>
+		<?php endif; ?>
 
 		<nav class="vlt-mobile-navigation">
 

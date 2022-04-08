@@ -1,4 +1,4 @@
-# Copyright (C) 2019 docs
+# Copyright (C) 2022 docs
 # This file is distributed under the same license as the docs package.
 msgid ""
 msgstr ""
@@ -6,6 +6,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Econdig: 8bit\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"MIME-Version: 1.0\n"
+"Project-Id-Version: docs\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -29,39 +33,39 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
-#: comments.php:26
+#: comments.php:28
 msgid "Reply"
 msgstr ""
 
-#: comments.php:41
+#: comments.php:46
 msgid "Submit Comment"
 msgstr ""
 
-#: comments.php:42
+#: comments.php:47
 msgid "Leave a Comment"
 msgstr ""
 
-#: comments.php:47
+#: comments.php:52
 msgid "Leave a Reply"
 msgstr ""
 
-#: comments.php:48
+#: comments.php:53
 msgid "Cancel Reply"
 msgstr ""
 
-#: comments.php:51
+#: comments.php:56
 msgid "Comment"
 msgstr ""
 
-#: comments.php:53
+#: comments.php:58
 msgid "Name*"
 msgstr ""
 
-#: comments.php:54
+#: comments.php:59
 msgid "E-mail*"
 msgstr ""
 
-#: comments.php:55
+#: comments.php:60
 msgid "Website"
 msgstr ""
 
@@ -97,40 +101,36 @@ msgstr ""
 msgid "XL"
 msgstr ""
 
-#: functions.php:111, inc/framework/setup/section-core.php:59
+#: functions.php:106, inc/framework/setup/section-core.php:59
 msgid "First"
 msgstr ""
 
-#: functions.php:116, inc/framework/setup/section-core.php:60
+#: functions.php:111, inc/framework/setup/section-core.php:60
 msgid "Second"
 msgstr ""
 
-#: functions.php:121
+#: functions.php:116
 msgid "Success"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:121
 msgid "Warning"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:126
 msgid "Danger"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:131
 msgid "Gray"
 msgstr ""
 
-#: functions.php:147
+#: functions.php:142
 msgid "Primary Menu"
 msgstr ""
 
 #: searchform.php:12
 msgid "Search&hellip;"
-msgstr ""
-
-#: template-docs-page.php:3
-msgid "Docs Page"
 msgstr ""
 
 #: docspress/archive.php:65
@@ -142,15 +142,15 @@ msgstr ""
 msgid "Documentation search: \"%s\""
 msgstr ""
 
-#: docspress/search.php:81, docspress/single.php:37, template-parts/content/content-page.php:61
+#: docspress/search.php:81, docspress/single.php:37, template-parts/content/single/content-single-changelog.php:48, template-parts/content/single/content-single-page.php:48, template-parts/content/single/content-single-post.php:62
 msgid "Pages: "
 msgstr ""
 
-#: docspress/search.php:84, docspress/single.php:40, template-parts/content/content-page.php:64
+#: docspress/search.php:84, docspress/single.php:40, template-parts/content/single/content-single-changelog.php:51, template-parts/content/single/content-single-page.php:51, template-parts/content/single/content-single-post.php:65
 msgid "Next page"
 msgstr ""
 
-#: docspress/search.php:85, docspress/single.php:41, template-parts/content/content-page.php:65
+#: docspress/search.php:85, docspress/single.php:41, template-parts/content/single/content-single-changelog.php:52, template-parts/content/single/content-single-page.php:52, template-parts/content/single/content-single-post.php:66
 msgid "Previous page"
 msgstr ""
 
@@ -403,16 +403,16 @@ msgstr ""
 msgid "Upate Required"
 msgstr ""
 
-#: inc/helper/class-tgm-plugin-activation.php:934
-msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
+#: inc/helper/class-tgm-plugin-activation.php:937
+msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
 msgstr ""
 
-#: inc/helper/class-tgm-plugin-activation.php:934, inc/helper/class-tgm-plugin-activation.php:937
+#: inc/helper/class-tgm-plugin-activation.php:937, inc/helper/class-tgm-plugin-activation.php:934
 msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
 msgstr ""
 
-#: inc/helper/class-tgm-plugin-activation.php:937
-msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
+#: inc/helper/class-tgm-plugin-activation.php:934
+msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
 msgstr ""
 
 #: inc/helper/class-tgm-plugin-activation.php:1121, inc/helper/class-tgm-plugin-activation.php:2948
@@ -449,24 +449,24 @@ msgstr ""
 msgid "Not Installed"
 msgstr ""
 
-#: inc/helper/class-tgm-plugin-activation.php:2319
-msgid "Installed But Not Activated"
-msgstr ""
-
 #: inc/helper/class-tgm-plugin-activation.php:2321
 msgid "Active"
 msgstr ""
 
-#: inc/helper/class-tgm-plugin-activation.php:2327
-msgid "Required Upate not Available"
+#: inc/helper/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/helper/class-tgm-plugin-activation.php:2333
+msgid "Upate recommended"
 msgstr ""
 
 #: inc/helper/class-tgm-plugin-activation.php:2330
 msgid "Requires Upate"
 msgstr ""
 
-#: inc/helper/class-tgm-plugin-activation.php:2333
-msgid "Upate recommended"
+#: inc/helper/class-tgm-plugin-activation.php:2327
+msgid "Required Upate not Available"
 msgstr ""
 
 #. translators: 1: install status, 2: update status
@@ -546,11 +546,6 @@ msgid "Status"
 msgstr ""
 
 #. translators: %2$s: plugin name in screen reader markup
-#: inc/helper/class-tgm-plugin-activation.php:2603
-msgid "Install %2$s"
-msgstr ""
-
-#. translators: %2$s: plugin name in screen reader markup
 #: inc/helper/class-tgm-plugin-activation.php:2608
 msgid "Upate %2$s"
 msgstr ""
@@ -558,6 +553,10 @@ msgstr ""
 #. translators: %2$s: plugin name in screen reader markup
 #: inc/helper/class-tgm-plugin-activation.php:2614
 msgid "Activate %2$s"
+msgstr ""
+
+#: inc/helper/class-tgm-plugin-activation.php:2603
+msgid "Install %2$s"
 msgstr ""
 
 #: inc/helper/class-tgm-plugin-activation.php:2684
@@ -576,20 +575,20 @@ msgstr ""
 msgid "Activate"
 msgstr ""
 
-#: inc/helper/class-tgm-plugin-activation.php:2757
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
 #: inc/helper/class-tgm-plugin-activation.php:2759
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: inc/helper/class-tgm-plugin-activation.php:2800
-msgid "No plugins are available to be installed at this time."
+#: inc/helper/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
 #: inc/helper/class-tgm-plugin-activation.php:2802
 msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/helper/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
 msgstr ""
 
 #: inc/helper/class-tgm-plugin-activation.php:2908
@@ -604,11 +603,6 @@ msgstr ""
 msgid "Plugin activation failed."
 msgstr ""
 
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/helper/class-tgm-plugin-activation.php:3498
-msgid "Upating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
 #. translators: 1: plugin name, 2: error message.
 #: inc/helper/class-tgm-plugin-activation.php:3501
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
@@ -617,32 +611,6 @@ msgstr ""
 #. translators: 1: plugin name.
 #: inc/helper/class-tgm-plugin-activation.php:3503
 msgid "The installation of %1$s failed."
-msgstr ""
-
-#: inc/helper/class-tgm-plugin-activation.php:3507
-msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr ""
-
-#. translators: 1: plugin name.
-#: inc/helper/class-tgm-plugin-activation.php:3509
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: inc/helper/class-tgm-plugin-activation.php:3509, inc/helper/class-tgm-plugin-activation.php:3517
-msgid "Show Details"
-msgstr ""
-
-#: inc/helper/class-tgm-plugin-activation.php:3509, inc/helper/class-tgm-plugin-activation.php:3517
-msgid "Hide Details"
-msgstr ""
-
-#: inc/helper/class-tgm-plugin-activation.php:3510
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/helper/class-tgm-plugin-activation.php:3512
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/helper/class-tgm-plugin-activation.php:3515
@@ -654,6 +622,14 @@ msgstr ""
 msgid "%1$s installed successfully."
 msgstr ""
 
+#: inc/helper/class-tgm-plugin-activation.php:3517, inc/helper/class-tgm-plugin-activation.php:3509
+msgid "Show Details"
+msgstr ""
+
+#: inc/helper/class-tgm-plugin-activation.php:3517, inc/helper/class-tgm-plugin-activation.php:3509
+msgid "Hide Details"
+msgstr ""
+
 #: inc/helper/class-tgm-plugin-activation.php:3518
 msgid "All installations have been completed."
 msgstr ""
@@ -661,6 +637,26 @@ msgstr ""
 #. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/helper/class-tgm-plugin-activation.php:3520
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/helper/class-tgm-plugin-activation.php:3507
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/helper/class-tgm-plugin-activation.php:3509
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/helper/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/helper/class-tgm-plugin-activation.php:3512
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/helper/class-tgm-plugin-activation.php:3498
+msgid "Upating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: template-parts/content/content-page-404.php:12
@@ -671,35 +667,23 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
+#: template-parts/content/content-page-empty.php:24
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
+msgstr ""
+
+#: template-parts/content/content-page-empty.php:20
+msgid "Sorry, but nothing matched your search terms."
+msgstr ""
+
 #: template-parts/content/content-page-empty.php:14
 msgid "Ready to publish your first post?"
 msgstr ""
 
-#: template-parts/content/content-page-empty.php:15
+#: template-parts/content/content-page-empty.php:16
 msgid "Get started here"
 msgstr ""
 
-#: template-parts/content/content-page-empty.php:19
-msgid "Sorry, but nothing matched your search terms."
-msgstr ""
-
-#: template-parts/content/content-page-empty.php:23
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
-msgstr ""
-
-#: template-parts/content/content-page.php:19
-msgid "Print Page"
-msgstr ""
-
-#: template-parts/content/content-page.php:70
-msgid "Edit"
-msgstr ""
-
-#: template-parts/content/content-post.php:47
-msgid "Read More"
-msgstr ""
-
-#: template-parts/header/header-default.php:56, template-parts/header/header-mobile.php:41
+#: template-parts/header/header-default.php:55, template-parts/header/header-mobile.php:40
 msgid "Portfolio"
 msgstr ""
 
@@ -719,67 +703,67 @@ msgstr ""
 msgid "Accent Colors"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:86, inc/framework/setup/section-core.php:94
+#: inc/framework/setup/section-core.php:72, inc/framework/setup/section-core.php:80
 msgid "Preloader"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:98, inc/framework/setup/section-core.php:120
+#: inc/framework/setup/section-core.php:84, inc/framework/setup/section-core.php:106
 msgid "Show"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:99, inc/framework/setup/section-core.php:121
+#: inc/framework/setup/section-core.php:85, inc/framework/setup/section-core.php:107
 msgid "Hide"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:108
+#: inc/framework/setup/section-core.php:94
 msgid "Additional"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:116
+#: inc/framework/setup/section-core.php:102
 msgid "\"Back to Top\" Button"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:133
+#: inc/framework/setup/section-core.php:119
 msgid "Selection Text Color"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:158
+#: inc/framework/setup/section-core.php:144
 msgid "Selection Background Color"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:186
+#: inc/framework/setup/section-core.php:172
 msgid "Custom Scrollbar"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:190
+#: inc/framework/setup/section-core.php:176
 msgid "Enable"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:191
+#: inc/framework/setup/section-core.php:177
 msgid "Disable"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:200
+#: inc/framework/setup/section-core.php:186
 msgid "Track Color"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:226
+#: inc/framework/setup/section-core.php:212
 msgid "Bar Color"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:252
+#: inc/framework/setup/section-core.php:238
 msgid "Bar Width"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:284
+#: inc/framework/setup/section-core.php:270
 msgid "Authorization Logo"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:294
+#: inc/framework/setup/section-core.php:280
 msgid "Logo Height"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:311
+#: inc/framework/setup/section-core.php:297
 msgid "Logo Width"
 msgstr ""
 
@@ -788,5 +772,21 @@ msgid "Copyright"
 msgstr ""
 
 #: inc/framework/setup/section-header.php:17
+msgid "Logo"
+msgstr ""
+
+#: inc/framework/setup/section-header.php:27
 msgid "Link to Portfolio"
+msgstr ""
+
+#: template-parts/content/post/content-post.php:47
+msgid "Read More"
+msgstr ""
+
+#: template-parts/content/single/content-single-changelog.php:19, template-parts/content/single/content-single-page.php:19, template-parts/content/single/content-single-post.php:19
+msgid "Print Page"
+msgstr ""
+
+#: template-parts/content/single/content-single-changelog.php:58, template-parts/content/single/content-single-page.php:58, template-parts/content/single/content-single-post.php:72
+msgid "Edit"
 msgstr ""

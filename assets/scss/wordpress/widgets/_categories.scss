@@ -1,0 +1,22 @@
+/* WIDGET: CATEGORIES
+-------------------------------------------- */
+
+%vlt-widget-categories,
+.vlt-widget.widget_categories {
+
+	li::before {
+		content: '▪';
+		margin-right: 1em;
+		color: var(--vlt-color-2);
+	}
+
+	li + li,
+	ul.children {
+		margin-top: 10px;
+	}
+
+	a {
+		margin-right: 4px;
+	}
+
+}

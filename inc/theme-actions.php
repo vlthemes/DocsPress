@@ -41,7 +41,7 @@ add_action( 'widgets_init', 'docs_register_sidebar' );
 if ( ! function_exists( 'docs_before_site' ) ) {
 	function docs_before_site() {
 
-		if ( get_theme_mod( 'preloader', 'show' ) == 'show' ) {
+		if ( docs_get_theme_mod( 'preloader' ) == 'show' ) {
 			echo '<div class="vlt-site-preloader"><div class="spinner"><span></span></div></div><!-- ./vlt-site-preloader -->';
 		}
 
@@ -69,12 +69,12 @@ add_action( 'docs/after_site', 'docs_after_site' );
 if ( ! function_exists( 'docs_change_admin_logo' ) ) {
 	function docs_change_admin_logo() {
 
-		if ( ! get_theme_mod( 'login_logo_image', DOCS_THEME_DIRECTORY . 'assets/img/vlthemes.png' ) ) {
+		if ( ! docs_get_theme_mod( 'login_logo_image' ) ) {
 			return;
 		}
-		$image_url = get_theme_mod( 'login_logo_image', DOCS_THEME_DIRECTORY . 'assets/img/vlthemes.png' );
-		$image_w = get_theme_mod( 'login_logo_image_width', '102px' );
-		$image_h = get_theme_mod( 'login_logo_image_height', '115px' );
+		$image_url = docs_get_theme_mod( 'login_logo_image' );
+		$image_w = docs_get_theme_mod( 'login_logo_image_width' );
+		$image_h = docs_get_theme_mod( 'login_logo_image_height' );
 		echo '<style type="text/css">
 			h1 a {
 				background: transparent url(' . esc_url( $image_url ) . ') 50% 50% no-repeat !important;

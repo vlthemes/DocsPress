@@ -60,3 +60,8 @@ if ( ! function_exists( 'docs_change_admin_logo_link' ) ) {
 	}
 }
 add_filter( 'login_headerurl', 'docs_change_admin_logo_link' );
+
+/**
+ * Remove cf7 autop
+ */
+add_filter( 'wpcf7_autop_or_not', '__return_false' );

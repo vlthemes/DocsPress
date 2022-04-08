@@ -17,6 +17,7 @@ get_header(); ?>
 	<!-- /.vlt-main-title -->
 
 	<?php
+
 		if ( have_posts() ) :
 			echo '<div class="vlt-grid" data-col="2">';
 				while ( have_posts() ) : the_post();
@@ -27,6 +28,7 @@ get_header(); ?>
 		else:
 			get_template_part( 'template-parts/content/content', 'page-empty' );
 		endif;
+
 	?>
 
 </main>

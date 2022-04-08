@@ -1,0 +1,15 @@
+/* WORDPRESS: NAVIGATION
+-------------------------------------------- */
+
+.navigation {
+	margin-top: 2.5em;
+
+	.nav-links {
+
+		* + * {
+			margin-left: .6em;
+		}
+
+	}
+
+}

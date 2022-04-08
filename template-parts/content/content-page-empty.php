@@ -12,6 +12,7 @@
 	<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
 		<p><?php esc_html_e( 'Ready to publish your first post?', '@@textdomain' ); ?></p>
+
 		<a href="<?php echo esc_url( admin_url( 'post-new.php' ) ); ?>" class="vlt-btn vlt-btn--primary"><?php esc_html_e( 'Get started here', '@@textdomain' ); ?></a>
 
 	<?php elseif ( is_search() ): ?>

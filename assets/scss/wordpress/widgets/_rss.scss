@@ -1,0 +1,33 @@
+/* WIDGET: RSS
+-------------------------------------------- */
+
+.vlt-widget.widget_rss {
+
+	.vlt-widget__title {
+
+		img {
+			margin-right: 4px;
+		}
+
+	}
+
+	li {
+
+		.rss-date {
+			display: block;
+			margin: 1em 0;
+			font-size: 14px;
+			color: var(--vlt-color-5);
+		}
+
+		cite {
+			margin: 1em 0 0;
+		}
+
+	}
+
+	li + li {
+		margin-top: 1em;
+	}
+
+}

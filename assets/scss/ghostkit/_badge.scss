@@ -1,0 +1,18 @@
+/* GHOSTKIT: BADGE
+-------------------------------------------- */
+
+.ghostkit-badge {
+	padding: 10px 15px;
+	border-radius: var(--vlt-radius-1);
+
+	&-success {
+		border-color: var(--vlt-success-color);
+		background-color: var(--vlt-success-color);
+	}
+
+	&-primary {
+		border-color: var(--vlt-accent-2);
+		background-color: var(--vlt-accent-2);
+	}
+
+}

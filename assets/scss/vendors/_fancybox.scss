@@ -1,0 +1,88 @@
+/* VENDOR: FANCYBOX
+-------------------------------------------- */
+
+.fancybox-bg {
+	background-color: var(--vlt-color-1);
+}
+
+.fancybox-is-open .fancybox-bg {
+	opacity: .8;
+}
+
+.fancybox-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 45px;
+	height: 45px;
+	padding: 0;
+	overflow: hidden;
+	font-size: 22px;
+	color: var(--vlt-color-6);
+	cursor: pointer;
+	background: none;
+	opacity: .5;
+	transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
+
+	&:hover {
+		opacity: .8;
+	}
+
+	&.fancybox-close-small {
+		font-size: 16px;
+		color: var(--vlt-color-1);
+	}
+
+}
+
+.fancybox-loading {
+	border: 2px solid var(--vlt-color-6-0p1);
+	border-top-color: var(--vlt-accent-2);
+}
+
+.fancybox-slide--image {
+	padding: 10%;
+}
+
+.fancybox-content {
+	padding: 2em;
+}
+
+@media (min-width: 783px) {
+
+	.admin-bar {
+
+		.fancybox-infobar,
+		.fancybox-toolbar {
+			top: 32px !important;
+		}
+
+	}
+
+}
+
+@media (max-width: 782px) {
+
+	.admin-bar {
+
+		.fancybox-infobar,
+		.fancybox-toolbar {
+			top: 46px !important;
+		}
+
+	}
+
+}
+
+@media (max-width: 600px) {
+
+	.admin-bar {
+
+		.fancybox-infobar,
+		.fancybox-toolbar {
+			top: 0 !important;
+		}
+
+	}
+
+}

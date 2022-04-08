@@ -3,27 +3,30 @@
 * Project Configuration for gulp tasks.
 */
 
-var pkg = require('./package.json');
-var package = pkg.name;
-var slug = pkg.slug;
-var version = pkg.version;
-var textdomain = pkg.textdomain;
+const pkg = require('./package.json');
+const package = pkg.name;
+const slug = pkg.slug;
+const version = pkg.version;
+const textdomain = pkg.textdomain;
+const compressing = true;
 
 // Build files.
-var buildFiles = ['./**', '!node_modules/**', '!dist/', '!package.json', '!package-lock.json', '!gulpfile.js', '!assets/sass/**'];
-var buildDestination = './dist/' + slug + '/';
-var distributionFiles = './dist/' + slug + '/**/*';
+const buildFiles = ['./**', '!node_modules/**', '!dist/', '!package-lock.json'];
+const buildDestination = './dist/' + slug + '/';
+const distributionFiles = './dist/' + slug + '/**/*';
 
 // Translations.
-var destFile = slug + '.pot';
-var translatePath = './languages/' + destFile;
-var translatableFiles = './**/*.php';
+const destFile = slug + '.pot';
+const translatePath = './languages/' + destFile;
+const translatableFiles = './**/*.php';
 
 // Source files.
-var cssFolder = './assets/css/';
-var sassFolder = './assets/sass/';
-var scriptsFolder = './assets/scripts/';
-var controllersFolder = './assets/scripts/controllers/';
+const cssFolder = './assets/css/';
+const scssFolder = './assets/scss/';
+const scriptsFolder = './assets/scripts/';
+const controllersFolder = './assets/scripts/controllers/';
+const vendorsJSFolder = './assets/vendors/js/';
+const vendorsCSSFolder = './assets/vendors/css/';
 
 // Browsers you care about for autoprefixing. https://github.com/ai/browserslist
 const AUTOPREFIXER_BROWSERS = [
@@ -41,99 +44,142 @@ const AUTOPREFIXER_BROWSERS = [
 ];
 
 // Requirements
-var gulp = require('gulp'),
-	sass = require('gulp-sass'),
-	autoprefixer = require('gulp-autoprefixer'),
-	csscomb = require('gulp-csscomb'),
-	concat = require('gulp-concat'),
-	cleanCSS = require('gulp-clean-css'),
-	uglify = require('gulp-uglifyjs'),
-	rename = require('gulp-rename'),
 
-	// build
-	wpPot = require('gulp-wp-pot'),
-	sort = require('gulp-sort'),
-	copy = require('gulp-copy'),
-	zip = require('gulp-zip'),
-	replace = require('gulp-replace-task'),
-	cleaner = require('gulp-clean');
+const {
+	src,
+	dest,
+	watch,
+	series,
+} = require('gulp');
+
+const sass = require('gulp-sass')(require('sass'));
+const del = require('del');
+const uglify = require('gulp-uglify-es').default;
+const print = require('gulp-print').default;
+const cleanCSS = require('gulp-clean-css');
+const gulpif = require('gulp-if');
+const $ = require('gulp-load-plugins')();
+const replace = require('gulp-replace-task');
+
+/**
+ * Error Handler for gulp-plumber
+ */
+function errorHandler(err) {
+	console.error(err);
+	this.emit('end');
+}
 
 /**
  * Development Tasks.
  */
 
-gulp.task('sass', function() {
-	return gulp.src(sassFolder + '**/!(_)*.sass')
+// DELETE FOLDERS
+function cleanFolders(done) {
+	del.sync([
+		'assets/vendors/', 'assets/scripts/*.js', '!assets/scripts/admin.js', '!assets/scripts/helpers.js', '!assets/scripts/gutenberg-formats.js', 'assets/css/*.css', '!assets/css/admin.css'
+	]);
+	return done();
+}
+
+// COMPILE SCSS INTO CSS
+function compileSCSS() {
+	return src(scssFolder + '**/!(_)*.scss')
+	.pipe($.plumber({ errorHandler }))
+	.pipe(print(filepath => `Processing: ${filepath}`))
 	.pipe(sass())
-	.pipe(autoprefixer(AUTOPREFIXER_BROWSERS))
-	.pipe(csscomb())
-	.pipe(rename({
-		suffix: '',
-		prefix : 'vlt-'
-	}))
-	.pipe(gulp.dest(cssFolder))
+	.pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
+	.pipe($.csscomb())
+	.pipe(dest(cssFolder))
 
 	// minify
-	.pipe(cleanCSS())
-	.pipe(rename({
+	.pipe(gulpif(compressing, cleanCSS()))
+	.pipe(gulpif(compressing, $.rename({
 		suffix: '.min',
-		prefix : ''
-	}))
-	.pipe(gulp.dest(cssFolder));
-});
+		prefix: ''
+	})))
+	.pipe(dest(cssFolder));
+}
 
-gulp.task('scripts', function() {
-	return gulp.src(controllersFolder + '**/_*.js')
-	.pipe(concat('vlt-controllers.js'))
-	.pipe(gulp.dest(scriptsFolder))
+// COPY AND TRANSPILE CUSTOM JS
+function compileJS() {
+	return src(controllersFolder + '**/_*.js')
+	.pipe($.plumber({ errorHandler }))
+	.pipe(print(filepath => `Processing: ${filepath}`))
+	.pipe($.babel())
+	.pipe($.concat('controllers.js'))
+	.pipe(dest(scriptsFolder))
 
 	// minify
-	.pipe(uglify())
-	.pipe(rename({
+	.pipe(gulpif(compressing, uglify()))
+	.pipe(gulpif(compressing, $.rename({
 		suffix: '.min',
-		prefix : ''
-	}))
-	.pipe(gulp.dest(scriptsFolder));
-});
+		prefix: ''
+	})))
+	.pipe(dest(scriptsFolder));
+}
 
-gulp.task('watch', function() {
-	gulp.watch(sassFolder + '**/*.sass', gulp.parallel('sass'));
-	gulp.watch(controllersFolder + '**/*.js', gulp.parallel('scripts'));
-});
+// COPY JS VENDOR FILES
+function jsVendor() {
+	return src([
+		'node_modules/fitvids/dist/fitvids.js',
+		'node_modules/jquery.scrollto/jquery.scrollTo.js',
+		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+		'node_modules/superfish/dist/js/superfish.js',
+		'node_modules/superclick/dist/js/superclick.js'
+	])
+	.pipe($.plumber({ errorHandler }))
+	.pipe($.removeSourcemaps())
+	.pipe(dest(vendorsJSFolder));
+}
 
-gulp.task('default', gulp.parallel('watch', 'sass', 'scripts'));
+// COPY CSS VENDOR FILES
+function cssVendor() {
+	return src([
+		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css'
+	])
+	.pipe($.plumber({ errorHandler }))
+	.pipe($.removeSourcemaps())
+	.pipe(dest(vendorsCSSFolder));
+}
+
+// WATCH FILES
+function watchFiles() {
+	watch(scssFolder + '**/*.scss', compileSCSS);
+	watch(controllersFolder + '**/*.js', compileJS);
+}
 
 /**
  * Build Tasks.
  */
 
-gulp.task('build-translate', function() {
-	return gulp.src(translatableFiles)
-	.pipe(sort())
-	.pipe(wpPot({
+// TRANSLATE
+function buildTranslate() {
+	return src(translatableFiles)
+	.pipe(print(filepath => `Processing: ${filepath}`))
+	.pipe($.sort())
+	.pipe($.wpPot({
 		domain: '@@textdomain',
 		destFile: destFile,
 		package: package
 	}))
-	.pipe(gulp.dest(translatePath));
-});
+	.pipe(dest(translatePath));
+}
 
-gulp.task('build-clean', function() {
-	return gulp.src('./dist/*', {
-		read: false
-	})
-	.pipe(cleaner());
-});
+// CLEAN DIST
+function buildCleanDist(done) {
+	del.sync('dist');
+	return done();
+}
 
-gulp.task('build-copy', function() {
-	return gulp.src(buildFiles)
-	.pipe(copy(buildDestination));
-});
+// BUILD COPY
+function buildCopy() {
+	return src(buildFiles)
+	.pipe($.copy(buildDestination));
+}
 
-gulp.task('build-clean-and-copy', gulp.series('build-clean', 'build-copy'), function() {});
-
-gulp.task('build-variables', function() {
-	return gulp.src(distributionFiles)
+// BUILD VARIABLES
+function buildVariables() {
+	return src(distributionFiles)
 	.pipe(replace({
 		patterns: [
 			{
@@ -146,27 +192,27 @@ gulp.task('build-variables', function() {
 			}
 		]
 	}))
-	.pipe(gulp.dest(buildDestination));
-});
+	.pipe(dest(buildDestination));
+}
 
-gulp.task('build-zip', function() {
-	return gulp.src(buildDestination + '/**', {
+// ZIP ALL FILES INSIDE DIST
+function buildZip() {
+	return src(buildDestination + '/**', {
 		base: 'dist'
 	})
-	.pipe(zip(slug + '-' + version + '.zip'))
-	.pipe(gulp.dest('./dist/'));
-});
+	.pipe($.zip(slug + '-' + version + '.zip'))
+	.pipe(dest('./dist/'));
+}
 
-gulp.task('build-clean-after-zip', function() {
-	return gulp.src([
+// CLEAN DIST FOLDER EXCEPT ZIP
+function buildCleanAfterZip(done) {
+	del.sync([
 		buildDestination,
 		'!/dist/' + slug + '.zip'
-	], {
-		read: false
-	})
-	.pipe(cleaner());
-});
+	]);
+	return done();
+}
 
-gulp.task('build-zip-and-clean', gulp.series('build-zip', 'build-clean-after-zip'), function() {});
-
-gulp.task('build', gulp.series('build-clean', gulp.parallel('sass', 'scripts', 'build-translate'), 'build-clean-and-copy', 'build-variables', 'build-zip-and-clean'));
+// DEVELOPMENT
+exports.default = series(cleanFolders, compileSCSS, cssVendor, jsVendor, compileJS, watchFiles);
+exports.build = series(buildCleanDist, series(cleanFolders, compileSCSS, cssVendor, jsVendor, compileJS, buildTranslate), series(buildCleanDist, buildCopy), buildVariables, series(buildZip, buildCleanAfterZip));

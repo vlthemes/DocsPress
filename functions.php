@@ -100,22 +100,17 @@ if ( ! function_exists( 'docs_setup' ) ) {
 			)
 		);
 
-		$accent_colors = get_theme_mod( 'accent_colors', array(
-			'first' => '#d54e21',
-			'second' => '#1e8cbe'
-		) );
-
 		// Editor color palette.
 		add_theme_support( 'editor-color-palette', array(
 			array(
 				'name' => esc_html__( 'First', '@@textdomain' ),
 				'slug' => 'first',
-				'color' => $accent_colors['first'],
+				'color' => docs_get_theme_mod( 'accent_colors' )[ 'first' ],
 			),
 			array(
 				'name' => esc_html__( 'Second', '@@textdomain' ),
 				'slug' => 'second',
-				'color' => $accent_colors['second'],
+				'color' => docs_get_theme_mod( 'accent_colors' )[ 'second' ],
 			),
 			array(
 				'name' => esc_html__( 'Success', '@@textdomain' ),
@@ -167,17 +162,23 @@ add_action( 'after_setup_theme', 'docs_content_width', 0 );
 /**
  * Include Kirki fields
  */
-if ( class_exists( 'Kirki' ) ) {
-	require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/customizer.php';
-}
+require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/customizer-helper.php';
+require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/customizer.php';
+require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/customizer-dynamic-css.php';
 
 /**
  * Required files
  */
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/theme-required-plugins.php';
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/theme-enqueue.php';
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/theme-includes.php';
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/theme-functions.php';
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/theme-actions.php';
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/theme-filters.php';
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/theme-menus.php';
+$docs_theme_includes = array(
+	'required-plugins',
+	'enqueue',
+	'includes',
+	'functions',
+	'actions',
+	'filters',
+	'menus'
+);
+
+foreach ( $docs_theme_includes as $file ) {
+	require_once DOCS_REQUIRE_DIRECTORY . 'inc/theme-' . $file . '.php';
+}

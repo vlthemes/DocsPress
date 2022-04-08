@@ -18,7 +18,9 @@ if ( post_password_required() ) {
 		<h3 class="vlt-comments__title" ><?php comments_number( esc_html__( 'No Comments', '@@textdomain' ) , esc_html__( 'One Comment', '@@textdomain' ), esc_html__( '% Comments', '@@textdomain' ) ); ?></h3>
 
 		<ul class="vlt-comments__list">
+
 			<?php
+
 				wp_list_comments( array(
 					'avatar_size' => 60,
 					'style' => 'ul',
@@ -26,7 +28,9 @@ if ( post_password_required() ) {
 					'reply_text' => esc_html__( 'Reply', '@@textdomain' ),
 					'callback' => 'docs_callback_custom_comment',
 				) );
+
 			?>
+
 		</ul>
 
 		<?php echo docs_get_comment_navigation(); ?>
@@ -36,6 +40,7 @@ if ( post_password_required() ) {
 	<div class="vlt-comment-form">
 
 		<?php
+
 			$commenter = wp_get_current_commenter();
 			$args = array(
 				'label_submit' => esc_html__( 'Submit Comment', '@@textdomain' ),
@@ -55,6 +60,7 @@ if ( post_password_required() ) {
 					'url' => '<div class="vlt-form-group"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" placeholder="' . esc_attr__( 'Website', '@@textdomain' ) . '"></div></div>',
 				),
 			);
+
 		?>
 
 		<?php comment_form( $args ); ?>

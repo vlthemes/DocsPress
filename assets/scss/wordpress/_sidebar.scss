@@ -1,0 +1,48 @@
+/* WORDPRESS: SIDEBAR
+-------------------------------------------- */
+
+.vlt-sidebar {
+	padding-top: 2em;
+	margin-top: 2.5em;
+	border-top: 1px solid var(--vlt-color-4);
+}
+
+.vlt-widget {
+	display: block;
+}
+
+.vlt-widget ~ .vlt-widget {
+	margin-top: 2.5em;
+}
+
+.vlt-widget ul {
+	list-style-type: none;
+
+	.children {
+		margin-left: 10px;
+	}
+
+}
+
+.vlt-widget__title {
+	padding: 0;
+	margin: 0 0 1em;
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--vlt-color-2);
+}
+
+// import
+@import
+	"widgets/search",
+	"widgets/categories",
+	"widgets/archive",
+	"widgets/pages",
+	"widgets/meta",
+	"widgets/recent-comments",
+	"widgets/recent-entries",
+	"widgets/nav-menu",
+	"widgets/tag-cloud",
+	"widgets/text",
+	"widgets/rss",
+	"widgets/calendar";

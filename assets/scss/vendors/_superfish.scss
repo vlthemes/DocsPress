@@ -1,0 +1,39 @@
+/* VENDOR: SUPERFISH
+-------------------------------------------- */
+
+.sf-menu, .sf-menu * {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.sf-menu li {
+	position: relative;
+}
+
+.sf-menu ul {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: none;
+	z-index: 99;
+}
+
+.sf-menu > li {
+	float: left;
+}
+
+.sf-menu li:hover > ul,
+.sf-menu li.sfHover > ul {
+	display: block;
+}
+
+.sf-menu a {
+	position: relative;
+	display: block;
+}
+
+.sf-menu ul ul {
+	top: 0;
+	left: 100%;
+}

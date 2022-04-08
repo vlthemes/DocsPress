@@ -1,0 +1,24 @@
+/* GHOSTKIT: ACCORDION
+-------------------------------------------- */
+
+.ghostkit-accordion {
+
+	.ghostkit-accordion-item {
+
+		& + & .ghostkit-accordion-item-heading {
+			border-color: var(--vlt-color-4);
+		}
+
+	}
+
+	.ghostkit-accordion-item-heading {
+		padding-right: 40px;
+	}
+
+	.ghostkit-accordion-item-collapse {
+		width: 40px;
+		font-size: 14px;
+		color: var(--vlt-color-2);
+	}
+
+}

@@ -1,0 +1,47 @@
+/* ELEMENT: BUTTON
+-------------------------------------------- */
+
+.vlt-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px 12px;
+	font-family: inherit;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.3;
+	text-decoration: none;
+	letter-spacing: 0;
+	cursor: pointer;
+	border-radius: var(--vlt-radius-1);
+	box-shadow: inset 0 -2px 0 var(--vlt-color-1-0p1);
+	transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
+}
+
+.vlt-btn--primary {
+	color: var(--vlt-color-6);
+	background-color: var(--vlt-accent-2);
+	border: 1px solid var(--vlt-accent-2);
+
+	&:hover,
+	&.hover {
+		color: var(--vlt-color-6);
+		background-color: var(--vlt-color-2);
+		border-color: var(--vlt-color-2);
+	}
+
+}
+
+.vlt-btn--secondary {
+	color: var(--vlt-accent-2);
+	background-color: transparent;
+	border: 1px solid var(--vlt-color-4);
+
+	&:hover,
+	&.hover {
+		color: var(--vlt-color-6);
+		background-color: var(--vlt-color-2);
+		border-color: var(--vlt-color-2);
+	}
+
+}

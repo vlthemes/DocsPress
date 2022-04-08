@@ -5,23 +5,19 @@
  * @version: @@version
  */
 
-$footer_copyright = get_theme_mod( 'footer_copyright', '<p>© 2019 DocsPress. All rights reserved.</p>' );
-
 ?>
 
-<?php if ( $footer_copyright ) : ?>
 
-	<footer class="vlt-footer">
+<footer class="vlt-footer">
 
-		<div class="vlt-footer-copyright"><?php echo wp_kses_post( $footer_copyright ); ?></div>
-		<!-- /.vlt-footer-copyright -->
+	<div class="vlt-footer-copyright"><?php echo sprintf( docs_get_theme_mod( 'footer_copyright' ), date( 'Y' ) ); ?></div>
+	<!-- /.vlt-footer-copyright -->
 
-	</footer>
-	<!-- /.vlt-footer -->
+</footer>
+<!-- /.vlt-footer -->
 
-<?php endif; ?>
 
-<?php if ( get_theme_mod( 'back_to_top', 'show' ) == 'show' ) : ?>
+<?php if ( docs_get_theme_mod( 'back_to_top' ) == 'show' ) : ?>
 
 	<div class="hidden-sm-down">
 

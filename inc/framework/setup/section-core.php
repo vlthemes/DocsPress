@@ -10,7 +10,7 @@ $priority = 0;
 /**
  * General
  */
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'custom',
 	'settings' => 'sg_1',
 	'section' => 'core_general',
@@ -18,7 +18,7 @@ Kirki::add_field( 'docs_customizer', array(
 	'priority' => $priority++,
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'background',
 	'settings' => 'body_background',
 	'section' => 'core_general',
@@ -40,7 +40,7 @@ Kirki::add_field( 'docs_customizer', array(
 	),
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'custom',
 	'settings' => 'sg_2',
 	'section' => 'core_general',
@@ -48,7 +48,7 @@ Kirki::add_field( 'docs_customizer', array(
 	'priority' => $priority++,
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'multicolor',
 	'settings' => 'accent_colors',
 	'section' => 'core_general',
@@ -62,24 +62,10 @@ Kirki::add_field( 'docs_customizer', array(
 	'default' => array(
 		'first' => '#d54e21',
 		'second' => '#1e8cbe',
-	),
-	'output' => array(
-		array(
-			'choice' => 'first',
-			'element' => ':root',
-			'property' => '--p1',
-			'context' => array( 'editor', 'front' ),
-		),
-		array(
-			'choice' => 'second',
-			'element' => ':root',
-			'property' => '--p2',
-			'context' => array( 'editor', 'front' ),
-		),
 	)
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'custom',
 	'settings' => 'sg_3',
 	'section' => 'core_general',
@@ -87,7 +73,7 @@ Kirki::add_field( 'docs_customizer', array(
 	'priority' => $priority++,
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'select',
 	'settings' => 'preloader',
 	'section' => 'core_general',
@@ -101,7 +87,7 @@ Kirki::add_field( 'docs_customizer', array(
 	'default' => 'show',
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'custom',
 	'settings' => 'sg_4',
 	'section' => 'core_general',
@@ -109,7 +95,7 @@ Kirki::add_field( 'docs_customizer', array(
 	'priority' => $priority++,
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'select',
 	'settings' => 'back_to_top',
 	'section' => 'core_general',
@@ -126,7 +112,7 @@ Kirki::add_field( 'docs_customizer', array(
 /**
  * Selection
  */
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'color',
 	'settings' => 'selection_text_color',
 	'section' => 'core_selection',
@@ -151,7 +137,7 @@ Kirki::add_field( 'docs_customizer', array(
 	)
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'color',
 	'settings' => 'selection_background_color',
 	'section' => 'core_selection',
@@ -179,7 +165,7 @@ Kirki::add_field( 'docs_customizer', array(
 /**
  * Scrollbar
  */
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'select',
 	'settings' => 'custom_scrollbar',
 	'section' => 'core_scrollbar',
@@ -193,7 +179,7 @@ Kirki::add_field( 'docs_customizer', array(
 	'default' => 'disable',
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'color',
 	'settings' => 'custom_scrollbar_track_color',
 	'section' => 'core_scrollbar',
@@ -219,7 +205,7 @@ Kirki::add_field( 'docs_customizer', array(
 	)
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'color',
 	'settings' => 'custom_scrollbar_bar_color',
 	'section' => 'core_scrollbar',
@@ -245,7 +231,7 @@ Kirki::add_field( 'docs_customizer', array(
 	)
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'slider',
 	'settings' => 'custom_scrollbar_width',
 	'section' => 'core_scrollbar',
@@ -277,7 +263,7 @@ Kirki::add_field( 'docs_customizer', array(
 /**
  * Admin logo
  */
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'image',
 	'settings' => 'login_logo_image',
 	'section' => 'core_login_logo',
@@ -287,7 +273,7 @@ Kirki::add_field( 'docs_customizer', array(
 	'default' => $theme_path_images . 'vlthemes.png',
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'dimension',
 	'settings' => 'login_logo_image_height',
 	'section' => 'core_login_logo',
@@ -304,7 +290,7 @@ Kirki::add_field( 'docs_customizer', array(
 	)
 ) );
 
-Kirki::add_field( 'docs_customizer', array(
+VLT_Options::add_field( array(
 	'type' => 'dimension',
 	'settings' => 'login_logo_image_width',
 	'section' => 'core_login_logo',

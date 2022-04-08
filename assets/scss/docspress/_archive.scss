@@ -1,0 +1,71 @@
+/* DOCSPRESS: ARCHIVE
+-------------------------------------------- */
+
+.docspress-archive {
+
+	// Doc items list
+	.docspress-archive-list {
+		padding: 15px;
+		margin: 0;
+
+		.docspress-archive-list-category {
+			margin-bottom: 15px;
+			font-size: 18px;
+			font-weight: 500;
+		}
+
+		li + .docspress-archive-list-category {
+			margin-top: 20px;
+		}
+
+		> .docspress-archive-list-item {
+
+			a {
+				text-decoration: underline;
+				transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
+			}
+
+			> ul {
+
+				a:hover {
+					color: var(--vlt-accent-1);
+				}
+
+				li {
+					font-size: 14px;
+
+					> a {
+						display: inline-block;
+						padding-left: 1em;
+					}
+
+					&.more a {
+						color: var(--vlt-color-5);
+						text-decoration: none;
+
+						&:hover {
+							color: var(--vlt-accent-1);
+						}
+
+					}
+				}
+			}
+
+			.docspress-archive-list-item-title {
+				text-decoration: none;
+
+				span {
+					color: var(--vlt-color-5);
+				}
+
+				&:hover {
+					color: var(--vlt-accent-2);
+				}
+
+			}
+
+		}
+
+	}
+
+}

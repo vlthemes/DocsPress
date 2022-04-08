@@ -1,0 +1,44 @@
+/* PARTIAL: PRELOADER
+-------------------------------------------- */
+
+.vlt-site-preloader {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--vlt-color-6);
+	transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
+	z-index: 999;
+}
+
+.vlt-is-page-loaded {
+
+	.vlt-site-preloader {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+}
+
+.vlt-site-preloader {
+
+	.spinner span {
+		display: inline-block;
+		width: 2em;
+		height: 2em;
+		border: 2px solid var(--vlt-color-1-0p1);
+		border-bottom-color: var(--vlt-accent-2);
+		border-radius: 50%;
+		animation: {
+			name: vlt_spin;
+			duration: .75s;
+			iteration-count: infinite;
+			timing-function: linear;
+		}
+	}
+
+}
