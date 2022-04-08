@@ -39,7 +39,6 @@
     color: var(--vlt-color-2);
 }
 
-/* headings*/
 .editor-post-title__block .editor-post-title__input,
 .editor-block-list__block h1,
 .wp-block-heading h1.editor-rich-text__tinymce,
@@ -97,7 +96,6 @@
     font-size: 14px;
 }
 
-/* preformatted*/
 .code
 {
     font-family: inherit;
