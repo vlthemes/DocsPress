@@ -30,12 +30,6 @@
     --vlt-danger-color: hsl(5, 77%, 58%);
 }
 
-:root
-{
-    --vlt-accent-1: hsl(159, 73%, 53%);
-    --vlt-accent-2: hsl(244, 81%, 59%);
-}
-
 .edit-post-visual-editor.editor-styles-wrapper
 {
     font-family: var(--vlt-font-primary);

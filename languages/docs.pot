@@ -238,12 +238,16 @@ msgstr ""
 msgid "DocsPress"
 msgstr ""
 
-#: inc/theme-required-plugins.php:31
+#: inc/theme-required-plugins.php:31, inc/theme-required-plugins.php:36
 msgid "Contact Form 7"
 msgstr ""
 
-#: inc/theme-required-plugins.php:36
-msgid "MailChimp for WordPress"
+#: inc/theme-required-plugins.php:41
+msgid "Conditional Fields for Contact Form 7"
+msgstr ""
+
+#: inc/theme-required-plugins.php:46
+msgid "Multiline files upload for contact form 7"
 msgstr ""
 
 #: inc/framework/customizer.php:25

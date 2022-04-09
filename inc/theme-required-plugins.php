@@ -33,7 +33,17 @@ if ( ! function_exists( 'docs_tgm_plugins' ) ) {
 				'required' => false,
 			),
 			array(
-				'name' => esc_html__( 'MailChimp for WordPress', '@@textdomain' ),
+				'name' => esc_html__( 'Contact Form 7', '@@textdomain' ),
+				'slug' => 'cf7-conditional-fields7',
+				'required' => false,
+			),
+			array(
+				'name' => esc_html__( 'Conditional Fields for Contact Form 7', '@@textdomain' ),
+				'slug' => 'multiline-files-for-contact-form-7',
+				'required' => false,
+			),
+			array(
+				'name' => esc_html__( 'Multiline files upload for contact form 7', '@@textdomain' ),
 				'slug' => 'mailchimp-for-wp',
 				'required' => false,
 			),

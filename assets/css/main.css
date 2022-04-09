@@ -16541,12 +16541,6 @@ fieldset:disabled .btn
     --vlt-danger-color: hsl(5, 77%, 58%);
 }
 
-:root
-{
-    --vlt-accent-1: hsl(159, 73%, 53%);
-    --vlt-accent-2: hsl(244, 81%, 59%);
-}
-
 @-webkit-keyframes vlt_spin
 {
     100%
@@ -17505,7 +17499,9 @@ html
 .vlt-header .vlt-btn,
 .vlt-header .docspress-btn,
 .vlt-header .vlt-search-form button,
-.vlt-search-form .vlt-header button
+.vlt-search-form .vlt-header button,
+.vlt-header .wpcf7 form #mfcf7_zl_add_file,
+.wpcf7 form .vlt-header #mfcf7_zl_add_file
 {
     margin-left: 2.5em;
 }
@@ -17529,7 +17525,9 @@ html
 .vlt-header .vlt-subscribe-form-toggle + .vlt-btn,
 .vlt-header .vlt-subscribe-form-toggle + .docspress-btn,
 .vlt-header .vlt-search-form .vlt-subscribe-form-toggle + button,
-.vlt-search-form .vlt-header .vlt-subscribe-form-toggle + button
+.vlt-search-form .vlt-header .vlt-subscribe-form-toggle + button,
+.vlt-header .wpcf7 form .vlt-subscribe-form-toggle + #mfcf7_zl_add_file,
+.wpcf7 form .vlt-header .vlt-subscribe-form-toggle + #mfcf7_zl_add_file
 {
     margin-left: 2em;
 }
@@ -17672,7 +17670,7 @@ html
     -ms-flex-pack: justify;
             justify-content: space-between;
 }
-.vlt-page-title svg
+.vlt-page-title i
 {
     font-size: 90%;
 
@@ -17857,7 +17855,7 @@ html
 
     color: var(--vlt-color-5);
 }
-.vlt-changelog-meta svg
+.vlt-changelog-meta i
 {
     margin-right: 6px;
 }
@@ -17982,7 +17980,8 @@ html
 -------------------------------------------- */
 .vlt-btn,
 .docspress-btn,
-.vlt-search-form button
+.vlt-search-form button,
+.wpcf7 form #mfcf7_zl_add_file
 {
     font-family: inherit;
     font-size: 14px;
@@ -18017,7 +18016,8 @@ html
 }
 
 .vlt-btn--primary,
-.vlt-search-form button
+.vlt-search-form button,
+.wpcf7 form #mfcf7_zl_add_file
 {
     color: var(--vlt-color-6);
     border: 1px solid var(--vlt-accent-2);
@@ -18025,8 +18025,10 @@ html
 }
 .vlt-btn--primary:hover,
 .vlt-search-form button:hover,
+.wpcf7 form #mfcf7_zl_add_file:hover,
 .vlt-btn--primary.hover,
-.vlt-search-form button.hover
+.vlt-search-form button.hover,
+.wpcf7 form .hover#mfcf7_zl_add_file
 {
     color: var(--vlt-color-6);
     border-color: var(--vlt-color-2);
@@ -18127,6 +18129,38 @@ html
 .wpcf7 form .wpcf7-spinner
 {
     display: none !important;
+}
+.wpcf7 form a.mfcf7_zl_delete_file
+{
+    text-decoration: none;
+
+    color: var(--vlt-danger-color);
+}
+.wpcf7 form a.mfcf7_zl_delete_file span.delete-file
+{
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display:         inline-flex;
+    visibility: hidden;
+    overflow: hidden;
+
+    width: 13px;
+    margin-left: 20px;
+
+    pointer-events: none;
+}
+.wpcf7 form a.mfcf7_zl_delete_file span.delete-file::before
+{
+    visibility: visible;
+
+    content: '✕';
+    pointer-events: auto;
+}
+
+.grecaptcha-badge
+{
+    visibility: hidden;
 }
 
 /* PLUGIN: MAILCHIMP
