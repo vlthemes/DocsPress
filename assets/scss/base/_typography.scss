@@ -6,11 +6,7 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	font-family: var(--vlt-primary-font);
-	font-size: 16px;
-	line-height: 1.8;
 	color: var(--vlt-color-2);
-	letter-spacing: .010em;
 
 	@if $smooth_font {
 		-webkit-font-smoothing: antialiased;
@@ -112,71 +108,12 @@ h6,
 .h6 {
 	padding: 0;
 	margin: 0;
-	font-family: var(--vlt-primary-font);
-	font-weight: 500;
-	line-height: 1.5;
 	color: var(--vlt-color-1);
 
 	@include markup {
 		margin: 1em 0;
 	}
 
-}
-
-h1,
-.h1 {
-	font-size: 34px;
-
-	@include media-breakpoint-down(md) {
-		font-size: 26px;
-	}
-
-}
-
-h2,
-.h2 {
-	font-size: 22px;
-
-	@include media-breakpoint-down(md) {
-		font-size: 20px;
-	}
-
-}
-
-h3,
-.h3 {
-	font-size: 20px;
-
-	@include media-breakpoint-down(md) {
-		font-size: 18px;
-	}
-
-	@include markup {
-		padding-bottom: 15px;
-		margin-bottom: 15px;
-		border-bottom: 1px solid var(--vlt-color-4);
-	}
-
-}
-
-h4,
-.h4 {
-	font-size: 18px;
-
-	@include media-breakpoint-down(md) {
-		font-size: 16px;
-	}
-
-}
-
-h5,
-.h5 {
-	font-size: 16px;
-}
-
-h6,
-.h6 {
-	font-size: 14px;
 }
 
 /* LIST
@@ -381,9 +318,6 @@ select {
 	appearance: none;
 	padding: 10px 12px;
 	margin: 0;
-	font-family: inherit;
-	font-size: 14px;
-	line-height: 1.4;
 	background-color: transparent;
 	border: 1px solid var(--vlt-color-4);
 	border-radius: var(--vlt-radius-1);

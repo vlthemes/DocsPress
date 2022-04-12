@@ -78,3 +78,49 @@ VLT_Options::add_section( 'section_footer_options', array(
 ) );
 
 require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-footer.php';
+
+/**
+ * Typography
+ */
+VLT_Options::add_panel( 'panel_typography', array(
+	'title' => esc_html__( 'Typography Options', '@@textdomain' ),
+	'priority' => $first_level++,
+	'icon' => 'dashicons-editor-bold',
+) );
+
+VLT_Options::add_section( 'typography_fonts', array(
+	'panel' => 'panel_typography',
+	'title' => esc_html__( 'General Fonts', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-editor-bold',
+) );
+
+VLT_Options::add_section( 'typography_text', array(
+	'panel' => 'panel_typography',
+	'title' => esc_html__( 'Text Options', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-text',
+) );
+
+VLT_Options::add_section( 'typography_headings', array(
+	'panel' => 'panel_typography',
+	'title' => esc_html__( 'Heading Options', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-editor-textcolor',
+) );
+
+VLT_Options::add_section( 'typography_buttons', array(
+	'panel' => 'panel_typography',
+	'title' => esc_html__( 'Button Options', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-admin-links',
+) );
+
+VLT_Options::add_section( 'typography_input', array(
+	'panel' => 'panel_typography',
+	'title' => esc_html__( 'Input Options', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-edit',
+) );
+
+require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-typography.php';

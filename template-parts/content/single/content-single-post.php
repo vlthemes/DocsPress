@@ -11,7 +11,7 @@
 
 	<header class="vlt-page-header">
 
-		<h1 class="vlt-page-title"><?php the_title(); ?></h1>
+		<h1 class="vlt-page-title"><i class="far fa-file-alt"></i><?php the_title(); ?></h1>
 		<!-- /.vlt-page-title -->
 
 		<?php if ( ! is_single() ) : ?>

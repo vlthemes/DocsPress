@@ -82,18 +82,18 @@
 
 			ul.sub-menu {
 				min-width: 150px;
-				padding: 8px 0;
-				font-size: 12px;
+				padding: 12px 0;
+				font-size: 13px;
 				background-color: var(--vlt-color-2);
-				border-radius: var(--vlt-radius-1);
+				border-radius: var(--vlt-radius-2);
 
 				ul.sub-menu {
-					top: -8px;
+					top: -12px;
 				}
 
 				li {
 					display: block;
-					padding: 5px 15px;
+					padding: 6px 16px;
 				}
 
 				a {
@@ -102,12 +102,6 @@
 					color: var(--vlt-color-6-0p8);
 					text-decoration: none;
 					white-space: nowrap;
-
-					&::before {
-						content: '-';
-						margin-right: 5px;
-					}
-
 				}
 
 				li:hover > a,

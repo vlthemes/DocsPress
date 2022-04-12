@@ -28,6 +28,22 @@ if ( ! class_exists( 'DocsThemeEnqueueAssets' ) ) {
 			add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_gutenberg_formats' ) );
 		}
 
+		public function fonts_url() {
+			$fonts_url = '';
+			$fonts = [];
+			$display = 'swap';
+			$fonts[] = 'DM+Sans:wght@500;700';
+
+			if ( $fonts ) {
+				$fonts_url = add_query_arg( array(
+					'family' => implode( '&family=', $fonts ),
+					'display' => urlencode( $display )
+				), 'https://fonts.googleapis.com/css2?family=' );
+			}
+
+			return $fonts_url;
+		}
+
 		public function enqueue_gutenberg_formats() {
 
 			// Enqueue gutenberg scripts
@@ -79,6 +95,7 @@ if ( ! class_exists( 'DocsThemeEnqueueAssets' ) ) {
 			wp_enqueue_style( 'vlt-main-css', $this->assets_dir .'css/main.css', [], $this->theme_version );
 
 			if ( ! class_exists( 'Kirki' ) ) {
+				wp_enqueue_style( 'vlt-google-fonts-editor', $this->fonts_url(), [], null );
 				wp_enqueue_style( 'vlt-customizer-frontend', $this->customizer_frontend_css, [], $this->theme_version );
 			}
 
@@ -90,6 +107,7 @@ if ( ! class_exists( 'DocsThemeEnqueueAssets' ) ) {
 			wp_enqueue_style( 'vlt-admin-style', $this->assets_dir .'css/admin.css', [], $this->theme_version );
 
 			if ( ! class_exists( 'Kirki' ) ) {
+				wp_enqueue_style( 'vlt-google-fonts-editor', $this->fonts_url(), [], null );
 				wp_enqueue_style( 'vlt-customizer-editor', $this->customizer_editor_css, [], $this->theme_version );
 			}
 

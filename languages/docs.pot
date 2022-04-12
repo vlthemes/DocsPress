@@ -238,16 +238,20 @@ msgstr ""
 msgid "DocsPress"
 msgstr ""
 
-#: inc/theme-required-plugins.php:31, inc/theme-required-plugins.php:36
+#: inc/theme-required-plugins.php:31
 msgid "Contact Form 7"
 msgstr ""
 
-#: inc/theme-required-plugins.php:41
+#: inc/theme-required-plugins.php:36
 msgid "Conditional Fields for Contact Form 7"
 msgstr ""
 
-#: inc/theme-required-plugins.php:46
+#: inc/theme-required-plugins.php:41
 msgid "Multiline files upload for contact form 7"
+msgstr ""
+
+#: inc/theme-required-plugins.php:46
+msgid "MailChimp for WordPress"
 msgstr ""
 
 #: inc/framework/customizer.php:25
@@ -276,6 +280,30 @@ msgstr ""
 
 #: inc/framework/customizer.php:75
 msgid "Footer Options"
+msgstr ""
+
+#: inc/framework/customizer.php:86
+msgid "Typography Options"
+msgstr ""
+
+#: inc/framework/customizer.php:93
+msgid "General Fonts"
+msgstr ""
+
+#: inc/framework/customizer.php:100
+msgid "Text Options"
+msgstr ""
+
+#: inc/framework/customizer.php:107
+msgid "Heading Options"
+msgstr ""
+
+#: inc/framework/customizer.php:114
+msgid "Button Options"
+msgstr ""
+
+#: inc/framework/customizer.php:121
+msgid "Input Options"
 msgstr ""
 
 #: inc/helper/class-tgm-plugin-activation.php:327
@@ -781,6 +809,54 @@ msgstr ""
 
 #: inc/framework/setup/section-header.php:30
 msgid "Link to Portfolio"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:17
+msgid "Primary Font"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:50
+msgid "Text Typography"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:58, inc/framework/setup/section-typography.php:106, inc/framework/setup/section-typography.php:148, inc/framework/setup/section-typography.php:190, inc/framework/setup/section-typography.php:232, inc/framework/setup/section-typography.php:274, inc/framework/setup/section-typography.php:316
+msgid "Desktop"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:98
+msgid "H1 Titles"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:140
+msgid "H2 Titles"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:182
+msgid "H3 Titles"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:224
+msgid "H4 Titles"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:266
+msgid "H5 Titles"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:308
+msgid "H6 Titles"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:353
+msgid "Button Typography"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:386
+msgid "Input Typography"
+msgstr ""
+
+#: inc/framework/setup/section-typography.php:427
+msgid "Label Typography"
 msgstr ""
 
 #: template-parts/content/post/content-post.php:47
