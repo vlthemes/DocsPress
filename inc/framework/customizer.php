@@ -124,3 +124,19 @@ VLT_Options::add_section( 'typography_input', array(
 ) );
 
 require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-typography.php';
+
+/**
+ * Knowbase
+ */
+
+add_action( 'init', function() {
+
+	VLT_Options::add_section( 'section_knowbase_options', array(
+		'title' => esc_html__( 'Knowbase Options', '@@textdomain' ),
+		'priority' => 55,
+		'icon' => 'dashicons-editor-ol',
+	) );
+
+	require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-knowbase.php';
+
+});

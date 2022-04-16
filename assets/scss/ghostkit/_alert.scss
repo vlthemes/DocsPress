@@ -3,8 +3,8 @@
 
 .ghostkit-alert {
 	padding: 1em;
+	color: var(--gkt-alert--icon__color);
 	border-radius: 0;
-	border-color: var(--vlt-color-4);
 
 	.ghostkit-alert-icon {
 		padding: 5px;

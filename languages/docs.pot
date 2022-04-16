@@ -129,8 +129,20 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: searchform.php:12
+#: searchform.php:12, template-knowbase.php:24
 msgid "Search&hellip;"
+msgstr ""
+
+#: template-knowbase.php:3, inc/theme-functions.php:277, inc/theme-functions.php:278
+msgid "Knowbase"
+msgstr ""
+
+#: template-knowbase.php:51
+msgid "(%s Articles)"
+msgstr ""
+
+#: template-knowbase.php:92
+msgid "View all artciels"
 msgstr ""
 
 #: docspress/archive.php:65
@@ -216,6 +228,26 @@ msgstr ""
 
 #: inc/theme-functions.php:240
 msgid "Search Changelog Item"
+msgstr ""
+
+#: inc/theme-functions.php:279
+msgid "Edit Article"
+msgstr ""
+
+#: inc/theme-functions.php:280
+msgid "Update Article"
+msgstr ""
+
+#: inc/theme-functions.php:281
+msgid "Search Article"
+msgstr ""
+
+#: inc/theme-functions.php:315
+msgid "Knowbase Categories"
+msgstr ""
+
+#: inc/theme-functions.php:317
+msgid "Categories"
 msgstr ""
 
 #: inc/theme-menus.php:14
@@ -304,6 +336,10 @@ msgstr ""
 
 #: inc/framework/customizer.php:121
 msgid "Input Options"
+msgstr ""
+
+#: inc/framework/customizer.php:135
+msgid "Knowbase Options"
 msgstr ""
 
 #: inc/helper/class-tgm-plugin-activation.php:327
@@ -811,6 +847,14 @@ msgstr ""
 msgid "Link to Portfolio"
 msgstr ""
 
+#: inc/framework/setup/section-knowbase.php:17
+msgid "Category Title"
+msgstr ""
+
+#: inc/framework/setup/section-knowbase.php:27
+msgid "Number of Categories"
+msgstr ""
+
 #: inc/framework/setup/section-typography.php:17
 msgid "Primary Font"
 msgstr ""
@@ -859,7 +903,7 @@ msgstr ""
 msgid "Label Typography"
 msgstr ""
 
-#: template-parts/content/post/content-post.php:47
+#: template-parts/content/post/content-post.php:49
 msgid "Read More"
 msgstr ""
 

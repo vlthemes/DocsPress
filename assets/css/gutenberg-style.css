@@ -24,7 +24,7 @@
     --vlt-color-2-0p1: hsla(197, 19%, 15%, .1);
     --vlt-color-6-0p1: hsla(0, 100%, 100%, .1);
     --vlt-color-6-0p8: hsla(0, 100%, 100%, .8);
-    --vlt-success-color: hsl(144, 58%, 51%);
+    --vlt-success-color: hsl(144, 46%, 51%);
     --vlt-warning-color: hsl(25, 78%, 55%);
     --vlt-danger-color: hsl(5, 77%, 58%);
 }

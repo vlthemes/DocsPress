@@ -11,19 +11,17 @@
  * 05. Partials
  * 06. Elements
  * 07. Plugins
- * 08. Vendors
- * 09. WordPress
- * 10. Docspress
- * 11. Ghostkit
+ * 08. WordPress
+ * 09. Docspress
+ * 10. Ghostkit
  */
 
 /* 00. Framework */
 
 @import
-	"framework/bootstrap";
+	"plugins/bootstrap";
 
 /* 01. Helpers */
-
 @import
 	"abstracts/mixins",
 	"abstracts/variables",
@@ -32,51 +30,41 @@
 	"abstracts/snippets";
 
 /* 02. Base */
-
 @import
 	"base/helper-classes",
 	"base/typography";
 
 /* 03. Layout */
-
 @import
 	"layout/grid",
 	"layout/header",
 	"layout/footer";
 
 /* 04. Layout */
-
 @import
 	"pages/404",
 	"pages/page",
 	"pages/post",
+	"pages/knowbase",
 	"pages/changelog";
 
 /* 05. Partials */
-
 @import
 	"partials/back-to-top",
 	"partials/site-preloader";
 
 /* 06. Elements */
-
 @import
 	"elements/button";
 
 /* 07. Plugins */
-
 @import
 	"plugins/contact-form-7",
-	"plugins/mailchimp-form";
+	"plugins/mailchimp-form",
+	"plugins/fancybox",
+	"plugins/superfish";
 
-/* 08. Vendors */
-
-@import
-	"vendors/fancybox",
-	"vendors/superfish";
-
-/* 09. WordPress */
-
+/* 08. WordPress */
 @import
 	"wordpress/comments",
 	"wordpress/sidebar",
@@ -84,16 +72,14 @@
 	"wordpress/page-navigation",
 	"wordpress/password-protected";
 
-/* 10. Docspress */
-
+/* 09. Docspress */
 @import
 	"docspress/global",
 	"docspress/sidebar",
 	"docspress/content",
 	"docspress/archive";
 
-/* 11. Ghostkit */
-
+/* 10. Ghostkit */
 @import
 	"ghostkit/ghostkit",
 	"ghostkit/accordion",

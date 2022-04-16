@@ -12,10 +12,9 @@
  * 05. Partials
  * 06. Elements
  * 07. Plugins
- * 08. Vendors
- * 09. WordPress
- * 10. Docspress
- * 11. Ghostkit
+ * 08. WordPress
+ * 09. Docspress
+ * 10. Ghostkit
  */
 /* 00. Framework */
 /* PLUGIN: BOOTSTRAP
@@ -16535,7 +16534,7 @@ fieldset:disabled .btn
     --vlt-color-2-0p1: hsla(197, 19%, 15%, .1);
     --vlt-color-6-0p1: hsla(0, 100%, 100%, .1);
     --vlt-color-6-0p8: hsla(0, 100%, 100%, .8);
-    --vlt-success-color: hsl(144, 58%, 51%);
+    --vlt-success-color: hsl(144, 46%, 51%);
     --vlt-warning-color: hsl(25, 78%, 55%);
     --vlt-danger-color: hsl(5, 77%, 58%);
 }
@@ -17535,6 +17534,7 @@ html
     display: -ms-flexbox;
     display:         flex;
 
+    width: 100%;
     margin: 0 0 2em;
     padding-bottom: 1em;
 
@@ -17682,6 +17682,131 @@ html
     margin-top: 1em;
 }
 
+/* PAGE: KNOWBASE
+-------------------------------------------- */
+.vlt-knowbase-header
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    width: 100%;
+    margin: 0 0 2em;
+    padding-bottom: 1em;
+
+    border-bottom: 1px solid var(--vlt-color-4);
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.vlt-knowbase-title i
+{
+    font-size: 90%;
+
+    margin-right: .4em;
+
+    color: var(--vlt-color-5);
+}
+.vlt-knowbase .vlt-knowbase-item
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    padding: 1.5em 2em;
+
+    border-radius: var(--vlt-radius-2);
+    background-color: var(--vlt-color-7);
+
+    -webkit-box-align: start;
+    -webkit-align-items: start;
+    -ms-flex-align: start;
+            align-items: start;
+}
+.vlt-knowbase .vlt-knowbase-item-content
+{
+    width: 100%;
+}
+.vlt-knowbase .vlt-knowbase-item-title
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+
+    border-bottom: 1px solid var(--vlt-color-1-0p1);
+
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.vlt-knowbase .vlt-knowbase-item-title span
+{
+    font-size: 14px;
+
+    color: var(--vlt-color-5);
+}
+.vlt-knowbase .vlt-knowbase-item-title a
+{
+    text-decoration: none;
+}
+.vlt-knowbase .vlt-knowbase-item-description
+{
+    font-size: 14px;
+
+    margin-bottom: 1em;
+}
+.vlt-knowbase .vlt-knowbase-item-articles
+{
+    margin-top: 1em;
+}
+.vlt-knowbase .vlt-knowbase-item-articles ul
+{
+    margin: 0;
+
+    list-style: none;
+}
+.vlt-knowbase .vlt-knowbase-item-articles ul li
+{
+    position: relative;
+}
+.vlt-knowbase .vlt-knowbase-item-articles ul li::before
+{
+    font-family: var(--vlt-font-awesome-5-free);
+
+    margin-right: 10px;
+
+    content: '\f15c';
+
+    color: var(--vlt-color-5);
+}
+.vlt-knowbase .vlt-knowbase-item-articles ul li a
+{
+    padding: 2px 0;
+
+    text-decoration: underline;
+}
+.vlt-knowbase .vlt-knowbase-item-footer
+{
+    margin-top: 1.5em;
+}
+
 /* PAGE: CHANGELOG
 -------------------------------------------- */
 .vlt-changelog
@@ -17693,7 +17818,7 @@ html
 
     padding: 1.5em 2em;
 
-    border-radius: 4px;
+    border-radius: var(--vlt-radius-2);
     background-color: var(--vlt-color-7);
 
     -webkit-box-align: center;
@@ -17914,7 +18039,7 @@ html
 {
     color: var(--vlt-accent-2);
     border: 1px solid var(--vlt-color-4);
-    background-color: transparent;
+    background-color: var(--vlt-color-6);
 }
 .vlt-btn--secondary:hover,
 .docspress-btn:hover,
@@ -18104,8 +18229,7 @@ html
     border-bottom-left-radius: 0 !important;
 }
 
-/* 08. Vendors */
-/* VENDOR: FANCYBOX
+/* PLUGIN: FANCYBOX
 -------------------------------------------- */
 .fancybox-bg
 {
@@ -18199,7 +18323,7 @@ html
         top: 0 !important;
     }
 }
-/* VENDOR: SUPERFISH
+/* PLUGIN: SUPERFISH
 -------------------------------------------- */
 .sf-menu,
 .sf-menu *
@@ -18249,7 +18373,7 @@ html
     left: 100%;
 }
 
-/* 09. WordPress */
+/* 08. WordPress */
 /* WORDPRESS: COMMENTS
 -------------------------------------------- */
 .vlt-comments
@@ -18472,6 +18596,18 @@ p.form-submit
 
     border-top-left-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
+}
+.vlt-search-form--large input[type=text]
+{
+    padding: 20px 24px;
+
+    border-radius: var(--vlt-radius-2);
+}
+.vlt-search-form--large button
+{
+    padding: 20px 24px;
+
+    border-radius: var(--vlt-radius-2);
 }
 
 /* WIDGET: CATEGORIES
@@ -18698,7 +18834,7 @@ p.form-submit
     margin-bottom: 1em;
 }
 
-/* 10. Docspress */
+/* 09. Docspress */
 /* DOCSPRESS: GLOBAL
 -------------------------------------------- */
 .anchorjs-link
@@ -19048,7 +19184,7 @@ p.form-submit
     color: var(--vlt-accent-2);
 }
 
-/* 11. Ghostkit */
+/* 10. Ghostkit */
 /* GHOSTKIT: GENERAL
 -------------------------------------------- */
 .ghostkit-progress,
@@ -19115,7 +19251,7 @@ p.form-submit
 {
     padding: 1em;
 
-    border-color: var(--vlt-color-4);
+    color: var(--gkt-alert--icon__color);
     border-radius: 0;
 }
 .ghostkit-alert .ghostkit-alert-icon

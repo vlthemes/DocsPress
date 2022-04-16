@@ -24,7 +24,7 @@ $smooth_font: false;
 	@include defineColorHSLA(--vlt-color-6-0p1, 0, 100%, 100%, .1); // #ffffff, op .1
 	@include defineColorHSLA(--vlt-color-6-0p8, 0, 100%, 100%, .8); // #ffffff, op .8
 
-	@include defineColorHSL(--vlt-success-color, 144, 58%, 51%); // #3acb74
+	@include defineColorHSL(--vlt-success-color, 144, 46%, 51%); // #49bc77
 	@include defineColorHSL(--vlt-warning-color, 25, 78%, 55%); // #e67c30
 	@include defineColorHSL(--vlt-danger-color, 5, 77%, 58%); // #e74f42
 

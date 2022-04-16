@@ -266,3 +266,68 @@ if ( ! function_exists( 'docs_add_changelog_post_type' ) ) {
 }
 
 add_action( 'init', 'docs_add_changelog_post_type' );
+
+/**
+ * Add Knowbase Taxonomy
+ */
+if ( ! function_exists( 'docs_add_knowbase_post_type' ) ) {
+	function docs_add_knowbase_post_type() {
+
+		$labels = array(
+			'name' => esc_html__( 'Knowbase', '@@textdomain' ),
+			'singular_name' => esc_html__( 'Knowbase', '@@textdomain' ),
+			'edit_item' => esc_html__( 'Edit Article', '@@textdomain' ),
+			'update_item' => esc_html__( 'Update Article', '@@textdomain' ),
+			'search_items' => esc_html__( 'Search Article', '@@textdomain' ),
+		);
+
+		// $rewrite = array(
+		// 	'slug' => 'knowbase',
+		// 	'with_front' => false,
+		// 	'pages' => true,
+		// 	'feeds' => true,
+		// );
+
+		$args = array(
+			'labels' => $labels,
+			'public' => true,
+			'has_archive' => true,
+			'show_ui' => true,
+			'supports' => array(
+				'title',
+				'editor',
+				'revisions'
+			),
+			'publicly_queryable' => true,
+			'menu_position' => 40,
+			'show_in_menu' => true,
+			'show_in_admin_bar' => true,
+			'show_in_rest' => true,
+			'capability_type' => 'page'
+		);
+
+		register_post_type( 'knowbase', $args );
+
+		register_taxonomy(
+			'knowbase_category',
+			'knowbase',
+			array(
+				'label' => esc_html__( 'Knowbase Categories', '@@textdomain' ),
+				'labels' => array(
+					'menu_name' => esc_html__( 'Categories', '@@textdomain' ),
+				),
+				'rewrite' => array(
+					'slug' => 'knowbase-articles',
+				),
+				'hierarchical' => true,
+				'show_ui' => true,
+				'show_admin_column' => true,
+				'query_var' => true,
+			)
+		);
+
+	}
+
+}
+
+add_action( 'init', 'docs_add_knowbase_post_type' );

@@ -34,7 +34,7 @@ if ( ! function_exists( 'docs_tgm_plugins' ) ) {
 			),
 			array(
 				'name' => esc_html__( 'Conditional Fields for Contact Form 7', '@@textdomain' ),
-				'slug' => 'cf7-conditional-fields7',
+				'slug' => 'cf7-conditional-fields',
 				'required' => false,
 			),
 			array(
@@ -46,7 +46,7 @@ if ( ! function_exists( 'docs_tgm_plugins' ) ) {
 				'name' => esc_html__( 'MailChimp for WordPress', '@@textdomain' ),
 				'slug' => 'mailchimp-for-wp',
 				'required' => false,
-			),
+			)
 		);
 
 		tgmpa( $plugins );

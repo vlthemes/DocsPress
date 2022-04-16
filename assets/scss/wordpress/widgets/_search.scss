@@ -16,4 +16,18 @@
 		@extend .vlt-btn, .vlt-btn--primary;
 	}
 
+	&--large {
+
+		input[type="text"] {
+			padding: 20px 24px;
+			border-radius: var(--vlt-radius-2);
+		}
+
+		button {
+			padding: 20px 24px;
+			border-radius: var(--vlt-radius-2);
+		}
+
+	}
+
 }
