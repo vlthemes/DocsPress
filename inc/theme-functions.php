@@ -281,13 +281,6 @@ if ( ! function_exists( 'docs_add_knowbase_post_type' ) ) {
 			'search_items' => esc_html__( 'Search Article', '@@textdomain' ),
 		);
 
-		// $rewrite = array(
-		// 	'slug' => 'knowbase',
-		// 	'with_front' => false,
-		// 	'pages' => true,
-		// 	'feeds' => true,
-		// );
-
 		$args = array(
 			'labels' => $labels,
 			'public' => true,
