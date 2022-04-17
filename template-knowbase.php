@@ -61,8 +61,11 @@ get_header(); ?>
 
 							<?php
 
+								$count = 0;
+								$articles_number = docs_get_theme_mod( 'knowbase_category_count' );
+
 								$args = array(
-									'posts_per_page' => docs_get_theme_mod( 'knowbase_category_count' ),
+									'posts_per_page' => -1,
 									'tax_query' => array(
 										'relation' => 'AND',
 										array(
@@ -79,19 +82,34 @@ get_header(); ?>
 
 									<div class="vlt-knowbase-item-articles">
 										<ul>
-											<?php while ( $cat_post->have_posts() ) : $cat_post->the_post(); ?>
-												<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+											<?php while ( $cat_post->have_posts() ) : $cat_post->the_post();
+
+												if ( $count >= $articles_number ) {
+													break;
+												}
+												$count++; ?>
+
+												<li>
+													<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+												</li>
+
 											<?php endwhile; wp_reset_postdata(); ?>
+
+											<?php if ( $cat_post->post_count > $articles_number ) : ?>
+												<li class="more">
+													<a href="<?php echo get_category_link( $categories->term_id ); ?>">
+														<?php
+															// translators: %s articles count.
+															printf( esc_html__( '+%s More', '@@textdomain' ), intval( $cat_post->post_count ) - $articles_number );
+														?>
+													</a>
+												</li>
+											<?php endif; ?>
+
 										</ul>
 									</div>
 
 							<?php endif; ?>
-
-							<div class="vlt-knowbase-item-footer">
-
-								<a href="<?php echo get_category_link( $categories->term_id ); ?>" class="vlt-btn vlt-btn--primary"><?php esc_html_e( 'View all artciels', '@@textdomain' ); ?></a>
-
-							</div>
 
 						</div>
 

@@ -17786,7 +17786,7 @@ html
 }
 .vlt-knowbase .vlt-knowbase-item-articles ul li
 {
-    position: relative;
+    font-size: 14px;
 }
 .vlt-knowbase .vlt-knowbase-item-articles ul li::before
 {
@@ -17800,13 +17800,32 @@ html
 }
 .vlt-knowbase .vlt-knowbase-item-articles ul li a
 {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display:         inline-flex;
+
     padding: 2px 0;
 
     text-decoration: underline;
 }
-.vlt-knowbase .vlt-knowbase-item-footer
+.vlt-knowbase .vlt-knowbase-item-articles ul li.more
 {
-    margin-top: 1.5em;
+    font-size: 13px;
+}
+.vlt-knowbase .vlt-knowbase-item-articles ul li.more::before
+{
+    visibility: hidden;
+}
+.vlt-knowbase .vlt-knowbase-item-articles ul li.more a
+{
+    text-decoration: none;
+
+    color: var(--vlt-color-5);
+}
+.vlt-knowbase .vlt-knowbase-item-articles ul li.more a:hover
+{
+    color: var(--vlt-accent-1);
 }
 
 /* PAGE: CHANGELOG

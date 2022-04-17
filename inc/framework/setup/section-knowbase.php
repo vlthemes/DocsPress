@@ -28,7 +28,7 @@ VLT_Options::add_field( array(
 	'priority' => $priority++,
 	'transport' => 'auto',
 	'choices' => [
-		'min' => -1,
+		'min' => 1,
 		'max' => 999,
 		'step' => 1,
 	],
