@@ -141,8 +141,9 @@ msgstr ""
 msgid "(%s Articles)"
 msgstr ""
 
-#: template-knowbase.php:92
-msgid "View all artciels"
+#. translators: %s articles count.
+#: template-knowbase.php:103
+msgid "+%s More"
 msgstr ""
 
 #: docspress/archive.php:65
@@ -242,11 +243,11 @@ msgstr ""
 msgid "Search Article"
 msgstr ""
 
-#: inc/theme-functions.php:315
+#: inc/theme-functions.php:307
 msgid "Knowbase Categories"
 msgstr ""
 
-#: inc/theme-functions.php:317
+#: inc/theme-functions.php:309
 msgid "Categories"
 msgstr ""
 

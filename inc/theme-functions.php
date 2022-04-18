@@ -294,9 +294,8 @@ if ( ! function_exists( 'docs_add_knowbase_post_type' ) ) {
 			'publicly_queryable' => true,
 			'menu_position' => 40,
 			'show_in_menu' => true,
-			'show_in_admin_bar' => true,
-			'show_in_rest' => true,
-			'capability_type' => 'page'
+			'show_in_nav_menus' => true,
+			'taxonomies' => array( 'knowbase_category' ),
 		);
 
 		register_post_type( 'knowbase', $args );
