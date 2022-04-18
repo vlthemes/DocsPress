@@ -243,11 +243,11 @@ msgstr ""
 msgid "Search Article"
 msgstr ""
 
-#: inc/theme-functions.php:307
+#: inc/theme-functions.php:309
 msgid "Knowbase Categories"
 msgstr ""
 
-#: inc/theme-functions.php:309
+#: inc/theme-functions.php:311
 msgid "Categories"
 msgstr ""
 

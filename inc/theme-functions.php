@@ -293,8 +293,10 @@ if ( ! function_exists( 'docs_add_knowbase_post_type' ) ) {
 			),
 			'publicly_queryable' => true,
 			'menu_position' => 40,
+			'show_in_rest' => true,
 			'show_in_menu' => true,
 			'show_in_nav_menus' => true,
+			'menu_icon' => 'dashicons-list-view',
 			'taxonomies' => array( 'knowbase_category' ),
 		);
 
@@ -313,6 +315,7 @@ if ( ! function_exists( 'docs_add_knowbase_post_type' ) ) {
 				),
 				'hierarchical' => true,
 				'show_ui' => true,
+				'show_in_rest' => true,
 				'show_admin_column' => true,
 				'query_var' => true,
 			)
