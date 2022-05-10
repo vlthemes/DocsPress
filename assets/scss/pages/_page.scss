@@ -5,7 +5,6 @@
 
 	&-header {
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
 		width: 100%;
 		padding-bottom: 1em;
@@ -14,6 +13,7 @@
 	}
 
 	&-title {
+		max-width: 80%;
 
 		i {
 			margin-right: .4em;

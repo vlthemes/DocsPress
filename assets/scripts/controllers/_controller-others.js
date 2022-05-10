@@ -5,6 +5,12 @@
 
 	'use strict';
 
+	// Back button
+	$('.btn-go-back').on('click', function (e) {
+		e.preventDefault();
+		window.history.back();
+	});
+
 	// Fitvids
 	if (typeof $.fn.fitVids !== 'undefined') {
 		VLTJS.body.fitVids();

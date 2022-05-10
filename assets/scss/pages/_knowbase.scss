@@ -67,7 +67,7 @@
 				list-style: none;
 
 				li {
-					font-size: 14px;
+					padding: 2px 0;
 
 					&::before {
 						content: '\f15c';
@@ -77,34 +77,17 @@
 					}
 
 					a {
-						display: inline-flex;
-						padding: 2px 0;
 						text-decoration: underline;
-					}
-
-					&.more {
-						font-size: 13px;
-
-						&::before {
-							visibility: hidden;
-						}
-
-						a {
-							color: var(--vlt-color-5);
-							text-decoration: none;
-
-							&:hover {
-								color: var(--vlt-accent-1);
-							}
-
-						}
-
 					}
 
 				}
 
 			}
 
+		}
+
+		&-footer {
+			margin-top: 1.5em;
 		}
 
 	}

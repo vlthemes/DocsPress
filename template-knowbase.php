@@ -81,6 +81,7 @@ get_header(); ?>
 								if ( $cat_post->have_posts() ) : ?>
 
 									<div class="vlt-knowbase-item-articles">
+
 										<ul>
 											<?php while ( $cat_post->have_posts() ) : $cat_post->the_post();
 
@@ -89,25 +90,28 @@ get_header(); ?>
 												}
 												$count++; ?>
 
-												<li>
-													<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-												</li>
+												<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 
 											<?php endwhile; wp_reset_postdata(); ?>
 
-											<?php if ( $cat_post->post_count > $articles_number ) : ?>
-												<li class="more">
-													<a href="<?php echo get_category_link( $categories->term_id ); ?>">
-														<?php
-															// translators: %s articles count.
-															printf( esc_html__( '+%s More', '@@textdomain' ), intval( $cat_post->post_count ) - $articles_number );
-														?>
-													</a>
-												</li>
-											<?php endif; ?>
-
 										</ul>
+
 									</div>
+
+							<?php endif; ?>
+
+							<?php if ( $cat_post->post_count > $articles_number ) : ?>
+
+								<div class="vlt-knowbase-item-footer">
+
+									<a href="<?php echo get_category_link( $categories->term_id ); ?>" class="vlt-btn vlt-btn--primary">
+										<?php
+											// translators: %s articles count.
+											printf( esc_html__( '+%s More', '@@textdomain' ), intval( $cat_post->post_count ) - $articles_number );
+										?>
+									</a>
+
+								</div>
 
 							<?php endif; ?>
 
