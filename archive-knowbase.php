@@ -11,7 +11,7 @@ get_header(); ?>
 
 	<header class="vlt-knowbase-header">
 
-		<h1 class="vlt-knowbase-title"><i class="fas fa-folder"></i><?php echo docs_get_theme_mod( 'knowbase_category_title' ) ? docs_get_theme_mod( 'knowbase_category_title' ) : esc_html__( 'Archive', '@@textdomain' ); ?></h1>
+		<h1 class="vlt-knowbase-title"><i class="fas fa-folder"></i><?php esc_html_e( 'Archive', '@@textdomain' ); ?></h1>
 		<!-- /.vlt-knowbase-title -->
 
 	</header>

@@ -311,7 +311,7 @@ if ( ! function_exists( 'docs_add_knowbase_post_type' ) ) {
 					'menu_name' => esc_html__( 'Categories', '@@textdomain' ),
 				),
 				'rewrite' => array(
-					'slug' => 'knowbase-articles',
+					'slug' => 'knowbase-category',
 				),
 				'hierarchical' => true,
 				'show_ui' => true,

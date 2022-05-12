@@ -71,6 +71,7 @@ if ( ! class_exists( 'DocsThemeEnqueueAssets' ) ) {
 			wp_enqueue_script( 'superfish', $this->assets_dir .'vendors/js/superfish.js', [ 'jquery' ], $this->theme_version, true );
 			wp_enqueue_script( 'superclick', $this->assets_dir .'vendors/js/superclick.js', [ 'jquery' ], $this->theme_version, true );
 			wp_enqueue_script( 'fancybox', $this->assets_dir .'vendors/js/jquery.fancybox.js', [ 'jquery' ], $this->theme_version, true );
+			wp_enqueue_script( 'highlight', $this->assets_dir .'vendors/js/highlight.pack.js', [ 'jquery' ], $this->theme_version, true );
 
 			// Enqueue theme helper script
 			wp_enqueue_script( 'vlt-helpers', $this->assets_dir .'scripts/helpers.js', [ 'jquery' ], $this->theme_version, true );
@@ -84,6 +85,8 @@ if ( ! class_exists( 'DocsThemeEnqueueAssets' ) ) {
 
 			// Plugins
 			wp_enqueue_style( 'fancybox', $this->assets_dir .'vendors/css/jquery.fancybox.css', [], $this->theme_version );
+			wp_enqueue_style( 'highlight-github-gist', $this->assets_dir .'vendors/css/github-gist.css', [], $this->theme_version );
+
 
 			// FontAwesome
 			wp_enqueue_style( 'fontawesome-solid', '//use.fontawesome.com/releases/v5.7.2/css/solid.css', [], $this->theme_version );

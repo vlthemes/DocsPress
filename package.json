@@ -8,6 +8,7 @@
 		"@fancyapps/fancybox": "^3.5.7",
 		"bootstrap": "^5.1.3",
 		"fitvids": "^2.1.1",
+		"highlightjs": "^9.16.2",
 		"jquery.scrollto": "^2.1.3",
 		"superclick": "github:joeldbirch/superclick",
 		"superfish": "^1.7.10"

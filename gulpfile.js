@@ -121,6 +121,7 @@ function compileJS() {
 // COPY JS VENDOR FILES
 function jsVendor() {
 	return src([
+		'node_modules/highlightjs/highlight.pack.js',
 		'node_modules/fitvids/dist/fitvids.js',
 		'node_modules/jquery.scrollto/jquery.scrollTo.js',
 		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
@@ -135,7 +136,8 @@ function jsVendor() {
 // COPY CSS VENDOR FILES
 function cssVendor() {
 	return src([
-		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css'
+		'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css',
+		'node_modules/highlightjs/styles/github-gist.css'
 	])
 	.pipe($.plumber({ errorHandler }))
 	.pipe($.removeSourcemaps())

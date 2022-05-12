@@ -25,7 +25,7 @@ msgstr ""
 msgid "Archive"
 msgstr ""
 
-#: archive-knowbase.php:21, searchform.php:12, template-knowbase.php:24
+#: archive-knowbase.php:21, searchform.php:12, taxonomy-knowbase_category.php:21, template-knowbase.php:24
 msgid "Search&hellip;"
 msgstr ""
 

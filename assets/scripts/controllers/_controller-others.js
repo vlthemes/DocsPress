@@ -11,6 +11,12 @@
 		window.history.back();
 	});
 
+	// Highlight JS
+	var highlight = document.querySelectorAll("pre");
+	"undefined" !== typeof hljs && highlight && [].forEach.call(highlight, function (highlight) {
+		hljs.highlightBlock(highlight)
+	});
+
 	// Fitvids
 	if (typeof $.fn.fitVids !== 'undefined') {
 		VLTJS.body.fitVids();

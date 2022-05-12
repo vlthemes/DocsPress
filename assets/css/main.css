@@ -342,6 +342,7 @@ a:not([href]):not([class]):hover
 }
 
 pre,
+.hljs,
 code,
 kbd,
 samp
@@ -353,7 +354,8 @@ samp
     unicode-bidi: bidi-override;
 }
 
-pre
+pre,
+.hljs
 {
     font-size: .875em;
 
@@ -363,7 +365,8 @@ pre
     margin-top: 0;
     margin-bottom: 1rem;
 }
-pre code
+pre code,
+.hljs code
 {
     font-size: inherit;
 
@@ -16862,6 +16865,7 @@ code,
 }
 
 pre,
+.hljs,
 .pre
 {
     font-size: 14px;
@@ -16879,7 +16883,8 @@ pre,
     background-color: var(--vlt-color-7);
 }
 
-.vlt-content-markup pre + img
+.vlt-content-markup pre + img,
+.vlt-content-markup .hljs + img
 {
     margin-top: 2.4em;
 }
@@ -18323,6 +18328,8 @@ html
         top: 0 !important;
     }
 }
+/* PLUGIN: HIGHLIGHT
+-------------------------------------------- */
 /* PLUGIN: SUPERFISH
 -------------------------------------------- */
 .sf-menu,
