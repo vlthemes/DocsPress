@@ -11,11 +11,24 @@
 if ( ! function_exists( 'docs_tgm_plugins' ) ) {
 	function docs_tgm_plugins() {
 
+		$source = 'https://vlthemes.com/plugins/';
+
 		$plugins = array(
 			array(
 				'name' => esc_html__( 'Kirki', '@@textdomain' ),
 				'slug' => 'kirki',
 				'required' => true,
+			),
+			array(
+				'name' => esc_html__( 'Advanced Custom Fields', '@@textdomain' ),
+				'slug' => 'advanced-custom-fields-pro',
+				'source' => esc_url( $source . 'advanced-custom-fields-pro.zip' ),
+				'required' => true,
+			),
+			array(
+				'name' => esc_html__( 'Elementor Page Builder', '@@textdomain' ),
+				'slug' => 'elementor',
+				'required' => false,
 			),
 			array(
 				'name' => esc_html__( 'Ghost Kit', '@@textdomain' ),
@@ -46,7 +59,12 @@ if ( ! function_exists( 'docs_tgm_plugins' ) ) {
 				'name' => esc_html__( 'MailChimp for WordPress', '@@textdomain' ),
 				'slug' => 'mailchimp-for-wp',
 				'required' => false,
-			)
+			),
+			array(
+				'name' => esc_html__( 'Classic Widgets', '@@textdomain' ),
+				'slug' => 'classic-widgets',
+				'required' => false,
+			),
 		);
 
 		tgmpa( $plugins );

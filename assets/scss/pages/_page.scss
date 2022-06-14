@@ -3,26 +3,6 @@
 
 .vlt-page {
 
-	&-header {
-		display: flex;
-		justify-content: space-between;
-		width: 100%;
-		padding-bottom: 1em;
-		margin: 0 0 2em;
-		border-bottom: 1px solid var(--vlt-color-4);
-	}
-
-	&-title {
-		max-width: 80%;
-
-		i {
-			margin-right: .4em;
-			font-size: 90%;
-			color: var(--vlt-color-5);
-		}
-
-	}
-
 	&-thumbnail {
 		position: relative;
 

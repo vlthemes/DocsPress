@@ -18,7 +18,21 @@ var VLTJS = {
 	is_ie10: navigator.appVersion.indexOf('MSIE 10') !== -1,
 	transitionEnd: 'transitionend webkitTransitionEnd oTransitionEnd otransitionend MSTransitionEnd',
 	animIteration: 'animationiteration webkitAnimationIteration oAnimationIteration MSAnimationIteration',
-	animationEnd: 'animationend webkitAnimationEnd'
+	animationEnd: 'animationend webkitAnimationEnd',
+	debounce: function (func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this, args = arguments;
+			var later = function() {
+					timeout = null;
+					if (!immediate) func.apply(context, args);
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) func.apply(context, args);
+		}
+	}
 };
 
 /**

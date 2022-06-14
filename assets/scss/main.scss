@@ -45,11 +45,13 @@
 	"pages/404",
 	"pages/page",
 	"pages/post",
+	"pages/post-single",
 	"pages/knowbase",
 	"pages/changelog";
 
 /* 05. Partials */
 @import
+	"partials/page-title",
 	"partials/back-to-top",
 	"partials/site-preloader";
 

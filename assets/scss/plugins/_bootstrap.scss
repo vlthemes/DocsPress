@@ -2,3 +2,11 @@
 -------------------------------------------- */
 
 @import "node_modules/bootstrap/scss/bootstrap";
+
+.badge {
+	color: var(--vlt-color-5);
+	text-transform: uppercase;
+	white-space: nowrap;
+	background-color: var(--vlt-color-7);
+	border-radius: var(--vlt-radius-1);
+}

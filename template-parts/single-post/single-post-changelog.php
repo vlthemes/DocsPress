@@ -7,30 +7,24 @@
 
 ?>
 
-<article <?php post_class( 'vlt-page' ); ?>>
+<article <?php post_class( 'vlt-post vlt-post--single' ); ?>>
 
-	<header class="vlt-page-header">
+	<header class="vlt-post-header">
 
-		<h1 class="vlt-page-title"><i class="far fa-file-alt"></i><?php the_title(); ?></h1>
-		<!-- /.vlt-page-title -->
-
-		<?php if ( ! is_single() ) : ?>
-			<div class="d-none d-sm-block">
-				<a href="javascript:window.print()" class="vlt-btn vlt-btn--secondary"><i class="fas fa-print" style="margin-right: 4px;"></i><?php esc_html_e( 'Print Page', '@@textdomain' ); ?></a>
-			</div>
-		<?php endif; ?>
+		<h1 class="vlt-post-title"><i class="far fa-file-alt"></i><?php the_title(); ?></h1>
+		<!-- /.vlt-post-title -->
 
 	</header>
-	<!-- /.vlt-page-header -->
+	<!-- /.vlt-post-header -->
 
-	<div class="vlt-page-content vlt-content-markup">
+	<div class="vlt-post-content vlt-content-markup">
 		<?php the_content(); ?>
 	</div>
-	<!-- /.vlt-page-content -->
+	<!-- /.vlt-post-content -->
 
 	<div class="clearfix"></div>
 
-	<footer class="vlt-page-footer">
+	<footer class="vlt-post-footer">
 
 		<?php
 
@@ -58,10 +52,10 @@
 		<?php edit_post_link( __( 'Edit', '@@textdomain' ), '<span class="vlt-edit-link">', '</span>' ); ?>
 
 	</footer>
-	<!-- /.vlt-page-footer -->
+	<!-- /.vlt-post-footer -->
 
 </article>
-<!-- /.vlt-page -->
+<!-- /.vlt-post -->
 
 <?php
 

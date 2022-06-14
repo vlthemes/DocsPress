@@ -17,16 +17,12 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: archive-changelog.php:14, inc/theme-functions.php:236
-msgid "Changelogs"
-msgstr ""
-
-#: archive-knowbase.php:14
-msgid "Archive"
-msgstr ""
-
-#: archive-knowbase.php:21, searchform.php:12, taxonomy-knowbase_category.php:21, template-knowbase.php:24
+#: archive-changelog.php:16, archive-knowbase.php:16, searchform.php:12, taxonomy-knowbase_category.php:29, template-knowbase.php:24
 msgid "Search&hellip;"
+msgstr ""
+
+#: archive-changelog.php:19, archive-knowbase.php:19, taxonomy-knowbase_category.php:32, template-knowbase.php:27, inc/theme-enqueue.php:84
+msgid "Loading..."
 msgstr ""
 
 #: comments.php:18
@@ -137,16 +133,20 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: template-knowbase.php:3, inc/theme-functions.php:277, inc/theme-functions.php:278
+#: taxonomy-knowbase_category.php:21
+msgid "Go Back"
+msgstr ""
+
+#: template-knowbase.php:3, inc/theme-functions.php:277, inc/theme-functions.php:278, template-parts/page-title/page-title-knowbase.php:12
 msgid "Knowbase"
 msgstr ""
 
-#: template-knowbase.php:51
+#: template-knowbase.php:55
 msgid "(%s Articles)"
 msgstr ""
 
 #. translators: %s articles count.
-#: template-knowbase.php:110
+#: template-knowbase.php:114
 msgid "+%s More"
 msgstr ""
 
@@ -159,15 +159,15 @@ msgstr ""
 msgid "Documentation search: \"%s\""
 msgstr ""
 
-#: docspress/search.php:81, docspress/single.php:37, template-parts/content/single/content-single-changelog.php:48, template-parts/content/single/content-single-knowbase.php:46, template-parts/content/single/content-single-page.php:48, template-parts/content/single/content-single-post.php:62
+#: docspress/search.php:81, docspress/single.php:37, template-parts/content/content-page.php:45, template-parts/single-post/single-post-changelog.php:42, template-parts/single-post/single-post-knowbase.php:51, template-parts/single-post/single-post-post.php:65
 msgid "Pages: "
 msgstr ""
 
-#: docspress/search.php:84, docspress/single.php:40, template-parts/content/single/content-single-changelog.php:51, template-parts/content/single/content-single-knowbase.php:49, template-parts/content/single/content-single-page.php:51, template-parts/content/single/content-single-post.php:65
+#: docspress/search.php:84, docspress/single.php:40, template-parts/content/content-page.php:48, template-parts/single-post/single-post-changelog.php:45, template-parts/single-post/single-post-knowbase.php:54, template-parts/single-post/single-post-post.php:68
 msgid "Next page"
 msgstr ""
 
-#: docspress/search.php:85, docspress/single.php:41, template-parts/content/single/content-single-changelog.php:52, template-parts/content/single/content-single-knowbase.php:50, template-parts/content/single/content-single-page.php:52, template-parts/content/single/content-single-post.php:66
+#: docspress/search.php:85, docspress/single.php:41, template-parts/content/content-page.php:49, template-parts/single-post/single-post-changelog.php:46, template-parts/single-post/single-post-knowbase.php:55, template-parts/single-post/single-post-post.php:69
 msgid "Previous page"
 msgstr ""
 
@@ -185,6 +185,10 @@ msgstr ""
 
 #: inc/theme-actions.php:27
 msgid "Subscribe popup Widget Area"
+msgstr ""
+
+#: inc/theme-enqueue.php:85
+msgid "No matches found."
 msgstr ""
 
 #: inc/theme-filters.php:40
@@ -217,6 +221,10 @@ msgstr ""
 
 #: inc/theme-functions.php:218
 msgid "Next Page"
+msgstr ""
+
+#: inc/theme-functions.php:236, template-parts/page-title/page-title-changelog.php:12
+msgid "Changelogs"
 msgstr ""
 
 #: inc/theme-functions.php:237
@@ -255,6 +263,14 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
+#: inc/theme-functions.php:342
+msgid "1 min read"
+msgstr ""
+
+#: inc/theme-functions.php:340
+msgid " min read"
+msgstr ""
+
 #: inc/theme-menus.php:14
 msgid "Please register navigation from"
 msgstr ""
@@ -263,32 +279,44 @@ msgstr ""
 msgid "Appearance > Menus"
 msgstr ""
 
-#: inc/theme-required-plugins.php:16
+#: inc/theme-required-plugins.php:18
 msgid "Kirki"
 msgstr ""
 
-#: inc/theme-required-plugins.php:21
+#: inc/theme-required-plugins.php:23
+msgid "Advanced Custom Fields"
+msgstr ""
+
+#: inc/theme-required-plugins.php:29
+msgid "Elementor Page Builder"
+msgstr ""
+
+#: inc/theme-required-plugins.php:34
 msgid "Ghost Kit"
 msgstr ""
 
-#: inc/theme-required-plugins.php:26
+#: inc/theme-required-plugins.php:39
 msgid "DocsPress"
 msgstr ""
 
-#: inc/theme-required-plugins.php:31
+#: inc/theme-required-plugins.php:44
 msgid "Contact Form 7"
 msgstr ""
 
-#: inc/theme-required-plugins.php:36
+#: inc/theme-required-plugins.php:49
 msgid "Conditional Fields for Contact Form 7"
 msgstr ""
 
-#: inc/theme-required-plugins.php:41
+#: inc/theme-required-plugins.php:54
 msgid "Multiline files upload for contact form 7"
 msgstr ""
 
-#: inc/theme-required-plugins.php:46
+#: inc/theme-required-plugins.php:59
 msgid "MailChimp for WordPress"
+msgstr ""
+
+#: inc/theme-required-plugins.php:64
+msgid "Classic Widgets"
 msgstr ""
 
 #: inc/framework/customizer.php:25
@@ -800,8 +828,20 @@ msgstr ""
 msgid "Get started here"
 msgstr ""
 
+#: template-parts/content/content-page.php:17
+msgid "Print Page"
+msgstr ""
+
+#: template-parts/content/content-page.php:55, template-parts/single-post/single-post-changelog.php:52, template-parts/single-post/single-post-knowbase.php:61, template-parts/single-post/single-post-post.php:75
+msgid "Edit"
+msgstr ""
+
 #: template-parts/header/header-default.php:55, template-parts/header/header-mobile.php:40
 msgid "Portfolio"
+msgstr ""
+
+#: template-parts/post/post-default.php:52
+msgid "Read More"
 msgstr ""
 
 #: inc/framework/setup/section-core.php:17
@@ -950,20 +990,4 @@ msgstr ""
 
 #: inc/framework/setup/section-typography.php:427
 msgid "Label Typography"
-msgstr ""
-
-#: template-parts/content/post/content-post.php:49
-msgid "Read More"
-msgstr ""
-
-#: template-parts/content/single/content-single-changelog.php:19, template-parts/content/single/content-single-page.php:19, template-parts/content/single/content-single-post.php:19
-msgid "Print Page"
-msgstr ""
-
-#: template-parts/content/single/content-single-changelog.php:58, template-parts/content/single/content-single-knowbase.php:56, template-parts/content/single/content-single-page.php:58, template-parts/content/single/content-single-post.php:72
-msgid "Edit"
-msgstr ""
-
-#: template-parts/content/single/content-single-knowbase.php:18
-msgid "Go Back"
 msgstr ""

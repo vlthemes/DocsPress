@@ -9,19 +9,16 @@
 
 <article <?php post_class( 'vlt-page' ); ?>>
 
-	<header class="vlt-page-header">
+	<header class="vlt-page-title">
 
-		<h1 class="vlt-page-title"><?php the_title(); ?></h1>
-		<!-- /.vlt-page-title -->
+		<h1><?php the_title(); ?></h1>
 
 		<?php if ( ! is_single() ) : ?>
-			<div class="d-none d-sm-block">
-				<a href="javascript:window.print()" class="vlt-btn vlt-btn--secondary"><i class="fas fa-print" style="margin-right: 4px;"></i><?php esc_html_e( 'Print Page', '@@textdomain' ); ?></a>
-			</div>
+			<a href="javascript:window.print()" class="vlt-btn vlt-btn--secondary d-none d-sm-inline-flex ms-3 flex-shrink-0"><i class="fas fa-print" style="margin-right: 4px;"></i><?php esc_html_e( 'Print Page', '@@textdomain' ); ?></a>
 		<?php endif; ?>
 
 	</header>
-	<!-- /.vlt-page-header -->
+	<!-- /.vlt-page-title -->
 
 	<div class="vlt-page-content vlt-content-markup">
 		<?php the_content(); ?>

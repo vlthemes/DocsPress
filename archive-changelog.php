@@ -9,19 +9,26 @@ get_header(); ?>
 
 <main class="vlt-main vlt-main--padding">
 
-	<header class="vlt-main-header">
+	<?php get_template_part( 'template-parts/page-title/page-title', 'changelog' ); ?>
 
-		<h1><?php esc_html_e( 'Changelogs', '@@textdomain' ); ?></h1>
+	<form class="vlt-search-form vlt-search-form--large vlt-search-form--ajax mb-5" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
-	</header>
-	<!-- /.vlt-main-title -->
+		<input type="text" name="s" placeholder="<?php esc_attr_e( 'Search&hellip;', '@@textdomain' ); ?>" value="<?php echo get_search_query(); ?>" autocomplete="off">
+		<button><i class="fas fa-search"></i></button>
+
+		<div class="vlt-search-form__results" style="display: none;"><?php esc_html_e( 'Loading...' , '@@textdomain' ); ?></div>
+
+		<input type="hidden" name="post_type" value="changelog">
+
+	</form>
+	<!-- /.vlt-search-form -->
 
 	<?php
 
 		if ( have_posts() ) :
 			echo '<div class="vlt-grid" data-col="2">';
 				while ( have_posts() ) : the_post();
-					get_template_part( 'template-parts/content/post/content', 'changelog' );
+					get_template_part( 'template-parts/post/post', 'changelog' );
 				endwhile;
 			echo '</div>';
 			docs_the_posts_navigation();

@@ -12,7 +12,7 @@ get_header(); ?>
 	<?php
 		if ( have_posts() ) :
 			while ( have_posts() ) : the_post();
-				get_template_part( 'template-parts/content/post/content', 'post' );
+				get_template_part( 'template-parts/post/post', 'default' );
 			endwhile;
 			docs_the_posts_navigation();
 		else:

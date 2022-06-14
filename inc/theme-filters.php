@@ -65,3 +65,22 @@ add_filter( 'login_headerurl', 'docs_change_admin_logo_link' );
  * Remove cf7 autop
  */
 add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
+/*
+ * Replace content variables
+ */
+if ( ! function_exists( 'docs_replace_content_variables' ) ) {
+	function docs_replace_content_variables( $text ) {
+		global $post;
+		$replace = array(
+			'%product_name%' => docs_get_field( 'product_name', wp_get_post_parent_id( $post->ID ) ),
+			'%product_child_name%' => docs_get_field( 'product_child_name', wp_get_post_parent_id( $post->ID ) ),
+			'%product_slug%' => docs_get_field( 'product_slug', wp_get_post_parent_id( $post->ID ) ),
+		);
+		$text = str_replace( array_keys( $replace ), $replace, $text );
+		return $text;
+	}
+}
+add_filter( 'the_content', 'docs_replace_content_variables' );
+add_filter( 'the_excerpt', 'docs_replace_content_variables' );
+add_filter( 'docs/get_trimmed_content', 'docs_replace_content_variables' );

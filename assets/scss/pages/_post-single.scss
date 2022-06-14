@@ -1,20 +1,16 @@
-/* PAGE: POST
+/* PAGE: POST SINGLE
 -------------------------------------------- */
 
-.vlt-post--default {
-
-	& + & {
-		margin-top: 3em;
-	}
+.vlt-post--single {
+	padding-bottom: 2em;
 
 	.vlt-post-header {
 		padding-bottom: 1em;
-		margin: 0 0 1em;
+		margin: 0 0 2em;
 		border-bottom: 1px solid var(--vlt-color-4);
 	}
 
 	.vlt-post-title {
-		font-size: 22px;
 
 		i {
 			margin-right: .4em;
@@ -35,7 +31,7 @@
 	}
 
 	.vlt-post-meta {
-		margin-top: 0.25em;
+		margin-top: 1em;
 		font-size: 14px;
 		color: var(--vlt-color-5);
 

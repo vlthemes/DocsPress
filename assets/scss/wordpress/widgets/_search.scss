@@ -30,4 +30,46 @@
 
 	}
 
+	&__results {
+		position: absolute;
+		top: calc(100% + 10px);
+		right: 0;
+		left: 0;
+		max-height: 260px;
+		padding: 20px 24px;
+		overflow: auto;
+		background-color: var(--vlt-color-6);
+		border: 1px solid var(--vlt-color-4);
+		border-radius: var(--vlt-radius-2);
+		box-shadow: 0 0 8px 0 var(--vlt-color-1-0p1);
+		z-index: 2;
+
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+
+			li + li {
+				margin-top: 8px;
+			}
+
+		}
+
+		.vlt-search-result {
+			display: flex;
+			align-items: center;
+
+			&__thumbnail {
+				max-width: 40px;
+				margin-right: 15px;
+			}
+
+			.badge {
+				margin-left: auto;
+			}
+
+		}
+
+	}
+
 }

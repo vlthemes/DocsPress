@@ -326,3 +326,21 @@ if ( ! function_exists( 'docs_add_knowbase_post_type' ) ) {
 }
 
 add_action( 'init', 'docs_add_knowbase_post_type' );
+
+/**
+ * Reading time
+ */
+if ( ! function_exists( 'docs_get_reading_time' ) ) {
+	function docs_get_reading_time() {
+		global $post;
+		$wpm = 200;
+		$words = str_word_count( strip_tags( $post->post_content ) );
+		$minutes = floor( $words / $wpm );
+		if ( 1 <= $minutes ) {
+			$output = $minutes . esc_html__( ' min read', '@@textdomain' );
+		} else {
+			$output = esc_html__( '1 min read', '@@textdomain' );
+		}
+		return apply_filters( 'docs/get_reading_time', $output );
+	}
+}

@@ -79,6 +79,15 @@ if ( ! class_exists( 'DocsThemeEnqueueAssets' ) ) {
 			// Enqueue controllers
 			wp_enqueue_script( 'vlt-controllers', $this->assets_dir .'scripts/controllers.min.js', [ 'jquery' ], $this->theme_version, true );
 
+			// Localize the script with new data
+			$controllers_datas = [
+				'search_loading' => esc_html__( 'Loading...', '@@textdomain' ),
+				'search_no_found' => esc_html__( 'No matches found.', '@@textdomain' ),
+				'admin_ajax' => admin_url( 'admin-ajax.php' )
+			];
+
+			wp_localize_script( 'vlt-controllers', 'VLT_LOCALIZE_DATAS', $controllers_datas );
+
 		}
 
 		public function enqueue_frontend_styles() {

@@ -87,3 +87,54 @@ if ( ! function_exists( 'docs_change_admin_logo' ) ) {
 	}
 }
 add_action( 'login_head', 'docs_change_admin_logo' );
+
+/**
+ * Get AJAX search results
+ */
+if ( ! function_exists( 'docs_get_ajax_search_results' ) ) {
+	function docs_get_ajax_search_results() {
+
+		$args = array(
+			's' => $_POST[ 'searchTarget' ],
+			'posts_per_page' => -1
+		);
+
+		if ( isset( $_POST[ 'searchType' ] ) ) {
+			$args[ 'post_type' ] = $_POST[ 'searchType' ];
+		}
+
+		if ( isset( $_POST[ 'searchTaxonomy' ] ) && isset( $_POST[ 'searchTermID' ] ) ) {
+			$args[ 'tax_query' ] = [
+				[
+					'taxonomy' => $_POST[ 'searchTaxonomy' ],
+					'field' => 'term_id',
+					'terms' => $_POST[ 'searchTermID' ]
+				]
+			];
+		}
+
+		$new_query = new WP_Query( $args );
+
+		if ( $new_query->have_posts() ) :
+			echo '<ul>';
+			while ( $new_query->have_posts() ) : $new_query->the_post();
+				$post_type = get_post_type_object( get_post_type() );
+				echo '<li class="vlt-search-result vlt-search-result--' . $post_type->name . '">';
+					if ( has_post_thumbnail() ) {
+						echo '<span class="vlt-search-result__thumbnail">';
+						the_post_thumbnail( apply_filters( 'docs/ajax-search-results-image-size', 'docs-thumbnail' ), array( 'loading' => 'lazy' ) );
+						echo '</span>';
+					}
+					echo '<a href="' . get_permalink() .'" class="vlt-search-result__title">' . get_the_title() . '</a>';
+					echo '<span class="badge">' . esc_html( $post_type->labels->singular_name ) . '</span>';
+				echo '</li>';
+			endwhile;
+			echo '</ul>';
+		endif;
+		wp_reset_postdata();
+
+		wp_die();
+	}
+}
+add_action( 'wp_ajax_ajax-search-results', 'docs_get_ajax_search_results' );
+add_action( 'wp_ajax_nopriv_ajax-search-results', 'docs_get_ajax_search_results' );

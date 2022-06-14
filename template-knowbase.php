@@ -10,24 +10,28 @@ get_header(); ?>
 
 <div class="vlt-main vlt-main--padding">
 
-	<article <?php post_class( 'vlt-knowbase' ); ?>>
+	<article <?php post_class( 'vlt-page' ); ?>>
 
-		<header class="vlt-knowbase-header">
+		<header class="vlt-page-title">
 
-			<h1 class="vlt-knowbase-title"><i class="fas fa-folder"></i><?php echo docs_get_theme_mod( 'knowbase_category_title' ) ? docs_get_theme_mod( 'knowbase_category_title' ) : get_the_title(); ?></h1>
-			<!-- /.vlt-knowbase-title -->
+			<h1><i class="fas fa-folder"></i><?php echo docs_get_theme_mod( 'knowbase_category_title' ) ? docs_get_theme_mod( 'knowbase_category_title' ) : get_the_title(); ?></h1>
 
 		</header>
-		<!-- /.vlt-knowbase-header -->
+		<!-- /.vlt-page-title -->
 
-		<form class="vlt-search-form vlt-search-form--large mb-5" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-			<input type="text" id="s" name="s" placeholder="<?php esc_attr_e( 'Search&hellip;', '@@textdomain' ); ?>" value="<?php echo get_search_query(); ?>">
+		<form class="vlt-search-form vlt-search-form--large vlt-search-form--ajax mb-5" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+
+			<input type="text" name="s" placeholder="<?php esc_attr_e( 'Search&hellip;', '@@textdomain' ); ?>" value="<?php echo get_search_query(); ?>" autocomplete="off">
 			<button><i class="fas fa-search"></i></button>
-			<input type="hidden" name="post_type" value="knowbase" />
+
+			<div class="vlt-search-form__results" style="display: none;"><?php esc_html_e( 'Loading...' , '@@textdomain' ); ?></div>
+
+			<input type="hidden" name="post_type" value="knowbase">
+
 		</form>
 		<!-- /.vlt-search-form -->
 
-		<div class="vlt-grid" data-col="2">
+		<div class="vlt-knowbase vlt-grid" data-col="2">
 
 			<?php
 
