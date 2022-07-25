@@ -17942,6 +17942,36 @@ html
 }
 
 /* 05. Partials */
+/* PARTIAL: DEACTIVATE FORM
+-------------------------------------------- */
+.vlt-deactivate-form
+{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+            flex-direction: column;
+
+    padding: 2em;
+
+    border-radius: var(--vlt-radius-2);
+    background-color: var(--vlt-color-7);
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+}
+.vlt-deactivate-form__result
+{
+    font-size: 14px;
+
+    margin: 2em 0 0;
+    padding: 0 0 0 1.5em;
+
+    border-left: 2px solid var(--vlt-accent-1);
+}
+
 /* PARTIAL: PAGE TITLE
 -------------------------------------------- */
 .vlt-page-title

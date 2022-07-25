@@ -16,6 +16,5 @@ VLT_Options::add_field( array(
 	'section' => 'section_footer_options',
 	'label' => esc_html__( 'Copyright', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'default' => '<p>© %s DocsPress. All rights reserved.</p>',
 ) );

@@ -16,3 +16,4 @@
 	do_action( 'docs/before_site' );
 	get_template_part( 'template-parts/header/header', 'default' );
 	get_template_part( 'template-parts/header/header', 'mobile' );
+	do_action( 'docs/ads_block' );

@@ -83,7 +83,8 @@ if ( ! class_exists( 'DocsThemeEnqueueAssets' ) ) {
 			$controllers_datas = [
 				'search_loading' => esc_html__( 'Loading...', '@@textdomain' ),
 				'search_no_found' => esc_html__( 'No matches found.', '@@textdomain' ),
-				'admin_ajax' => admin_url( 'admin-ajax.php' )
+				'admin_ajax' => admin_url( 'admin-ajax.php' ),
+				'nonce' => wp_create_nonce( 'vlt-ajax-nonce' )
 			];
 
 			wp_localize_script( 'vlt-controllers', 'VLT_LOCALIZE_DATAS', $controllers_datas );

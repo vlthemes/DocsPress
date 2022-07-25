@@ -64,6 +64,22 @@ if ( ! function_exists( 'docs_after_site' ) ) {
 add_action( 'docs/after_site', 'docs_after_site' );
 
 /**
+ * Ads block
+ */
+if ( ! function_exists( 'docs_ads_block' ) ) {
+	function docs_ads_block() {
+		if ( docs_get_theme_mod( 'ads_link' ) ) {
+			echo '<div class="d-none d-sm-block my-5">';
+			echo '<a href="' . docs_get_theme_mod( 'ads_link' ) . '" target="_blank" class="vlt-ads-banner">';
+			echo '<img src="' . esc_url( docs_get_theme_mod( 'ads_banner' ) ) . '" loading="lazy" alt="' . esc_attr__( 'ADS', '@@textdomain' ) . '">';
+			echo '</a>';
+			echo '</div>';
+		}
+	}
+}
+add_action( 'docs/ads_block', 'docs_ads_block' );
+
+/**
  * Change admin logo
  */
 if ( ! function_exists( 'docs_change_admin_logo' ) ) {
@@ -138,3 +154,55 @@ if ( ! function_exists( 'docs_get_ajax_search_results' ) ) {
 }
 add_action( 'wp_ajax_ajax-search-results', 'docs_get_ajax_search_results' );
 add_action( 'wp_ajax_nopriv_ajax-search-results', 'docs_get_ajax_search_results' );
+
+/**
+ * AJAX deactivation action
+ */
+if ( ! function_exists( 'docs_deactivate_license_action' ) ) {
+	function docs_deactivate_license_action() {
+		check_ajax_referer( 'vlt-ajax-nonce', 'nonce' );
+		$curl = curl_init();
+		curl_setopt_array( $curl, array(
+			CURLOPT_URL => 'https://docs.vlthemes.com/wp-json/license-api/license/remove_domain',
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_ENCODING => '',
+			CURLOPT_MAXREDIRS => 10,
+			CURLOPT_TIMEOUT => 0,
+			CURLOPT_FOLLOWLOCATION => true,
+			CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+			CURLOPT_CUSTOMREQUEST => 'POST',
+			CURLOPT_POSTFIELDS => array( 'api_key' => '007455DD-F075866A-2211CA17-CCBC5A93', 'license_code' => $_POST[ 'purchase_code' ], 'domain' => $_POST[ 'domain' ] ),
+		) );
+		$response = curl_exec( $curl );
+		$message = json_decode( $response, true )[ 'msg' ];
+		curl_close( $curl );
+		echo $message;
+		wp_die();
+	}
+}
+add_action( 'wp_ajax_ajax-deactivate-license', 'docs_deactivate_license_action' );
+
+/**
+ * Deactivation form shortcode
+ */
+if ( ! function_exists( 'docs_deactivate_license_shortcode' ) ) {
+	function docs_deactivate_license_shortcode() {
+
+		ob_start(); ?>
+
+		<form class="vlt-deactivate-form">
+			<div class="vlt-form-group">
+				<input type="text" name="your_domain" placeholder="<?php esc_attr_e( 'Your Domain', '@@textdomain' ); ?>">
+			</div>
+			<div class="vlt-form-group">
+				<input type="text" name="purchase_code" placeholder="<?php esc_attr_e( 'Purchase Code', '@@textdomain' ); ?>">
+			</div>
+			<button class="vlt-btn vlt-btn--primary"><?php esc_html_e( 'Deactivate License', '@@textdomain' ); ?></button>
+			<div class="vlt-deactivate-form__result" style="display: none;"></div>
+		</form>
+
+		<?php return ob_get_clean();
+
+	}
+}
+add_shortcode( 'deactivate-license', 'docs_deactivate_license_shortcode' );

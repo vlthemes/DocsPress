@@ -16,7 +16,6 @@ VLT_Options::add_field( array(
 	'section' => 'section_knowbase_options',
 	'label' => esc_html__( 'Category Title', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'default' => '',
 ) );
 
@@ -26,7 +25,6 @@ VLT_Options::add_field( array(
 	'section' => 'section_knowbase_options',
 	'label' => esc_html__( 'Number of Categories', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => [
 		'min' => 1,
 		'max' => 999,

@@ -24,7 +24,6 @@ VLT_Options::add_field( array(
 	'section' => 'core_general',
 	'label' => esc_html__( 'Site Background', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'default' => array(
 		'background-color' => '#f0f1f3',
 		'background-image' => '',
@@ -33,6 +32,7 @@ VLT_Options::add_field( array(
 		'background-size' => 'auto',
 		'background-attachment' => 'fixed',
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => 'body'
@@ -54,7 +54,6 @@ VLT_Options::add_field( array(
 	'section' => 'core_general',
 	'label' => esc_html__( 'Accent Colors', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => array(
 		'first' => esc_html__( 'First', '@@textdomain' ),
 		'second' => esc_html__( 'Second', '@@textdomain' ),
@@ -79,7 +78,6 @@ VLT_Options::add_field( array(
 	'section' => 'core_general',
 	'label' => esc_html__( 'Preloader', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => array(
 		'show' => esc_html__( 'Show', '@@textdomain' ),
 		'hide' => esc_html__( 'Hide', '@@textdomain' )
@@ -101,7 +99,6 @@ VLT_Options::add_field( array(
 	'section' => 'core_general',
 	'label' => esc_html__( '"Back to Top" Button', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => array(
 		'show' => esc_html__( 'Show', '@@textdomain' ),
 		'hide' => esc_html__( 'Hide', '@@textdomain' )
@@ -118,11 +115,11 @@ VLT_Options::add_field( array(
 	'section' => 'core_selection',
 	'label' => esc_html__( 'Selection Text Color', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => array(
 		'alpha' => false
 	),
 	'default' => '#ffffff',
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => '::selection',
@@ -143,11 +140,11 @@ VLT_Options::add_field( array(
 	'section' => 'core_selection',
 	'label' => esc_html__( 'Selection Background Color', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => array(
 		'alpha' => true
 	),
 	'default' => '#242424',
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => '::selection',
@@ -171,7 +168,6 @@ VLT_Options::add_field( array(
 	'section' => 'core_scrollbar',
 	'label' => esc_html__( 'Custom Scrollbar', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => array(
 		'enable' => esc_html__( 'Enable', '@@textdomain' ),
 		'disable' => esc_html__( 'Disable', '@@textdomain' )
@@ -185,11 +181,11 @@ VLT_Options::add_field( array(
 	'section' => 'core_scrollbar',
 	'label' => esc_html__( 'Track Color', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => array(
 		'alpha' => false
 	),
 	'default' => '',
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => '::-webkit-scrollbar',
@@ -211,11 +207,11 @@ VLT_Options::add_field( array(
 	'section' => 'core_scrollbar',
 	'label' => esc_html__( 'Bar Color', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => array(
 		'alpha' => false
 	),
 	'default' => '',
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => '::-webkit-scrollbar-thumb',
@@ -237,13 +233,13 @@ VLT_Options::add_field( array(
 	'section' => 'core_scrollbar',
 	'label' => esc_html__( 'Bar Width', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => array(
 		'min' => '0',
 		'max' => '16',
 		'step' => '2'
 	),
 	'default' => '',
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => '::-webkit-scrollbar',
@@ -269,7 +265,6 @@ VLT_Options::add_field( array(
 	'section' => 'core_login_logo',
 	'label' => esc_html__( 'Authorization Logo', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'default' => $theme_path_images . 'vlthemes.png',
 ) );
 
@@ -279,7 +274,6 @@ VLT_Options::add_field( array(
 	'section' => 'core_login_logo',
 	'label' => esc_html__( 'Logo Height', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'default' => '115px',
 	'active_callback' => array(
 		array(
@@ -295,7 +289,6 @@ VLT_Options::add_field( array(
 	'settings' => 'login_logo_image_width',
 	'section' => 'core_login_logo',
 	'label' => esc_html__( 'Logo Width', '@@textdomain' ),
-	'transport' => 'auto',
 	'priority' => $priority++,
 	'default' => '102px',
 	'active_callback' => array(

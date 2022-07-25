@@ -16,7 +16,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_fonts',
 	'label' => esc_html__( 'Primary Font', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -27,9 +26,10 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'choice' => 'font-family',
@@ -57,7 +57,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_text',
 	'label' => '<span class="dashicons dashicons-desktop" style="margin-right: 5px;"></span>' . esc_html__( 'Desktop', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -69,7 +68,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 		'variant' => 'regular',
 		'font-size' => '16px',
@@ -77,6 +76,7 @@ VLT_Options::add_field( array(
 		'letter-spacing' => '0',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => 'body'
@@ -105,7 +105,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_headings',
 	'label' => '<span class="dashicons dashicons-desktop" style="margin-right: 5px;"></span>' . esc_html__( 'Desktop', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -114,7 +113,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
 		'font-size' => '28px',
@@ -122,6 +121,7 @@ VLT_Options::add_field( array(
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => 'h1, .h1'
@@ -147,7 +147,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_headings',
 	'label' => '<span class="dashicons dashicons-desktop" style="margin-right: 5;"></span>' . esc_html__( 'Desktop', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -156,7 +155,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
 		'font-size' => '22px',
@@ -164,6 +163,7 @@ VLT_Options::add_field( array(
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => 'h2, .h2'
@@ -189,7 +189,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_headings',
 	'label' => '<span class="dashicons dashicons-desktop" style="margin-right: 5;"></span>' . esc_html__( 'Desktop', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -198,7 +197,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
 		'font-size' => '20px',
@@ -206,6 +205,7 @@ VLT_Options::add_field( array(
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => 'h3, .h3'
@@ -231,7 +231,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_headings',
 	'label' => '<span class="dashicons dashicons-desktop" style="margin-right: 5px;"></span>' . esc_html__( 'Desktop', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -240,7 +239,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
 		'font-size' => '18px',
@@ -248,6 +247,7 @@ VLT_Options::add_field( array(
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => 'h4, .h4'
@@ -273,7 +273,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_headings',
 	'label' => '<span class="dashicons dashicons-desktop" style="margin-right: 5px;"></span>' . esc_html__( 'Desktop', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -282,7 +281,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
 		'font-size' => '16px',
@@ -290,6 +289,7 @@ VLT_Options::add_field( array(
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => 'h5, .h5'
@@ -315,7 +315,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_headings',
 	'label' => '<span class="dashicons dashicons-desktop" style="margin-right: 5px;"></span>' . esc_html__( 'Desktop', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -324,7 +323,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
 		'font-size' => '14px',
@@ -332,6 +331,7 @@ VLT_Options::add_field( array(
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => 'h6, .h6'
@@ -352,7 +352,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_buttons',
 	'label' => esc_html__( 'Button Typography', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -361,14 +360,15 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
-		'variant' => 'regular',
+		'variant' => '500',
 		'font-size' => '14px',
 		'line-height' => '1.4',
 		'letter-spacing' => '0',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => '.vlt-btn, input[type="button"]'
@@ -385,7 +385,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_input',
 	'label' => esc_html__( 'Input Typography', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -394,7 +393,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 		'variant' => 'regular',
 		'font-size' => '14px',
@@ -402,6 +401,7 @@ VLT_Options::add_field( array(
 		'letter-spacing' => '0',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => '
@@ -426,7 +426,6 @@ VLT_Options::add_field( array(
 	'section' => 'typography_input',
 	'label' => esc_html__( 'Label Typography', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
@@ -435,7 +434,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'DM Sans',
+		'font-family' => 'Roboto',
 		'subsets' => [ 'latin' ],
 		'variant' => 'regular',
 		'font-size' => '14px',
@@ -443,6 +442,7 @@ VLT_Options::add_field( array(
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
 	),
+	'transport' => 'auto',
 	'output' => array(
 		array(
 			'element' => 'label'

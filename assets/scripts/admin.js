@@ -26,4 +26,12 @@ jQuery( document ).ready( function() {
 	jQuery( '#accordion-panel-nav_menus > h3' ).addClass( 'dashicons-before dashicons-menu' );
 	jQuery( '#sub-accordion-panel-nav_menus .panel-title' ).prepend( '<span class="dashicons-before dashicons-menu" style="position: relative; padding-right:.2em; top: 2px;"></span>' );
 
+	var link = jQuery('a[href="admin.php?page=go_elementor_pro"]'),
+		link2 = jQuery('a.elementor-plugins-gopro'),
+		link3 = jQuery('li.e-overview__go-pro a');
+
+	link.attr('href', 'https://trk.elementor.com/5jh4mj5vchfm').attr('target', '_blank').css('color', '#d54e21');
+	link2.attr('href', 'https://trk.elementor.com/5jh4mj5vchfm').attr('target', '_blank').css('color', '#d54e21');
+	link3.attr('href', 'https://trk.elementor.com/5jh4mj5vchfm').attr('target', '_blank');
+
 });

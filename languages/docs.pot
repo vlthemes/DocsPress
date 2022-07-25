@@ -25,6 +25,38 @@ msgstr ""
 msgid "Loading..."
 msgstr ""
 
+#: archive-theme.php:62
+msgid "Sort by newness"
+msgstr ""
+
+#: archive-theme.php:63
+msgid "Sort by title"
+msgstr ""
+
+#: archive-theme.php:64
+msgid "Sort by number of sales"
+msgstr ""
+
+#: archive-theme.php:65
+msgid "Sort by popularity"
+msgstr ""
+
+#: archive-theme.php:66
+msgid "Sort by average rating"
+msgstr ""
+
+#: archive-theme.php:67
+msgid "Sort by price: low to high"
+msgstr ""
+
+#: archive-theme.php:68
+msgid "Sort by price: high to low"
+msgstr ""
+
+#: archive-theme.php:73
+msgid "Filter Themes By:"
+msgstr ""
+
 #: comments.php:18
 msgid "No Comments"
 msgstr ""
@@ -105,11 +137,11 @@ msgstr ""
 msgid "XL"
 msgstr ""
 
-#: functions.php:106, inc/framework/setup/section-core.php:59
+#: functions.php:106, inc/framework/setup/section-core.php:58
 msgid "First"
 msgstr ""
 
-#: functions.php:111, inc/framework/setup/section-core.php:60
+#: functions.php:111, inc/framework/setup/section-core.php:59
 msgid "Second"
 msgstr ""
 
@@ -137,7 +169,7 @@ msgstr ""
 msgid "Go Back"
 msgstr ""
 
-#: template-knowbase.php:3, inc/theme-functions.php:277, inc/theme-functions.php:278, template-parts/page-title/page-title-knowbase.php:12
+#: template-knowbase.php:3, template-parts/page-title/page-title-knowbase.php:12
 msgid "Knowbase"
 msgstr ""
 
@@ -187,6 +219,22 @@ msgstr ""
 msgid "Subscribe popup Widget Area"
 msgstr ""
 
+#: inc/theme-actions.php:74, inc/framework/setup/section-header.php:38
+msgid "ADS"
+msgstr ""
+
+#: inc/theme-actions.php:195
+msgid "Your Domain"
+msgstr ""
+
+#: inc/theme-actions.php:198
+msgid "Purchase Code"
+msgstr ""
+
+#: inc/theme-actions.php:200
+msgid "Deactivate License"
+msgstr ""
+
 #: inc/theme-enqueue.php:85
 msgid "No matches found."
 msgstr ""
@@ -223,51 +271,11 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: inc/theme-functions.php:236, template-parts/page-title/page-title-changelog.php:12
-msgid "Changelogs"
-msgstr ""
-
-#: inc/theme-functions.php:237
-msgid "Changelog"
-msgstr ""
-
-#: inc/theme-functions.php:238
-msgid "Edit Changelog Item"
-msgstr ""
-
-#: inc/theme-functions.php:239
-msgid "Update Changelog Item"
-msgstr ""
-
-#: inc/theme-functions.php:240
-msgid "Search Changelog Item"
-msgstr ""
-
-#: inc/theme-functions.php:279
-msgid "Edit Article"
-msgstr ""
-
-#: inc/theme-functions.php:280
-msgid "Update Article"
-msgstr ""
-
-#: inc/theme-functions.php:281
-msgid "Search Article"
-msgstr ""
-
-#: inc/theme-functions.php:309
-msgid "Knowbase Categories"
-msgstr ""
-
-#: inc/theme-functions.php:311
-msgid "Categories"
-msgstr ""
-
-#: inc/theme-functions.php:342
+#: inc/theme-functions.php:241
 msgid "1 min read"
 msgstr ""
 
-#: inc/theme-functions.php:340
+#: inc/theme-functions.php:239
 msgid " min read"
 msgstr ""
 
@@ -840,8 +848,36 @@ msgstr ""
 msgid "Portfolio"
 msgstr ""
 
+#: template-parts/page-title/page-title-changelog.php:12
+msgid "Changelogs"
+msgstr ""
+
+#: template-parts/page-title/page-title-theme.php:14
+msgid "The List of Premium WordPress Themes"
+msgstr ""
+
+#: template-parts/page-title/page-title-theme.php:16
+msgid "Themes and Demos List (%s items)"
+msgstr ""
+
 #: template-parts/post/post-default.php:52
 msgid "Read More"
+msgstr ""
+
+#: template-parts/theme/theme-style-1.php:48
+msgid "Live Theme"
+msgstr ""
+
+#: template-parts/theme/theme-style-1.php:51
+msgid "Details"
+msgstr ""
+
+#: template-parts/theme/theme-style-1.php:102
+msgid "%s sales"
+msgstr ""
+
+#: template-parts/theme/theme-style-1.php:106
+msgid "$%s"
 msgstr ""
 
 #: inc/framework/setup/section-core.php:17
@@ -860,67 +896,67 @@ msgstr ""
 msgid "Accent Colors"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:72, inc/framework/setup/section-core.php:80
+#: inc/framework/setup/section-core.php:71, inc/framework/setup/section-core.php:79
 msgid "Preloader"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:84, inc/framework/setup/section-core.php:106
+#: inc/framework/setup/section-core.php:82, inc/framework/setup/section-core.php:103
 msgid "Show"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:85, inc/framework/setup/section-core.php:107
+#: inc/framework/setup/section-core.php:83, inc/framework/setup/section-core.php:104
 msgid "Hide"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:94
+#: inc/framework/setup/section-core.php:92
 msgid "Additional"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:102
+#: inc/framework/setup/section-core.php:100
 msgid "\"Back to Top\" Button"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:119
+#: inc/framework/setup/section-core.php:116
 msgid "Selection Text Color"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:144
+#: inc/framework/setup/section-core.php:141
 msgid "Selection Background Color"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:172
+#: inc/framework/setup/section-core.php:169
 msgid "Custom Scrollbar"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:176
+#: inc/framework/setup/section-core.php:172
 msgid "Enable"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:177
+#: inc/framework/setup/section-core.php:173
 msgid "Disable"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:186
+#: inc/framework/setup/section-core.php:182
 msgid "Track Color"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:212
+#: inc/framework/setup/section-core.php:208
 msgid "Bar Color"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:238
+#: inc/framework/setup/section-core.php:234
 msgid "Bar Width"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:270
+#: inc/framework/setup/section-core.php:266
 msgid "Authorization Logo"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:280
+#: inc/framework/setup/section-core.php:275
 msgid "Logo Height"
 msgstr ""
 
-#: inc/framework/setup/section-core.php:297
+#: inc/framework/setup/section-core.php:291
 msgid "Logo Width"
 msgstr ""
 
@@ -932,15 +968,23 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: inc/framework/setup/section-header.php:30
+#: inc/framework/setup/section-header.php:29
 msgid "Link to Portfolio"
+msgstr ""
+
+#: inc/framework/setup/section-header.php:46
+msgid "Link"
+msgstr ""
+
+#: inc/framework/setup/section-header.php:55
+msgid "Banner"
 msgstr ""
 
 #: inc/framework/setup/section-knowbase.php:17
 msgid "Category Title"
 msgstr ""
 
-#: inc/framework/setup/section-knowbase.php:27
+#: inc/framework/setup/section-knowbase.php:26
 msgid "Number of Categories"
 msgstr ""
 
@@ -990,4 +1034,68 @@ msgstr ""
 
 #: inc/framework/setup/section-typography.php:427
 msgid "Label Typography"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-bestselling-themes.php:34
+msgid "Best-Selling Themes"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-bestselling-themes.php:42, template-parts/theme/sections/single-theme-section-related-themes.php:44
+msgid "All Themes"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-plugins.php:18
+msgid "Plugins & Modules"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-plugins.php:20
+msgid "Supported plugins & modules for extend the functionality of the theme."
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-related-themes.php:34
+msgid "Related Themes"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-related-themes.php:36
+msgid "Check out our popular themes and templates."
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-tagcloud.php:29
+msgid "<span class=\"vlt-theme-tagcloud__title\">Categories:</span> %s"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-tagcloud.php:35
+msgid "<span class=\"vlt-theme-tagcloud__title\">Colors:</span> %s"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-tagcloud.php:41
+msgid "<span class=\"vlt-theme-tagcloud__title\">Tags:</span> %s"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-tagcloud.php:47
+msgid "<span class=\"vlt-theme-tagcloud__title\">Styles:</span> %s"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-tagcloud.php:53
+msgid "<span class=\"vlt-theme-tagcloud__title\">Plugins:</span> %s"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-tagcloud.php:59
+msgid "<span class=\"vlt-theme-tagcloud__title\">Layouts:</span> %s"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-tagcloud.php:65
+msgid "<span class=\"vlt-theme-tagcloud__title\">Elements:</span> %s"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-tagcloud.php:71
+msgid "<span class=\"vlt-theme-tagcloud__title\">Authors:</span> %s"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-theme-features.php:18
+msgid "Theme Features"
+msgstr ""
+
+#: template-parts/theme/sections/single-theme-section-theme-features.php:20
+msgid "Theme features that will rock your WordPress."
 msgstr ""

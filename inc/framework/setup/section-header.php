@@ -16,7 +16,6 @@ VLT_Options::add_field( array(
 	'section' => 'section_header_options',
 	'label' => esc_html__( 'Logo', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'choices' => [
 		'language' => 'html',
 	],
@@ -29,6 +28,38 @@ VLT_Options::add_field( array(
 	'section' => 'section_header_options',
 	'label' => esc_html__( 'Link to Portfolio', '@@textdomain' ),
 	'priority' => $priority++,
-	'transport' => 'auto',
 	'default' => '',
+) );
+
+VLT_Options::add_field( array(
+	'type' => 'custom',
+	'settings' => 'sho_1',
+	'section' => 'section_header_options',
+	'default' => '<div class="kirki-separator">' . esc_html__( 'ADS', '@@textdomain' ) . '</div>',
+	'priority' => $priority++,
+) );
+
+VLT_Options::add_field( array(
+	'type' => 'url',
+	'settings' => 'ads_link',
+	'section' => 'section_header_options',
+	'label' => esc_html__( 'Link', '@@textdomain' ),
+	'priority' => $priority++,
+	'default' => '',
+) );
+
+VLT_Options::add_field( array(
+	'type' => 'image',
+	'settings' => 'ads_banner',
+	'section' => 'section_header_options',
+	'label' => esc_html__( 'Banner', '@@textdomain' ),
+	'priority' => $priority++,
+	'default' => '',
+	'active_callback' => array(
+		array(
+			'setting' => 'ads_link',
+			'operator' => '!=',
+			'value' => ''
+		)
+	)
 ) );
