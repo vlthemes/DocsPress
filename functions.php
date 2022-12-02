@@ -7,7 +7,7 @@
 
 define( 'DOCS_THEME_DIRECTORY', trailingslashit( get_template_directory_uri() ) );
 define( 'DOCS_REQUIRE_DIRECTORY', trailingslashit( get_template_directory() ) );
-define( 'DOCS_DEVELOPMENT', true );
+define( 'DOCS_DEVELOPMENT', false );
 
 /**
  * After setup theme
