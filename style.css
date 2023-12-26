@@ -1,13 +1,13 @@
 /*!
-Theme Name: Docs
-Theme URI: https://docs.vlthemes.com/
+Theme Name: DocsPress
+Theme URI: https://docs.vlthemes.me/
 Author: VLThemes
 Author URI: https://themeforest.net/user/vlthemes
-Description: Knowledge Base WordPress Theme
+Description: A Powerful WordPress Theme with Comprehensive Documentation, Knowledge Base, and Changelog Features.
 Version: @@version
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: docs
+Text Domain: docspress
 Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
 */
 
@@ -25,12 +25,12 @@ body {
 /* WordPress API Elements */
 
 .wp-caption {
+	max-width: 100%;
 	margin: 1em 0;
 	font-size: 12px;
-	text-align: center;
 	font-style: italic;
-	max-width: 100%;
 	color: #98999c;
+	text-align: center;
 }
 
 .wp-caption p,
@@ -52,16 +52,16 @@ body {
 }
 
 .aligncenter {
-	margin: 30px auto;
 	display: block;
+	margin: 30px auto;
 }
 
 .alignright {
-	margin: 10px 0 10px 30px;
 	float: right;
+	margin: 10px 0 10px 30px;
 }
 
 .alignleft {
-	margin: 10px 30px 10px 0;
 	float: left;
+	margin: 10px 30px 10px 0;
 }

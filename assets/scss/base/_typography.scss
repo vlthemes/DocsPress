@@ -1,12 +1,29 @@
+/* HTML
+-------------------------------------------- */
+
+html {
+	font-size: $base_font_size;
+
+	@include media-breakpoint-down(md) {
+		font-size: $base_font_size - 1px;
+	}
+
+	@include media-breakpoint-down(sm) {
+		font-size: $base_font_size - 2px;
+	}
+
+}
+
 /* BODY
 -------------------------------------------- */
 
 body {
-	min-width: 320px;
+	min-width: px2rem(320px);
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	color: var(--vlt-color-2);
+	color: var(--vlt-text-2);
+	background-color: var(--vlt-background-1);
 
 	@if $smooth_font {
 		-webkit-font-smoothing: antialiased;
@@ -23,40 +40,11 @@ img {
 	height: auto;
 }
 
-.wp-block-image {
-
-	@include markup {
-		margin: 4% 0;
-
-		img {
-			border: 6px solid var(--vlt-color-6);
-			box-shadow: 0 0 8px 0 var(--vlt-color-1-0p1);
-		}
-
-	}
-
-	figcaption {
-		font-size: 14px;
-		font-style: italic;
-		color: var(--vlt-color-5);
-	}
-
-}
-
 /* PARAGRAPH
 -------------------------------------------- */
 
 p {
 	margin: 0;
-
-	@include markup {
-		margin-bottom: 1.5em;
-
-		&:last-child {
-			margin-bottom: 0;
-		}
-
-	}
 
 	&:empty {
 		display: none;
@@ -108,12 +96,7 @@ h6,
 .h6 {
 	padding: 0;
 	margin: 0;
-	color: var(--vlt-color-1);
-
-	@include markup {
-		margin: 1em 0;
-	}
-
+	color: var(--vlt-text-1);
 }
 
 /* LIST
@@ -124,100 +107,91 @@ ol {
 	padding: 0;
 	margin: 0;
 	list-style-position: inside;
-
-	@include markup {
-		margin: 0 0 1.5em;
-	}
-
 }
 
-ol li,
-ul li {
+// ol li,
+// ul li {
 
-	@include markup {
-		margin-bottom: .6em;
+// 	@include markup {
+// 		margin-bottom: .6em;
 
-		&:last-child {
-			margin-bottom: 0;
-		}
+// 		&:last-child {
+// 			margin-bottom: 0;
+// 		}
 
-	}
+// 	}
 
-}
+// }
 
-ol ul,
-ul ol,
-ul ul,
-ol ol {
+// ol ul,
+// ul ol,
+// ul ul,
+// ol ol {
 
-	@include markup {
-		padding-left: 1.5em;
-		margin-top: .6em;
-		margin-bottom: 0;
-	}
+// 	@include markup {
+// 		padding-left: 1.5em;
+// 		margin-top: .6em;
+// 		margin-bottom: 0;
+// 	}
 
-}
+// }
 
-ol {
+// ol {
 
-	@include markup {
-		list-style-type: none;
-		counter-reset: ol;
+// 	@include markup {
+// 		list-style-type: none;
+// 		counter-reset: ol;
 
-		ol,
-		ul {
-			padding-left: 0;
-		}
+// 		ol,
+// 		ul {
+// 			padding-left: 0;
+// 		}
 
-		> li {
-			position: relative;
-			padding-left: 2.5em;
+// 		> li {
+// 			position: relative;
+// 			padding-left: 2.5em;
 
-			&::before {
-				content: counter(ol);
-				position: absolute;
-				top: 0;
-				left: 0;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 2em;
-				height: 2em;
-				font-size: 75%;
-				line-height: 1;
-				color: var(--vlt-color-6);
-				counter-increment: ol;
-				background-color: var(--vlt-accent-1);
-				border-radius: 50%;
-			}
+// 			&::before {
+// 				content: counter(ol);
+// 				position: absolute;
+// 				top: 0;
+// 				left: 0;
+// 				display: flex;
+// 				align-items: center;
+// 				justify-content: center;
+// 				width: 2em;
+// 				height: 2em;
+// 				font-size: 75%;
+// 				line-height: 1;
+// 				color: var(--vlt-color-6);
+// 				counter-increment: ol;
+// 				background-color: var(--vlt-accent-1);
+// 				border-radius: 50%;
+// 			}
 
-		}
+// 		}
 
-	}
+// 	}
 
-}
+// }
 
 /* DIVIDER
 -------------------------------------------- */
 
 hr {
-	margin: 1.5em 0;
+	margin: px2rm(25px) 0;
 	border: none;
-	border-bottom: 1px solid var(--vlt-color-4);
+	border-bottom: 1px solid var(--vlt-border-color-1);
 }
 
 /* BLOCKQUOTE
 -------------------------------------------- */
 
 blockquote {
-	padding: 0 0 0 1.5em;
+	padding: 0 0 0 px2rem(25px);
 	margin: 0;
 	color: var(--vlt-accent-1);
 	border-left: 3px solid currentColor;
-
-	@include markup {
-		margin-bottom: 2em;
-	}
 
 	code,
 	.code {
@@ -230,63 +204,32 @@ blockquote {
 
 }
 
-.wp-block-quote:not(.is-large):not(.is-style-large) {
-	border-color: var(--vlt-accent-1);
-}
-
-/* DROPCAP
--------------------------------------------- */
-
-p.has-drop-cap:not(:focus)::first-letter {
-	font-size: 5.7em;
-	font-weight: 400;
-	color: var(--vlt-accent-2);
-}
-
 /* PREFORMATTED
 -------------------------------------------- */
 
 code,
 .code {
-	padding: 2px 7px;
+	padding: px2rem(2px) px2rem(7px);
 	font-family: inherit;
-	color: var(--vlt-color-1);
+	font-size: inherit;
+	color: var(--vlt-text-1);
 	white-space: nowrap;
-	background-color: var(--vlt-color-7);
+	background-color: var(--vlt-background-3);
 	border-radius: var(--vlt-radius-1);
 }
 
 pre,
 .pre {
 	display: block;
-	padding: 20px;
+	padding: px2rem(20px);
 	overflow: auto;
 	clear: both;
-	font-size: 14px;
+	color: var(--vlt-text-1);
 	word-wrap: break-word;
 	white-space: pre-wrap;
-	background-color: var(--vlt-color-7);
-	border-radius: 4px;
-}
-
-pre + img {
-
-	@include markup {
-		margin-top: 2.4em;
-	}
-
-}
-
-/* GIST
--------------------------------------------- */
-
-.gist {
-
-	@include markup {
-		margin-top: 5%;
-		margin-bottom: 5%;
-	}
-
+	background-color: var(--vlt-background-3);
+	border-radius: var(--vlt-radius-1);
+	@include vlt_primary_regular_14;
 }
 
 /* FORM / INPUT / TEXTAREA / SELECT
@@ -298,64 +241,36 @@ form {
 
 label {
 	display: block;
-	margin-bottom: 5px;
-	color: var(--vlt-color-2);
+	margin-bottom: px2rem(5px);
+	color: var(--vlt-text-2);
 	user-select: none;
 }
 
-input[type="text"],
-input[type="date"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="url"],
-input[type="search"],
-input[type="number"],
+input[type=text],
+input[type=date],
+input[type=email],
+input[type=password],
+input[type=tel],
+input[type=url],
+input[type=search],
+input[type=number],
 textarea,
 select {
 	display: block;
 	width: 100%;
 	appearance: none;
-	padding: 10px 12px;
+	padding: px2rem(10px) px2rem(12px);
 	margin: 0;
+	color: var(--vlt-text-2);
 	background-color: transparent;
-	border: 1px solid var(--vlt-color-4);
+	border: 1px solid var(--vlt-border-color-1);
 	border-radius: var(--vlt-radius-1);
 	outline: none;
 	box-shadow: none;
 	transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
-}
-
-select {
-	appearance: none;
-	padding-right: 35px;
-	background: {
-		position: right 12px bottom 50%;
-		image: url('../img/select.png');
-		repeat: no-repeat;
-		size: 10px 6px;
-	}
-}
-
-textarea {
-	width: 100%;
-	max-width: 100%;
-	transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
-}
-
-input[type="text"],
-input[type="date"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-input[type="url"],
-input[type="search"],
-input[type="number"],
-textarea,
-select {
 
 	@include input-placeholder {
-		color: var(--vlt-color-5);
+		color: var(--vlt-text-3);
 		opacity: 1;
 	}
 
@@ -366,15 +281,43 @@ select {
 
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+	appearance: none;
+	margin: 0;
+}
+
+select {
+	background-image: var(--vlt-select-icon);
+	background-repeat: no-repeat;
+	background-position: right px2rem(12px) bottom 50%;
+	background-size: px2rem(18px) px2rem(18px);
+}
+
+textarea {
+	width: 100%;
+	max-width: 100%;
+	transition: height 0s;
+}
+
+button,
+input[type=submit] {
+
+	&:focus {
+		outline: none;
+	}
+
+}
+
 .vlt-form-group {
 	position: relative;
 	display: block;
-	margin-bottom: 1em;
+	margin-bottom: px2rem(16px);
 }
 
 .vlt-form-row {
 	display: grid;
-	grid-gap: 1em;
+	grid-gap: px2rem(16px);
 	grid-template-columns: repeat(1, 1fr);
 
 	@include media-breakpoint-down(md) {
@@ -401,25 +344,70 @@ select {
 
 }
 
+.vlt-checkbox {
+	position: relative;
+	display: flex;
+	align-items: center;
+	padding-left: px2rem(42px);
+	color: var(--vlt-text-2);
+	text-transform: none;
+	cursor: pointer;
+	user-select: none;
+	@include vlt_primary_regular_14;
+
+	&__checkmark {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: px2rem(25px);
+		height: px2rem(25px);
+		font-size: px2rem(16px);
+		background-color: transparent;
+		border: 1px solid var(--vlt-border-color-1);
+		border-radius: var(--vlt-radius-1);
+		transform: translateY(-50%);
+
+		&::after {
+			content: "";
+			font-family: var(--vlt-remixicon);
+			color: var(--vlt-text-1);
+		}
+
+	}
+
+	input[type=checkbox]:checked ~ .vlt-checkbox__checkmark {
+		background-color: var(--vlt-color-accent);
+
+		&::after {
+			content: "\eb7b";
+		}
+
+	}
+
+}
+
 /* DEFINITION LIST
 -------------------------------------------- */
 
 dl {
-	margin: 0 0 1.5em;
+	margin: 0 0 px2rem(25px);
 }
 
 dt {
-	font-weight: 500;
 	color: var(--vlt-accent-2);
+	@include vlt_primary_medium_16;
 }
 
 dd {
 	padding: 0;
-	margin: 8px 0 0 0;
+	margin: px2rem(8px) 0 0 0;
 }
 
 dd + dt {
-	margin-top: 1em;
+	margin-top: px2rem(16px);
 }
 
 /* TABLE
@@ -428,19 +416,19 @@ dd + dt {
 table {
 	width: 100%;
 	max-width: 100%;
-	margin: 0 0 1em;
+	margin: 0;
 	text-align: left;
 	border-collapse: collapse;
 
 	td,
 	th {
-		padding: .6em;
-		border: 1px solid var(--vlt-color-4);
+		padding: px2rem(10px);
+		border: 1px solid var(--vlt-border-color-1);
 	}
 
 	tr th,
 	thead th {
-		color: var(--vlt-color-2);
+		color: var(--vlt-text-2);
 	}
 
 }

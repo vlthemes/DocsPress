@@ -5,15 +5,15 @@
  * @version: @@version
  */
 
-define( 'DOCS_THEME_DIRECTORY', trailingslashit( get_template_directory_uri() ) );
-define( 'DOCS_REQUIRE_DIRECTORY', trailingslashit( get_template_directory() ) );
-define( 'DOCS_DEVELOPMENT', false );
+define( 'DOCSPRESS_THEME_DIRECTORY', trailingslashit( get_template_directory_uri() ) );
+define( 'DOCSPRESS_REQUIRE_DIRECTORY', trailingslashit( get_template_directory() ) );
+define( 'DOCSPRESS_DEVELOPMENT', false );
 
 /**
  * After setup theme
  */
-if ( ! function_exists( 'docs_setup' ) ) {
-	function docs_setup() {
+if ( ! function_exists( 'docspress_setup' ) ) {
+	function docspress_setup() {
 
 		/*
 		 * Make theme available for translation.
@@ -105,12 +105,12 @@ if ( ! function_exists( 'docs_setup' ) ) {
 			array(
 				'name' => esc_html__( 'First', '@@textdomain' ),
 				'slug' => 'first',
-				'color' => docs_get_theme_mod( 'accent_colors' )[ 'first' ],
+				'color' => docspress_get_theme_mod( 'accent_colors' )[ 'first' ],
 			),
 			array(
 				'name' => esc_html__( 'Second', '@@textdomain' ),
 				'slug' => 'second',
-				'color' => docs_get_theme_mod( 'accent_colors' )[ 'second' ],
+				'color' => docspress_get_theme_mod( 'accent_colors' )[ 'second' ],
 			),
 			array(
 				'name' => esc_html__( 'Success', '@@textdomain' ),
@@ -145,68 +145,68 @@ if ( ! function_exists( 'docs_setup' ) ) {
 		// thumbnail
 		add_image_size( 'docs-thumbnail', 80 );
 
-		// 800x600
-		add_image_size( 'docs-830x630_crop', 830, 630, true );
+		// 950x633
+		add_image_size( 'docs-950x633_crop', 950, 633, true );
 
 	}
 }
-add_action( 'after_setup_theme', 'docs_setup' );
+add_action( 'after_setup_theme', 'docspress_setup' );
 
 /**
  * Content width
  */
-if ( ! function_exists( 'docs_content_width' ) ) {
-	function docs_content_width() {
-		$GLOBALS['content_width'] = apply_filters( 'docs/content_width', 1140 );
+if ( ! function_exists( 'docspress_content_width' ) ) {
+	function docspress_content_width() {
+		$GLOBALS[ 'content_width' ] = apply_filters( 'docs/content_width', 1140 );
 	}
 }
-add_action( 'after_setup_theme', 'docs_content_width', 0 );
+add_action( 'after_setup_theme', 'docspress_content_width', 0 );
 
 
 /**
  * Import ACF fields
  */
-if ( ! DOCS_DEVELOPMENT ) {
-	function docs_acf_show_admin_panel() {
-		return apply_filters( 'archee/acf_show_admin_panel', false );
+if ( ! DOCSPRESS_DEVELOPMENT ) {
+	function docspress_acf_show_admin_panel() {
+		return apply_filters( 'docspress/acf_show_admin_panel', false );
 	}
-	add_filter( 'acf/settings/show_admin', 'docs_acf_show_admin_panel' );
+	add_filter( 'acf/settings/show_admin', 'docspress_acf_show_admin_panel' );
 }
 
-if ( ! DOCS_DEVELOPMENT ) {
-	require_once DOCS_REQUIRE_DIRECTORY . 'inc/helper/custom-fields/custom-fields.php';
+if ( ! DOCSPRESS_DEVELOPMENT ) {
+	require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/helper/custom-fields/custom-fields.php';
 }
 
-if ( ! function_exists( 'docs_acf_save_json' ) ) {
-	function docs_acf_save_json( $path ) {
-		$path = DOCS_REQUIRE_DIRECTORY . 'inc/helper/custom-fields';
+if ( ! function_exists( 'docspress_acf_save_json' ) ) {
+	function docspress_acf_save_json( $path ) {
+		$path = DOCSPRESS_REQUIRE_DIRECTORY . 'inc/helper/custom-fields';
 		return $path;
 	}
 }
-add_filter( 'acf/settings/save_json', 'docs_acf_save_json' );
+add_filter( 'acf/settings/save_json', 'docspress_acf_save_json' );
 
-if ( DOCS_DEVELOPMENT ) {
-	if ( ! function_exists( 'docs_acf_load_json' ) ) {
-		function docs_acf_load_json( $paths ) {
+if ( DOCSPRESS_DEVELOPMENT ) {
+	if ( ! function_exists( 'docspress_acf_load_json' ) ) {
+		function docspress_acf_load_json( $paths ) {
 			unset( $paths[0] );
-			$paths[] = DOCS_REQUIRE_DIRECTORY . 'inc/helper/custom-fields';
+			$paths[] = DOCSPRESS_REQUIRE_DIRECTORY . 'inc/helper/custom-fields';
 			return $paths;
 		}
 	}
-	add_filter( 'acf/settings/load_json', 'docs_acf_load_json' );
+	add_filter( 'acf/settings/load_json', 'docspress_acf_load_json' );
 }
 
 /**
  * Include Kirki fields
  */
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/customizer-helper.php';
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/customizer.php';
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/customizer-dynamic-css.php';
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/framework/customizer-helper.php';
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/framework/customizer.php';
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/framework/customizer-dynamic-css.php';
 
 /**
  * Required files
  */
-$docs_theme_includes = array(
+$docspress_theme_includes = array(
 	'required-plugins',
 	'enqueue',
 	'includes',
@@ -216,6 +216,6 @@ $docs_theme_includes = array(
 	'menus'
 );
 
-foreach ( $docs_theme_includes as $file ) {
-	require_once DOCS_REQUIRE_DIRECTORY . 'inc/theme-' . $file . '.php';
+foreach ( $docspress_theme_includes as $file ) {
+	require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/theme-' . $file . '.php';
 }

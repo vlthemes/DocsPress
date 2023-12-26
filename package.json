@@ -1,17 +1,21 @@
 {
-	"name": "docs",
-	"version": "2.0.0",
+	"name": "docspress",
+	"version": "2.0.1",
 	"main": "gulpfile.js",
-	"textdomain": "docs",
-	"slug": "docs",
+	"textdomain": "docspress",
+	"slug": "docspress",
 	"dependencies": {
 		"@fancyapps/fancybox": "^3.5.7",
+		"animsition": "^4.0.2",
+		"@popperjs/core": "^2.11.5",
 		"bootstrap": "^5.1.3",
 		"fitvids": "^2.1.1",
 		"highlightjs": "^9.16.2",
-		"jquery.scrollto": "^2.1.3",
 		"superclick": "github:joeldbirch/superclick",
-		"superfish": "^1.7.10"
+		"superfish": "^1.7.10",
+		"sharer.js": "^0.5.1",
+		"tippy.js": "^6.3.7",
+		"gist-simple": "github:nk-o/gist-simple"
 	},
 	"scripts": {
 		"start": "gulp",

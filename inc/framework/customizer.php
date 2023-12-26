@@ -5,7 +5,7 @@
  * @version: @@version
  */
 
-$theme_path_images = DOCS_THEME_DIRECTORY . 'assets/img/';
+$theme_path_images = DOCSPRESS_THEME_DIRECTORY . 'assets/img/';
 
 /**
 * Add config
@@ -34,6 +34,13 @@ VLT_Options::add_section( 'core_general', array(
 	'icon' => 'dashicons-admin-generic',
 ) );
 
+VLT_Options::add_section( 'core_night_mode', array(
+	'panel' => 'panel_core',
+	'title' => esc_html__( 'Night Mode', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-art',
+) );
+
 VLT_Options::add_section( 'core_selection', array(
 	'panel' => 'panel_core',
 	'title' => esc_html__( 'Selection', '@@textdomain' ),
@@ -48,6 +55,13 @@ VLT_Options::add_section( 'core_scrollbar', array(
 	'icon' => 'dashicons-sort',
 ) );
 
+VLT_Options::add_section( 'core_sidebars', array(
+	'panel' => 'panel_core',
+	'title' => esc_html__( 'Custom Sidebars', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-format-aside',
+) );
+
 VLT_Options::add_section( 'core_login_logo', array(
 	'panel' => 'panel_core',
 	'title' => esc_html__( 'Login Page', '@@textdomain' ),
@@ -55,29 +69,61 @@ VLT_Options::add_section( 'core_login_logo', array(
 	'icon' => 'dashicons-lock',
 ) );
 
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-core.php';
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-core.php';
 
 /**
  * Header
  */
-VLT_Options::add_section( 'section_header_options', array(
+VLT_Options::add_section( 'section_header_general', array(
 	'title' => esc_html__( 'Header Options', '@@textdomain' ),
 	'priority' => $first_level++,
 	'icon' => 'dashicons-arrow-up-alt',
 ) );
 
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-header.php';
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-header.php';
 
 /**
  * Footer
  */
-VLT_Options::add_section( 'section_footer_options', array(
+VLT_Options::add_section( 'section_footer_general', array(
 	'title' => esc_html__( 'Footer Options', '@@textdomain' ),
 	'priority' => $first_level++,
 	'icon' => 'dashicons-arrow-down-alt',
 ) );
 
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-footer.php';
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-footer.php';
+
+/**
+ * Pages
+ */
+VLT_Options::add_panel( 'panel_page', array(
+	'title' => esc_html__( 'Page Options', '@@textdomain' ),
+	'priority' => $first_level++,
+	'icon' => 'dashicons-admin-page',
+) );
+
+VLT_Options::add_section( 'section_knowbase', array(
+	'panel' => 'panel_page',
+	'title' => esc_html__( 'Knowbase', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-media-document',
+) );
+
+VLT_Options::add_section( 'section_changelog', array(
+	'panel' => 'panel_page',
+	'title' => esc_html__( 'Changelog', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-media-document',
+) );
+
+VLT_Options::add_section( 'section_docs', array(
+	'panel' => 'panel_page',
+	'title' => esc_html__( 'Documentation', '@@textdomain' ),
+	'priority' => $second_level++,
+	'icon' => 'dashicons-media-document',
+) );
+
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-pages.php';
 
 /**
  * Typography
@@ -123,20 +169,15 @@ VLT_Options::add_section( 'typography_input', array(
 	'icon' => 'dashicons-edit',
 ) );
 
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-typography.php';
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-typography.php';
 
 /**
- * Knowbase
+ * Advanced
  */
+VLT_Options::add_section( 'section_advanced', array(
+	'title' => esc_html__( 'Advanced', '@@textdomain' ),
+	'priority' => 9999,
+	'icon' => 'dashicons-star-filled',
+) );
 
-add_action( 'init', function() {
-
-	VLT_Options::add_section( 'section_knowbase_options', array(
-		'title' => esc_html__( 'Knowbase Options', '@@textdomain' ),
-		'priority' => 55,
-		'icon' => 'dashicons-editor-ol',
-	) );
-
-	require_once DOCS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-knowbase.php';
-
-});
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/framework/setup/section-advanced.php';

@@ -6,26 +6,33 @@
  */
 
 /**
+ * Wrapper function to deal with backwards compatibility.
+ */
+if ( ! function_exists( 'docspress_body_open' ) ) {
+	function docspress_body_open() {
+		if ( function_exists( 'wp_body_open' ) ) {
+			wp_body_open();
+		} else {
+			do_action( 'wp_body_open' );
+		}
+	}
+}
+
+/**
  * Sanitize slass tag
  */
-if ( ! function_exists( 'docs_sanitize_class' ) ) {
-	function docs_sanitize_class( $class, $fallback = null ) {
+if ( ! function_exists( 'docspress_sanitize_class' ) ) {
+	function docspress_sanitize_class( $class, $fallback = null ) {
 
 		if ( is_string( $class ) ) {
-
 			$class = explode( ' ', $class );
-
 		}
 
 		if ( is_array( $class ) && count( $class ) > 0 ) {
-
-			$class = array_map( 'sanitize_html_class', $class );
+			$class = array_map( 'esc_attr', $class );
 			return implode( ' ', $class );
-
 		} else {
-
-			return sanitize_html_class( $class, $fallback );
-
+			return esc_attr( $class, $fallback );
 		}
 
 	}
@@ -34,22 +41,20 @@ if ( ! function_exists( 'docs_sanitize_class' ) ) {
 /**
  * Sanitize style tag
  */
-if ( ! function_exists( 'docs_sanitize_style' ) ) {
-	function docs_sanitize_style( $style ) {
-
+if ( ! function_exists( 'docspress_sanitize_style' ) ) {
+	function docspress_sanitize_style( $style ) {
 		$allowed_html = array(
 			'style' => array ()
 		);
 		return wp_kses( $style, $allowed_html );
-
 	}
 }
 
 /**
  * Callback for custom comment
  */
-if ( ! function_exists( 'docs_callback_custom_comment' ) ) {
-	function docs_callback_custom_comment( $comment, $args, $depth ) {
+if ( ! function_exists( 'docspress_callback_custom_comment' ) ) {
+	function docspress_callback_custom_comment( $comment, $args, $depth ) {
 
 		$GLOBALS['comment'] = $comment;
 		global $post;
@@ -123,15 +128,15 @@ if ( ! function_exists( 'docs_callback_custom_comment' ) ) {
 /**
  * Get trimmed content
  */
-if ( ! function_exists( 'docs_get_trimmed_content' ) ) {
-	function docs_get_trimmed_content( $content = false, $max_words = 18 ) {
+if ( ! function_exists( 'docspress_get_trimmed_content' ) ) {
+	function docspress_get_trimmed_content( $max_words = 18 ) {
 
-		if ( $content == false ) {
-			return;
-		}
+		global $post;
 
+		$content = $post->post_excerpt != '' ? $post->post_excerpt : $post->post_content;
 		$content = preg_replace( '~(?:\[/?)[^/\]]+/?\]~s', '', $content );
 		$content = strip_tags( $content );
+		$content = strip_shortcodes( $content );
 		$words = explode( ' ', $content, $max_words + 1 );
 		if ( count( $words ) > $max_words ) {
 			array_pop( $words );
@@ -140,7 +145,7 @@ if ( ! function_exists( 'docs_get_trimmed_content' ) ) {
 		$content = implode( ' ', $words );
 		$content = esc_html( $content );
 
-		return apply_filters( 'docs/get_trimmed_content', $content );
+		return apply_filters( 'docspress/get_trimmed_content', $content );
 
 	}
 }
@@ -148,8 +153,8 @@ if ( ! function_exists( 'docs_get_trimmed_content' ) ) {
 /**
  * Get post taxonomy
  */
-if ( ! function_exists( 'docs_get_post_taxonomy' ) ) {
-	function docs_get_post_taxonomy( $post_id, $taxonomy, $delimiter = ', ', $get = 'name', $link = true ) {
+if ( ! function_exists( 'docspress_get_post_taxonomy' ) ) {
+	function docspress_get_post_taxonomy( $post_id, $taxonomy, $delimiter = ', ', $get = 'name', $link = true ) {
 
 		$tags = wp_get_post_terms( $post_id, $taxonomy );
 		$list = '';
@@ -168,17 +173,21 @@ if ( ! function_exists( 'docs_get_post_taxonomy' ) ) {
 }
 
 /**
- * Get attachment image
+ * Render elementor template
  */
-if ( ! function_exists( 'docs_get_attachment_image' ) ) {
-	function docs_get_attachment_image( $imageID, $size = 'docs-830x630_crop', $class = '' ) {
+if ( ! function_exists( 'docspress_render_elementor_template' ) ) {
+	function docspress_render_elementor_template( $template ) {
 
-		$output = wp_get_attachment_image( $imageID, $size, false, array(
-			'class' => $class,
-			'src' => wp_get_attachment_image_src( $imageID, $size )[0],
-			'srcset' => wp_get_attachment_image_srcset( $imageID, $size )
-		) );
-		return apply_filters( 'docs/get_attachment_image', $output );
+		if ( ! $template ) {
+			return;
+		}
+
+		if ( 'publish' !== get_post_status( $template ) ) {
+			return;
+		}
+
+		$new_frontend = new Elementor\Frontend;
+		return $new_frontend->get_builder_content_for_display( $template, false );
 
 	}
 }
@@ -186,25 +195,24 @@ if ( ! function_exists( 'docs_get_attachment_image' ) ) {
 /**
  * The post navigation
  */
-if ( ! function_exists( 'docs_the_posts_navigation' ) ) {
-	function docs_the_posts_navigation() {
-
+if ( ! function_exists( 'docspress_the_posts_navigation' ) ) {
+	function docspress_the_posts_navigation( $title = 'posts' ) {
 		the_posts_pagination(
 			array(
 				'mid_size' => 2,
-				'prev_text' => sprintf( '<span class="nav-prev-text">%s</span>', __( 'Newer posts', '@@textdomain' ) ),
-				'next_text' => sprintf( '<span class="nav-next-text">%s</span>', __( 'Older posts', '@@textdomain' ) ),
+				'prev_text' => sprintf( '<span class="nav-prev-text">%s</span>', __( 'Newer ' . $title, '@@textdomain' ) ),
+				'next_text' => sprintf( '<span class="nav-next-text">%s</span>', __( 'Older ' . $title, '@@textdomain' ) ),
+				'class' => 'vlt-pagination'
 			)
 		);
-
 	}
 }
 
 /**
  * Get comment navigation
  */
-if ( ! function_exists( 'docs_get_comment_navigation' ) ) {
-	function docs_get_comment_navigation() {
+if ( ! function_exists( 'docspress_get_comment_navigation' ) ) {
+	function docspress_get_comment_navigation() {
 
 		$output = '';
 
@@ -229,8 +237,8 @@ if ( ! function_exists( 'docs_get_comment_navigation' ) ) {
 /**
  * Reading time
  */
-if ( ! function_exists( 'docs_get_reading_time' ) ) {
-	function docs_get_reading_time() {
+if ( ! function_exists( 'docspress_get_reading_time' ) ) {
+	function docspress_get_reading_time() {
 		global $post;
 		$wpm = 200;
 		$words = str_word_count( strip_tags( $post->post_content ) );
@@ -241,5 +249,66 @@ if ( ! function_exists( 'docs_get_reading_time' ) ) {
 			$output = esc_html__( '1 min read', '@@textdomain' );
 		}
 		return apply_filters( 'docs/get_reading_time', $output );
+	}
+}
+
+/**
+ * Post views
+ */
+if ( ! function_exists( 'docspress_set_post_views' ) ) {
+	function docspress_set_post_views( $postID ) {
+
+		$count_key = 'views';
+		$count = get_post_meta( $postID, $count_key, true );
+		if ( $count == '' ) {
+			$count = 0;
+			delete_post_meta( $postID, $count_key );
+			add_post_meta( $postID, $count_key, '0' );
+		} else {
+			$count++;
+			update_post_meta( $postID, $count_key, $count );
+		}
+
+	}
+}
+add_action( 'wp_head', 'docspress_track_post_views' );
+
+if ( ! function_exists( 'docspress_track_post_views' ) ) {
+	function docspress_track_post_views( $postID ) {
+
+		if ( !is_single() ) {
+			return;
+		}
+		if ( empty( $postID ) ) {
+			global $post;
+			$postID = $post->ID;
+		}
+		docspress_set_post_views( $postID );
+
+	}
+}
+
+if ( ! function_exists( 'docspress_get_post_views' ) ) {
+	function docspress_get_post_views( $postID ) {
+
+		$count_key = 'views';
+		$count = get_post_meta( $postID, $count_key, true );
+		if ( $count == '' ) {
+			delete_post_meta( $postID, $count_key );
+			add_post_meta( $postID, $count_key, '0' );
+			return '0';
+		}
+		return $count;
+
+	}
+}
+
+/*
+ * Check is elementor post/page
+ */
+if ( ! function_exists( 'docspress_check_is_elementor' ) ) {
+	function docspress_check_is_elementor() {
+		global $post;
+		return \Elementor\Plugin::$instance->documents->get( $post->ID )->is_built_with_elementor();
 	}
 }

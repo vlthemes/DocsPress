@@ -1,5 +1,5 @@
 /* Master Stylesheet
- * Version: 1.0
+ * Version: 1.0.0
  *
  * Powered by VLThemes
  *
@@ -9,89 +9,79 @@
  * 03. Layout
  * 04. Pages
  * 05. Partials
- * 06. Elements
+ * 06. Widgets
  * 07. Plugins
  * 08. WordPress
  * 09. Docspress
- * 10. Ghostkit
  */
 
 /* 00. Framework */
 
-@import
-	"plugins/bootstrap";
+@import "plugins/bootstrap";
 
 /* 01. Helpers */
-@import
-	"abstracts/mixins",
-	"abstracts/variables",
-	"abstracts/functions",
-	"abstracts/keyframes",
-	"abstracts/snippets";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+@import "abstracts/keyframes";
+@import "abstracts/typography";
+@import "abstracts/snippets";
 
 /* 02. Base */
-@import
-	"base/helper-classes",
-	"base/typography";
+@import "base/helper-classes";
+@import "base/typography";
 
 /* 03. Layout */
-@import
-	"layout/grid",
-	"layout/header",
-	"layout/footer";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
 
 /* 04. Layout */
-@import
-	"pages/404",
-	"pages/page",
-	"pages/post",
-	"pages/post-single",
-	"pages/knowbase",
-	"pages/changelog";
+@import "pages/404";
+@import "pages/post";
+@import "pages/post-single";
+@import "pages/knowbase";
+@import "pages/changelog";
+@import "pages/changelog-single";
 
 /* 05. Partials */
-@import
-	"partials/deactivate-form",
-	"partials/page-title",
-	"partials/back-to-top",
-	"partials/site-preloader";
+@import "partials/ads-banner";
+// @import "partials/deactivate-form",
+@import "partials/page-title";
+@import "partials/info-bar";
+@import "partials/share";
+@import "partials/back-to-top";
+@import "partials/night-mode-switcher";
+@import "partials/social-icons";
+@import "partials/site-preloader";
 
-/* 06. Elements */
-@import
-	"elements/button";
+/* 06. Widgets */
+@import "widgets/alert-message";
+@import "widgets/button";
+@import "widgets/changelog";
+@import "widgets/contact-form-7";
+@import "widgets/gist-simple";
+@import "widgets/heading";
+@import "widgets/list-editor";
+@import "widgets/simple-image";
+@import "widgets/spacer";
 
 /* 07. Plugins */
-@import
-	"plugins/contact-form-7",
-	"plugins/mailchimp-form",
-	"plugins/fancybox",
-	"plugins/highlight",
-	"plugins/superfish";
+@import "plugins/fancybox";
+@import "plugins/highlight";
+@import "plugins/tippy";
+@import "plugins/superfish";
 
 /* 08. WordPress */
-@import
-	"wordpress/comments",
-	"wordpress/sidebar",
-	"wordpress/link-pages",
-	"wordpress/page-navigation",
-	"wordpress/password-protected";
+@import "wordpress/comments";
+@import "wordpress/sidebar";
+@import "wordpress/link-pages";
+@import "wordpress/pagination";
+@import "wordpress/password-protected";
 
 /* 09. Docspress */
-@import
-	"docspress/global",
-	"docspress/sidebar",
-	"docspress/content",
-	"docspress/archive";
-
-/* 10. Ghostkit */
-@import
-	"ghostkit/ghostkit",
-	"ghostkit/accordion",
-	"ghostkit/counter-box",
-	"ghostkit/alert",
-	"ghostkit/badge",
-	"ghostkit/tabs",
-	"ghostkit/testimonial",
-	"ghostkit/icon-box",
-	"ghostkit/changelog",
-	"ghostkit/video";
+@import "docspress/global";
+	// "docspress/sidebar",
+	// "docspress/content",
+@import "docspress/single";
+@import "docspress/archive";

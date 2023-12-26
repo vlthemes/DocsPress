@@ -7,12 +7,22 @@
 
 ?>
 
-<article <?php post_class( 'vlt-post vlt-post--single' ); ?>>
+<article <?php post_class( 'vlt-post vlt-post--single-changelog' ); ?>>
 
 	<header class="vlt-post-header">
 
-		<h1 class="vlt-post-title"><i class="far fa-file-alt"></i><?php the_title(); ?></h1>
+		<h1 class="vlt-post-title"><i class="ri-file-line"></i><?php the_title(); ?></h1>
 		<!-- /.vlt-post-title -->
+
+		<?php if ( docspress_get_field( 'recent_version' ) ) : ?>
+
+			<div class="vlt-post-version">
+				<small><?php esc_html_e( 'Recent version:', '@@textdomain' ); ?></small>
+				<span class="badge"><?php echo docspress_get_field( 'recent_version' ); ?></span>
+			</div>
+			<!-- /.vlt-post-version -->
+
+		<?php endif; ?>
 
 	</header>
 	<!-- /.vlt-post-header -->
@@ -26,30 +36,23 @@
 
 	<footer class="vlt-post-footer">
 
-		<?php
+		<div class="vlt-post-modified">
 
-			if ( get_the_tags() ) {
-				echo '<div class="vlt-tags">';
-				the_tags();
-				echo '</div>';
-			}
+			<div itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<meta itemprop="name" content="<?php echo esc_attr( get_the_author() ); ?>" />
+				<meta itemprop="url" content="<?php echo esc_attr( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" />
+			</div>
 
-		?>
+			<meta itemprop="datePublished" content="<?php echo esc_attr( get_the_time( 'c' ) ); ?>"/>
+			<time itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>">
+				<?php
+				// translators: %s - last time modified.
+				printf( esc_html__( 'Last modified %s', '@@textdomain' ), esc_html( get_the_modified_date() ) );
+				?>
+			</time>
 
-		<?php
-
-			wp_link_pages( array(
-				'before' => '<div class="vlt-link-pages"><h5>' . esc_html__( 'Pages: ', '@@textdomain' ) . '</h5>',
-				'after' => '</div>',
-				'separator' => '<span class="sep">|</span>',
-				'nextpagelink' => esc_html__( 'Next page', '@@textdomain' ),
-				'previouspagelink' => esc_html__( 'Previous page', '@@textdomain' ),
-				'next_or_number' => 'next'
-			) );
-
-		?>
-
-		<?php edit_post_link( __( 'Edit', '@@textdomain' ), '<span class="vlt-edit-link">', '</span>' ); ?>
+		</div>
+		<!-- /.vlt-post-modified -->
 
 	</footer>
 	<!-- /.vlt-post-footer -->

@@ -2,10 +2,10 @@
 -------------------------------------------- */
 
 .vlt-link-pages {
-	margin-top: 2.5em;
+	margin-top: px2rem(40px);
 
 	h5 {
-		margin: 0 0 .6em;
+		margin: 0 0 px2rem(10px);
 	}
 
 	a {
@@ -14,8 +14,8 @@
 	}
 
 	.sep {
-		margin: 0 1em;
-		color: var(--vlt-color-5);
+		margin: 0 px2rem(16px);
+		color: var(--vlt-text-3);
 	}
 
 }

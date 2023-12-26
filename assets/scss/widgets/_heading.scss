@@ -1,0 +1,23 @@
+/* WIDGET: HEADING
+-------------------------------------------- */
+
+h1.vlt-heading,
+h2.vlt-heading,
+h3.vlt-heading,
+h4.vlt-heading,
+h5.vlt-heading,
+h6.vlt-heading,
+div.vlt-heading,
+span.vlt-heading {
+	margin: 0;
+
+	.docs-link {
+		display: inline-flex;
+		margin-left: .5em;
+	}
+
+	a:not(.docs-link):hover {
+		color: currentColor;
+	}
+
+}

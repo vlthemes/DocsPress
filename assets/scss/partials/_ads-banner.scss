@@ -1,0 +1,14 @@
+/* PARTIAL: ADS BANNER
+-------------------------------------------- */
+
+.vlt-ads-banner {
+	display: flex;
+	margin-bottom: px2rem(50px);
+	overflow: hidden;
+	border-radius: var(--vlt-radius-2);
+
+	@include media-breakpoint-down(xl) {
+		display: none;
+	}
+
+}

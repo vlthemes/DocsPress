@@ -10,13 +10,13 @@
 	}
 
 	caption {
-		padding: 0 0 15px;
-		font-weight: 500;
-		color: var(--vlt-color-2);
+		padding: 0 0 px2rem(15px);
+		color: var(--vlt-text-2);
+		@include vlt_primary_medium_16;
 	}
 
 	#today {
-		color: var(--vlt-color-6);
+		color: var(--vlt-color-white);
 		background-color: var(--vlt-accent-1);
 	}
 

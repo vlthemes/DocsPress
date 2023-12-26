@@ -6,7 +6,7 @@
 	.vlt-widget__title {
 
 		img {
-			margin-right: 4px;
+			margin-right: px2rem(4px);
 		}
 
 	}
@@ -15,19 +15,19 @@
 
 		.rss-date {
 			display: block;
-			margin: 1em 0;
-			font-size: 14px;
-			color: var(--vlt-color-5);
+			margin: px2rem(10px) 0;
+			color: var(--vlt-text-3);
+			@include vlt_primary_regular_12;
 		}
 
 		cite {
-			margin: 1em 0 0;
+			margin: px2rem(16px) 0 0;
 		}
 
 	}
 
 	li + li {
-		margin-top: 1em;
+		margin-top: px2rem(16px);
 	}
 
 }

@@ -7,14 +7,39 @@
 
 $priority = 0;
 
-/**
- * Footer general
- */
 VLT_Options::add_field( array(
-	'type' => 'editor',
-	'settings' => 'footer_copyright',
-	'section' => 'section_footer_options',
-	'label' => esc_html__( 'Copyright', '@@textdomain' ),
+	'type' => 'custom',
+	'settings' => 'sfg_1',
+	'section' => 'section_footer_general',
+	'default' => '<div class="kirki-separator">' . esc_html__( 'General', '@@textdomain' ) . '</div>',
 	'priority' => $priority++,
-	'default' => '<p>© %s DocsPress. All rights reserved.</p>',
+) );
+
+VLT_Options::add_field( array(
+	'type' => 'select',
+	'settings' => 'footer_show',
+	'section' => 'section_footer_general',
+	'label' => esc_html__( 'Footer Show', '@@textdomain' ),
+	'priority' => $priority++,
+	'choices' => array(
+		'show' => esc_html__( 'Show', '@@textdomain' ),
+		'hide' => esc_html__( 'Hide', '@@textdomain' ),
+	),
+	'default' => 'hide',
+) );
+
+VLT_Options::add_field( array(
+	'type' => 'select',
+	'settings' => 'footer_template',
+	'section' => 'section_footer_general',
+	'label' => esc_html__( 'Footer Template', '@@textdomain' ),
+	'priority' => $priority++,
+	'choices' => docspress_get_elementor_templates(),
+	'active_callback' => array(
+		array(
+			'setting' => 'footer_show',
+			'operator' => '==',
+			'value' => 'show'
+		),
+	)
 ) );

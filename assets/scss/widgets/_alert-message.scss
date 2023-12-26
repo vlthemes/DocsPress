@@ -1,0 +1,76 @@
+/* WIDGET: ALERT MESSAGE
+-------------------------------------------- */
+
+.vlt-alert-message {
+	position: relative;
+	padding: px2rem(16px);
+	margin: 0;
+	color: var(--vlt-warning-color);
+	text-align: left;
+	list-style-type: none;
+	background-color: transparent;
+	border: 1px solid currentColor;
+	border-left-width: px2rem(3px);
+	border-radius: var(--vlt-radius-1);
+
+	&--danger {
+		color: var(--vlt-danger-color);
+	}
+
+	&--success {
+		color: var(--vlt-success-color);
+	}
+
+	&--info {
+		color: var(--vlt-info-color);
+	}
+
+	&--has-dismiss {
+
+		.vlt-alert-message__inner {
+			padding-right: px2rem(20px);
+		}
+
+	}
+
+	&__inner {
+		display: flex;
+
+		> i,
+		> svg {
+			margin-right: px2rem(16px);
+			font-size: 1.2em;
+			color: inherit;
+			align-self: flex-start;
+		}
+
+		svg {
+			height: 1em;
+		}
+
+	}
+
+	&__dismiss {
+		position: absolute;
+		top: 50%;
+		right: px2rem(16px);
+		font-size: px2rem(22px);
+		line-height: 1;
+		color: currentColor;
+		transform: translate3d(0, -50%, 0);
+
+		&:hover {
+			color: currentColor;
+		}
+
+	}
+
+	p:first-of-type {
+		margin-top: 0;
+	}
+
+	p:last-of-type {
+		margin-bottom: 0;
+	}
+
+}

@@ -24,21 +24,42 @@
 
 }
 
-.vlt-site-preloader {
+/* PARTIAL: SITE PRELOADER
+-------------------------------------------- */
 
-	.spinner span {
-		display: inline-block;
-		width: 2em;
-		height: 2em;
-		border: 2px solid var(--vlt-color-1-0p1);
-		border-bottom-color: var(--vlt-accent-2);
-		border-radius: 50%;
-		animation: {
-			name: vlt_spin;
-			duration: .75s;
-			iteration-count: infinite;
-			timing-function: linear;
-		}
-	}
+.animsition,
+.animsition-overlay {
+	position: static;
+}
 
+.animsition-image {
+	position: fixed;
+	top: calc(50% - #{px2rem(30px)});
+	left: calc(50% - #{px2rem(30px)});
+	width: px2rem(60px);
+	height: px2rem(60px);
+	animation: vlt_spin 1s infinite var(--vlt-transition-easing);
+	z-index: z("site-preloader");
+}
+
+.animsition-spinner {
+	position: fixed;
+	top: calc(50% - #{px2rem(16px)});
+	left: calc(50% - #{px2rem(16px)});
+	width: px2rem(32px);
+	height: px2rem(32px);
+	animation: vlt_spin 1s infinite var(--vlt-transition-easing);
+	z-index: z("site-preloader");
+}
+
+.spinner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	border: 2px solid var(--vlt-border-color-2);
+	border-bottom-color: var(--vlt-accent-2);
+	border-radius: 50%;
 }

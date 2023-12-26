@@ -2,24 +2,22 @@
 -------------------------------------------- */
 
 .vlt-widget.widget_tag_cloud {
-	line-height: 1.8;
 
 	a {
-		display: inline-block;
-		margin: 0 0 5px;
-		padding: 2px 8px;
-		font-size: 14px !important;
-		text-decoration: none;
-		letter-spacing: 0;
+		display: inline-flex;
+		padding: px2rem(2px) px2rem(8px);
+		margin: 0 px2rem(5px) px2rem(5px) 0;
+		font-size: px2rem(14px) !important;
 		color: var(--vlt-accent-2);
-		border: 1px solid var(--vlt-color-4);
-		border-radius: 2px;
+		text-decoration: none;
 		background-color: transparent;
+		border: 1px solid var(--vlt-border-color-1);
+		border-radius: var(--vlt-radius-1);
 
 		&:hover {
-			color: var(--vlt-color-6);
-			border-color: var(--vlt-color-2);
-			background-color: var(--vlt-color-2);
+			color: var(--vlt-color-white);
+			background-color: var(--vlt-accent-2);
+			border-color: var(--vlt-accent-2);
 		}
 
 	}

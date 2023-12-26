@@ -7,15 +7,20 @@
 
 get_header(); ?>
 
-<main class="vlt-main vlt-main--padding">
+<main class="vlt-main">
 
-	<?php
+	<div class="vlt-page-content vlt-page-content--padding">
 
-		while ( have_posts() ) : the_post();
-			get_template_part( 'template-parts/single-post/single-post', 'knowbase' );
-		endwhile;
+		<?php
 
-	?>
+			while ( have_posts() ) : the_post();
+				get_template_part( 'template-parts/single-post/single-post', 'knowbase' );
+			endwhile;
+
+		?>
+
+	</div>
+	<!-- /.vlt-page-content -->
 
 </main>
 <!-- /.vlt-main -->

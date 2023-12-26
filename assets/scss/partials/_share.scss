@@ -1,0 +1,64 @@
+/* PARTIAL: SHARE
+-------------------------------------------- */
+
+.vlt-docspress-share {
+	display: grid;
+	align-items: center;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: px2rem(25px);
+
+	@include media-breakpoint-down(md) {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	&__links {
+		color: var(--vlt-color-shade-0);
+
+		@include media-breakpoint-down(md) {
+			text-align: center;
+		}
+
+	}
+
+	&__permalink {
+		position: relative;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: px2rem(60px);
+			bottom: 0;
+			width: px2rem(150px);
+			width: 50%;
+			pointer-events: none;
+			border-top-right-radius: var(--vlt-radius-1);
+			border-bottom-right-radius: var(--vlt-radius-1);
+		}
+
+		input[type=text] {
+			padding-right: px2rem(60px);
+		}
+
+		span {
+			position: absolute;
+			top: 0;
+			right: px2rem(20px);
+			bottom: 0;
+			display: inline-flex;
+			align-items: center;
+			font-size: px2rem(16px);
+			color: var(--vlt-text-3);
+			cursor: pointer;
+			transition: color var(--vlt-transition-duration) var(--vlt-transition-easing);
+			z-index: 2;
+
+			&:hover {
+				color: var(--vlt-text-1);
+			}
+
+		}
+
+	}
+
+}

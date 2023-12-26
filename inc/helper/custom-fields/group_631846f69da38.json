@@ -1,11 +1,12 @@
 {
     "key": "group_631846f69da38",
-    "title": "[Product]",
+    "title": "[Product] Item",
     "fields": [
         {
             "key": "field_631846f61209b",
             "label": "Name",
             "name": "product_name",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -25,6 +26,7 @@
             "key": "field_6318471c1209d",
             "label": "Slug",
             "name": "product_slug",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -59,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1662535757
+    "modified": 1703323512
 }

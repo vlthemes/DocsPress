@@ -4,9 +4,9 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 
 .badge {
-	color: var(--vlt-color-5);
+	color: var(--vlt-color-white);
 	text-transform: uppercase;
 	white-space: nowrap;
-	background-color: var(--vlt-color-7);
+	background-color: var(--vlt-accent-1);
 	border-radius: var(--vlt-radius-1);
 }

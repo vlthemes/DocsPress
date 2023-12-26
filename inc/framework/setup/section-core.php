@@ -12,36 +12,6 @@ $priority = 0;
  */
 VLT_Options::add_field( array(
 	'type' => 'custom',
-	'settings' => 'sg_1',
-	'section' => 'core_general',
-	'default' => '<div class="kirki-separator">' . esc_html__( 'Body', '@@textdomain' ) . '</div>',
-	'priority' => $priority++,
-) );
-
-VLT_Options::add_field( array(
-	'type' => 'background',
-	'settings' => 'body_background',
-	'section' => 'core_general',
-	'label' => esc_html__( 'Site Background', '@@textdomain' ),
-	'priority' => $priority++,
-	'default' => array(
-		'background-color' => '#f0f1f3',
-		'background-image' => '',
-		'background-repeat' => 'repeat',
-		'background-position' => 'top left',
-		'background-size' => 'auto',
-		'background-attachment' => 'fixed',
-	),
-	'transport' => 'auto',
-	'output' => array(
-		array(
-			'element' => 'body'
-		),
-	),
-) );
-
-VLT_Options::add_field( array(
-	'type' => 'custom',
 	'settings' => 'sg_2',
 	'section' => 'core_general',
 	'default' => '<div class="kirki-separator">' . esc_html__( 'Colors', '@@textdomain' ) . '</div>',
@@ -64,9 +34,10 @@ VLT_Options::add_field( array(
 	)
 ) );
 
+
 VLT_Options::add_field( array(
 	'type' => 'custom',
-	'settings' => 'sg_3',
+	'settings' => 'sg_2',
 	'section' => 'core_general',
 	'default' => '<div class="kirki-separator">' . esc_html__( 'Preloader', '@@textdomain' ) . '</div>',
 	'priority' => $priority++,
@@ -74,15 +45,32 @@ VLT_Options::add_field( array(
 
 VLT_Options::add_field( array(
 	'type' => 'select',
-	'settings' => 'preloader',
+	'settings' => 'preloader_style',
 	'section' => 'core_general',
-	'label' => esc_html__( 'Preloader', '@@textdomain' ),
+	'label' => esc_html__( 'Style Preloader', '@@textdomain' ),
 	'priority' => $priority++,
 	'choices' => array(
-		'show' => esc_html__( 'Show', '@@textdomain' ),
-		'hide' => esc_html__( 'Hide', '@@textdomain' )
+		'none' => esc_html__( 'None', '@@textdomain' ),
+		'image' => esc_html__( 'Image', '@@textdomain' ),
+		'spinner' => esc_html__( 'Spinner', '@@textdomain' )
 	),
-	'default' => 'show',
+	'default' => 'spinner'
+) );
+
+VLT_Options::add_field( array(
+	'type' => 'image',
+	'settings' => 'preloader_image',
+	'section' => 'core_general',
+	'label' => esc_html__( 'Preloader Image', '@@textdomain' ),
+	'priority' => $priority++,
+	'default' => '',
+	'active_callback' => array(
+		array(
+			'setting' => 'preloader_style',
+			'operator' => '==',
+			'value' => 'image'
+		)
+	)
 ) );
 
 VLT_Options::add_field( array(
@@ -104,6 +92,19 @@ VLT_Options::add_field( array(
 		'hide' => esc_html__( 'Hide', '@@textdomain' )
 	),
 	'default' => 'show',
+) );
+
+VLT_Options::add_field( array(
+	'type' => 'code',
+	'settings' => 'tracking_code',
+	'section' => 'core_general',
+	'label' => esc_html__( 'Tracking Code', '@@textdomain' ),
+	'description' => esc_html__( 'Copy and paste your tracking code here.', '@@textdomain' ),
+	'priority' => $priority++,
+	'choices' => array(
+		'language' => 'php',
+	),
+	'default' => '',
 ) );
 
 /**
@@ -253,6 +254,66 @@ VLT_Options::add_field( array(
 			'operator' => '==',
 			'value' => 'enable'
 		)
+	)
+) );
+
+/**
+ * Night mode
+ */
+VLT_Options::add_field( array(
+	'type' => 'select',
+	'settings' => 'night_mode',
+	'section' => 'core_night_mode',
+	'label' => esc_html__( 'Night Mode', '@@textdomain' ),
+	'priority' => $priority++,
+	'choices' => array(
+		'auto' => esc_html__( 'Auto', '@@textdomain' ),
+		'day' => esc_html__( 'Day', '@@textdomain' ),
+		'night' => esc_html__( 'Night', '@@textdomain' )
+	),
+	'default' => 'auto',
+) );
+
+VLT_Options::add_field( array(
+	'type' => 'select',
+	'settings' => 'night_mode_toggle_button',
+	'section' => 'core_night_mode',
+	'label' => esc_html__( 'Toggle Button', '@@textdomain' ),
+	'priority' => $priority++,
+	'choices' => array(
+		'show' => esc_html__( 'Show', '@@textdomain' ),
+		'hide' => esc_html__( 'Hide', '@@textdomain' )
+	),
+	'default' => 'show',
+) );
+
+/**
+ * Custom sidebars
+ */
+VLT_Options::add_field( array(
+	'type' => 'repeater',
+	'settings' => 'custom_sidebars',
+	'section' => 'core_sidebars',
+	'label' => esc_attr__( 'Custom Sidebars', '@@textdomain' ),
+	'description' => esc_html__( 'Create new sidebars and use them later via the page builder for different areas.', '@@textdomain' ),
+	'row_label' => array(
+		'type' => 'field',
+		'field' => 'sidebar_title',
+		'value' => esc_attr__( 'Custom Sidebar', '@@textdomain' ),
+	),
+	'button_label' => esc_attr__( 'Add new sidebar area', '@@textdomain' ),
+	'default' => '',
+	'fields' => array(
+		'sidebar_title' => array(
+			'type' => 'text',
+			'label' => esc_attr__( 'Sidebar Title', '@@textdomain' ),
+			'default' => '',
+		),
+		'sidebar_description' => array(
+			'type' => 'textarea',
+			'label' => esc_attr__( 'Sidebar Description', '@@textdomain' ),
+			'default' => '',
+		),
 	)
 ) );
 

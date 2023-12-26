@@ -26,7 +26,7 @@ VLT_Options::add_field( array(
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 	),
 	'transport' => 'auto',
@@ -62,16 +62,15 @@ VLT_Options::add_field( array(
 			'variant' => [
 				'regular',
 				'500',
-				'600',
-				'700',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => 'regular',
-		'font-size' => '16px',
+		'font-size' => '1rem',
 		'line-height' => '1.8',
 		'letter-spacing' => '0',
 		'text-transform' => 'none'
@@ -108,15 +107,17 @@ VLT_Options::add_field( array(
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
+				'regular',
 				'500',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
-		'font-size' => '28px',
+		'font-size' => '1.75rem',
 		'line-height' => '1.5',
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
@@ -150,15 +151,17 @@ VLT_Options::add_field( array(
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
+				'regular',
 				'500',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
-		'font-size' => '22px',
+		'font-size' => '1.375rem',
 		'line-height' => '1.5',
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
@@ -192,15 +195,17 @@ VLT_Options::add_field( array(
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
+				'regular',
 				'500',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
-		'font-size' => '20px',
+		'font-size' => '1.25rem',
 		'line-height' => '1.5',
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
@@ -234,15 +239,17 @@ VLT_Options::add_field( array(
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
+				'regular',
 				'500',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
-		'font-size' => '18px',
+		'font-size' => '1.125rem',
 		'line-height' => '1.5',
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
@@ -276,15 +283,17 @@ VLT_Options::add_field( array(
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
+				'regular',
 				'500',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
-		'font-size' => '16px',
+		'font-size' => '1rem',
 		'line-height' => '1.5',
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
@@ -318,15 +327,17 @@ VLT_Options::add_field( array(
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
+				'regular',
 				'500',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
-		'font-size' => '14px',
+		'font-size' => '0.875rem',
 		'line-height' => '1.5',
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'
@@ -355,15 +366,17 @@ VLT_Options::add_field( array(
 	'choices' => apply_filters(
 		'vlthemes_fonts_choices', [
 			'variant' => [
+				'regular',
 				'500',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => '500',
-		'font-size' => '14px',
+		'font-size' => '0.875rem',
 		'line-height' => '1.4',
 		'letter-spacing' => '0',
 		'text-transform' => 'none'
@@ -389,14 +402,16 @@ VLT_Options::add_field( array(
 		'vlthemes_fonts_choices', [
 			'variant' => [
 				'regular',
+				'500',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => 'regular',
-		'font-size' => '14px',
+		'font-size' => '0.875rem',
 		'line-height' => '1.4',
 		'letter-spacing' => '0',
 		'text-transform' => 'none'
@@ -430,14 +445,16 @@ VLT_Options::add_field( array(
 		'vlthemes_fonts_choices', [
 			'variant' => [
 				'regular',
+				'500',
+				'700'
 			]
 		]
 	),
 	'default' => array(
-		'font-family' => 'Roboto',
+		'font-family' => 'DM Sans',
 		'subsets' => [ 'latin' ],
 		'variant' => 'regular',
-		'font-size' => '14px',
+		'font-size' => '0.875rem',
 		'line-height' => '1.4',
 		'letter-spacing' => '-.015em',
 		'text-transform' => 'none'

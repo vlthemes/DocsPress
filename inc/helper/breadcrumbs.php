@@ -8,52 +8,52 @@
 /**
  * Breadcrumbs
  */
-if ( ! function_exists( 'docs_get_breadcrumbs' ) ) {
-	function docs_get_breadcrumbs( $container_class = 'vlt-page-title__breadcrumbs' ) {
+if ( ! function_exists( 'docspress_get_breadcrumbs' ) ) {
+	function docspress_get_breadcrumbs( $container_class = 'vlt-page-title__breadcrumbs' ) {
 		/* === OPTIONS === */
-		$text['home']     = esc_html__( 'Home', '@@textdomain' ); // text for the 'Home' link
+		$text['home'] = esc_html__( 'Home', '@@textdomain' ); // text for the 'Home' link
 		$text['category'] = esc_html__( 'Archive by Category "%s"', '@@textdomain' ); // text for a category page
-		$text['search']   = esc_html__( 'Search Results for "%s"', '@@textdomain' ); // text for a search results page
-		$text['tag']      = esc_html__( 'Posts Tagged "%s"', '@@textdomain' ); // text for a tag page
-		$text['author']   = esc_html__( 'Articles Posted by %s', '@@textdomain' ); // text for an author page
-		$text['404']      = esc_html__( 'Error 404', '@@textdomain' ); // text for the 404 page
+		$text['search'] = esc_html__( 'Search Results for "%s"', '@@textdomain' ); // text for a search results page
+		$text['tag'] = esc_html__( 'Posts Tagged "%s"', '@@textdomain' ); // text for a tag page
+		$text['author'] = esc_html__( 'Articles Posted by %s', '@@textdomain' ); // text for an author page
+		$text['404'] = esc_html__( 'Error 404', '@@textdomain' ); // text for the 404 page
 
 		/* === OPTIONS === */
-		$text['home']     = esc_html__( 'Home', '@@textdomain' ); // text for the 'Home' link
+		$text['home'] = esc_html__( 'Home', '@@textdomain' ); // text for the 'Home' link
 		if( get_option( 'page_for_posts' ) !=='0' ){
 		$text['category'] = '<a href="'.get_permalink( get_option( 'page_for_posts' ) ) . '">' . esc_html__( 'Blog', '@@textdomain' ) . '</a> <span class="sep">-</span> ' . esc_html__( '%s', '@@textdomain' ); // text for a category page
 		}
-		$text['search']   = esc_html__( 'Search Results for "%s"', '@@textdomain' ); // text for a search results page
-		$text['tag']      = esc_html__( '%s', '@@textdomain' ); // text for a tag page
-		$text['author']   = esc_html__( 'Articles Posted by %s', '@@textdomain' ); // text for an author page
-		$text['404']      = esc_html__( '404', '@@textdomain' ); // text for the 404 page
-		$text['page']     = esc_html__( 'Page %s', '@@textdomain' ); // text 'Page N'
-		$text['cpage']    = esc_html__( 'Comment Page %s', '@@textdomain' ); // text 'Comment Page N'
-		$wrap_before      = '<nav class="' . docs_sanitize_class( $container_class ) . '">'; // the opening wrapper tag
-		$wrap_after       = '</nav>'; // the closing wrapper tag
-		$sep              = '<i class="fa-regular fa-fw fa-angle-right"></i>'; // separator between crumbs
-		$sep_before       = '<span class="sep">'; // tag before separator
-		$sep_after        = '</span>'; // tag after separator
-		$show_home_link   = 1; // 1 - show the 'Home' link, 0 - don't show
-		$show_on_home     = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-		$show_current     = 1; // 1 - show current page title, 0 - don't show
-		$before           = '<span class="current">'; // tag before the current crumb
-		$after            = '</span>'; // tag after the current crumb
+		$text['search'] = esc_html__( 'Search Results for "%s"', '@@textdomain' ); // text for a search results page
+		$text['tag'] = esc_html__( '%s', '@@textdomain' ); // text for a tag page
+		$text['author'] = esc_html__( 'Articles Posted by %s', '@@textdomain' ); // text for an author page
+		$text['404'] = esc_html__( '404', '@@textdomain' ); // text for the 404 page
+		$text['page'] = esc_html__( 'Page %s', '@@textdomain' ); // text 'Page N'
+		$text['cpage'] = esc_html__( 'Comment Page %s', '@@textdomain' ); // text 'Comment Page N'
+		$wrap_before = '<nav class="' . docspress_sanitize_class( $container_class ) . '">'; // the opening wrapper tag
+		$wrap_after = '</nav>'; // the closing wrapper tag
+		$sep = '<i class="ri-arrow-drop-right-line"></i>'; // separator between crumbs
+		$sep_before = '<span class="sep">'; // tag before separator
+		$sep_after = '</span>'; // tag after separator
+		$show_home_link = 1; // 1 - show the 'Home' link, 0 - don't show
+		$show_on_home = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+		$show_current = 1; // 1 - show current page title, 0 - don't show
+		$before = '<span class="current">'; // tag before the current crumb
+		$after = '</span>'; // tag after the current crumb
 		/* === END OF OPTIONS === */
 
 		global $post;
-		$home_link        = home_url( '/' );
-		$link_before      = '<span>';
-		$link_after       = '</span>';
-		$link_attr        = ' ';
-		$link_in_before   = '<span>';
-		$link_in_after    = '</span>';
-		$link             = $link_before . '<a href="%1$s"' . $link_attr . '>' . $link_in_before . '%2$s' . $link_in_after . '</a>' . $link_after;
-		$frontpage_id     = get_option( 'page_on_front' );
-		$thisPostID       = get_the_ID();
-		$parent_id        = wp_get_post_parent_id( $thisPostID );
-		$sep              = ' ' . $sep_before . $sep . $sep_after . ' ';
-		$output           = '';
+		$home_link = home_url( '/' );
+		$link_before = '<span>';
+		$link_after = '</span>';
+		$link_attr = ' ';
+		$link_in_before = '<span>';
+		$link_in_after = '</span>';
+		$link = $link_before . '<a href="%1$s"' . $link_attr . '>' . $link_in_before . '%2$s' . $link_in_after . '</a>' . $link_after;
+		$frontpage_id = get_option( 'page_on_front' );
+		$thisPostID = get_the_ID();
+		$parent_id = wp_get_post_parent_id( $thisPostID );
+		$sep = ' ' . $sep_before . $sep . $sep_after . ' ';
+		$output = '';
 
 		if ( is_home() || is_front_page() ) {
 			if ( $show_on_home ) {

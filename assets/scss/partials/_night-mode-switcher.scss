@@ -1,0 +1,53 @@
+/* PARTIAL: NIGHT MODE SWITCHER
+-------------------------------------------- */
+
+.vlt-night-mode-switcher {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	width: px2rem(44px);
+	height: px2rem(26px);
+	padding: 0 px2rem(5px);
+	color: var(--vlt-text-1);
+	cursor: pointer;
+	background-color: var(--vlt-background-4);
+	border-radius: px2rem(50px);
+
+	.vlt-toggle-indicator {
+		align-items: center;
+		width: px2rem(16px);
+		height: px2rem(16px);
+		border-radius: 100%;
+		transition: transform var(--vlt-transition-duration) var(--vlt-transition-easing) !important;
+
+		&__icon {
+			position: absolute;
+			line-height: 0;
+			opacity: 1;
+			transition: opacity var(--vlt-transition-duration) var(--vlt-transition-easing) !important;
+			backface-visibility: hidden;
+			will-change: transform,opacity;
+
+			svg {
+				height: 1em;
+			}
+
+		}
+
+	}
+
+}
+
+.night-mode .vlt-night-mode-switcher .vlt-toggle-indicator {
+	transform: translateX(px2rem(16px)) rotate(-40deg);
+}
+
+.night-mode .vlt-night-mode-switcher .vlt-toggle-indicator__icon--light,
+.vlt-night-mode-switcher .vlt-toggle-indicator__icon--dark {
+	opacity: 0;
+}
+
+.night-mode .vlt-night-mode-switcher .vlt-toggle-indicator__icon--dark,
+.vlt-night-mode-switcher .vlt-toggle-indicator__icon--light {
+	opacity: 1;
+}

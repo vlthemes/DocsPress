@@ -1,0 +1,36 @@
+/* PARTIAL: SOCIAL ICONS
+-------------------------------------------- */
+
+.vlt-social-icon {
+	display: inline-flex;
+	backface-visibility: hidden;
+}
+
+/* SECTION: STYLE 1 (text)
+-------------------------------------------- */
+
+.vlt-social-icon--style-1 {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: px2rem(30px);
+	height: px2rem(30px);
+	font-size: px2rem(16px);
+	color: var(--vlt-color-white);
+	text-decoration: none;
+	background-color: var(--vlt-accent-2);
+	border: 1px solid var(--vlt-accent-2);
+	border-radius: var(--vlt-radius-1);
+
+	&:hover,
+	&.hover {
+		color: var(--vlt-color-white);
+		background-color: var(--vlt-background-3-force-dark);
+		border-color: var(--vlt-background-3-force-dark);
+	}
+
+	& + & {
+		margin-left: px2rem(10px);
+	}
+
+}

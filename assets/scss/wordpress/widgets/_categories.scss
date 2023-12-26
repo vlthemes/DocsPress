@@ -7,16 +7,16 @@
 	li::before {
 		content: '▪';
 		margin-right: 1em;
-		color: var(--vlt-color-2);
+		color: var(--vlt-text-3);
 	}
 
 	li + li,
 	ul.children {
-		margin-top: 10px;
+		margin-top: px2rem(10px);
 	}
 
 	a {
-		margin-right: 4px;
+		margin-right: px2rem(4px);
 	}
 
 }

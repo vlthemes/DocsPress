@@ -8,7 +8,7 @@
 /**
 * Theme path image
 */
-$theme_path_images = DOCS_THEME_DIRECTORY . 'assets/img/';
+$theme_path_images = DOCSPRESS_THEME_DIRECTORY . 'assets/img/';
 
 /**
  * Wrapper for Kirki
@@ -20,7 +20,7 @@ if ( ! class_exists( 'VLT_Options' ) ) {
 
 		public static function add_config( $args ) {
 			if ( class_exists( 'Kirki' ) && isset( $args ) && is_array( $args ) ) {
-				Kirki::add_config( 'docs_customize', $args );
+				Kirki::add_config( 'docspress_customize', $args );
 			}
 		}
 
@@ -39,7 +39,7 @@ if ( ! class_exists( 'VLT_Options' ) ) {
 		public static function add_field( $args ) {
 			if ( isset( $args ) && is_array( $args ) ) {
 				if ( class_exists( 'Kirki' ) ) {
-					Kirki::add_field( 'docs_customize', $args );
+					Kirki::add_field( 'docspress_customize', $args );
 				}
 				if ( isset( $args['settings'] ) && isset( $args['default'] ) ) {
 					self::$default_options[$args['settings']] = $args['default'];
@@ -67,8 +67,8 @@ if ( ! class_exists( 'VLT_Options' ) ) {
 /**
  * Custom get_theme_mod
  */
-if ( ! function_exists( 'docs_get_theme_mod' ) ) {
-	function docs_get_theme_mod( $name = null, $use_acf = null, $postID = null, $acf_name = null ) {
+if ( ! function_exists( 'docspress_get_theme_mod' ) ) {
+	function docspress_get_theme_mod( $name = null, $use_acf = null, $postID = null, $acf_name = null ) {
 
 		$value = null;
 
@@ -78,7 +78,7 @@ if ( ! function_exists( 'docs_get_theme_mod' ) ) {
 
 		// try get value from meta box
 		if ( $use_acf ) {
-			$value = docs_get_field( $acf_name ? $acf_name : $name, $postID );
+			$value = docspress_get_field( $acf_name ? $acf_name : $name, $postID );
 		}
 
 		// get value from options
@@ -104,8 +104,8 @@ if ( ! function_exists( 'docs_get_theme_mod' ) ) {
 /**
  * Get value from acf field
  */
-if ( ! function_exists( 'docs_get_field' ) ) {
-	function docs_get_field( $name = null, $postID = null ) {
+if ( ! function_exists( 'docspress_get_field' ) ) {
+	function docspress_get_field( $name = null, $postID = null ) {
 
 		$value = null;
 
@@ -125,8 +125,8 @@ if ( ! function_exists( 'docs_get_field' ) ) {
 /**
  * Get hsl variables
  */
-if ( ! function_exists( 'docs_get_hsl_variables' ) ) {
-	function docs_get_hsl_variables( $name, $color ) {
+if ( ! function_exists( 'docspress_get_hsl_variables' ) ) {
+	function docspress_get_hsl_variables( $name, $color ) {
 		if ( class_exists( 'ariColor' ) ) {
 			$color_obj = ariColor::newColor( $color );
 			$new_color = "${name}-h: {$color_obj->hue};";
@@ -135,5 +135,47 @@ if ( ! function_exists( 'docs_get_hsl_variables' ) ) {
 			return $new_color;
 		}
 		return "${name}: {$color};";
+	}
+}
+
+/**
+ * Get Elementor templates
+ */
+if ( ! function_exists( 'docspress_get_elementor_templates' ) ) {
+	function docspress_get_elementor_templates( $type = null ) {
+
+		$args = [
+			'post_type' => 'elementor_library',
+			'posts_per_page' => -1,
+		];
+
+		if ( $type ) {
+
+			$args[ 'tax_query' ] = [
+				[
+					'taxonomy' => 'elementor_library_type',
+					'field' => 'slug',
+					'terms' => $type,
+				],
+			];
+
+		}
+
+		$page_templates = get_posts( $args );
+
+		$options[0] = esc_html__( 'Select a Template', '@@textdomain' );
+
+		if ( ! empty( $page_templates ) && ! is_wp_error( $page_templates ) ) {
+			foreach ( $page_templates as $post ) {
+				$options[ $post->ID ] = $post->post_title;
+			}
+		} else {
+
+			$options[0] = esc_html__( 'Create a Template First', '@@textdomain' );
+
+		}
+
+		return $options;
+
 	}
 }

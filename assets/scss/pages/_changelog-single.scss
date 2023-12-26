@@ -1,0 +1,48 @@
+/* PAGE: CHANGELOG SINGLE
+-------------------------------------------- */
+
+.vlt-post--single-changelog {
+
+	.vlt-post-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: px2rem(16px);
+		margin-bottom: px2rem(30px);
+		border-bottom: 1px solid var(--vlt-border-color-1);
+
+		.vlt-post-title {
+
+			i {
+				margin-right: .4em;
+				font-size: 90%;
+				color: var(--vlt-text-3);
+			}
+
+		}
+
+		.vlt-post-version {
+			display: flex;
+			align-items: center;
+
+			small {
+				margin-right: 0.4em;
+				color: var(--vlt-text-3);
+				@include vlt_primary_regular_14;
+			}
+
+		}
+
+	}
+
+	.vlt-post-footer {
+		margin-top: px2rem(30px);
+
+		.vlt-post-modified {
+			color: var(--vlt-text-3);
+			@include vlt_primary_regular_12;
+		}
+
+	}
+
+}

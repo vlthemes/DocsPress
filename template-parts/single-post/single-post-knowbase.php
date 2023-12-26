@@ -11,15 +11,15 @@
 
 	<header class="vlt-post-header">
 
-		<h1 class="vlt-post-title"><i class="far fa-file-alt"></i><?php the_title(); ?></h1>
+		<h1 class="vlt-post-title"><i class="ri-file-line"></i><?php the_title(); ?></h1>
 		<!-- /.vlt-post-title -->
 
 		<div class="vlt-post-meta">
-			<span><i class="fas fa-calendar-alt"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
-			<?php if ( docs_get_post_taxonomy( get_the_ID(), 'knowbase_category', ', ' ) ) : ?>
-				<span><i class="fas fa-tag"></i><?php echo docs_get_post_taxonomy( get_the_ID(), 'knowbase_category', ', ' ); ?></span>
+			<span><i class="ri-calendar-2-line"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
+			<?php if ( docspress_get_post_taxonomy( get_the_ID(), 'category_knowbase', ', ' ) ) : ?>
+				<span><i class="ri-price-tag-3-line"></i><?php echo docspress_get_post_taxonomy( get_the_ID(), 'category_knowbase', ', ' ); ?></span>
 			<?php endif; ?>
-			<span><i class="fas fa-clock"></i><?php echo docs_get_reading_time(); ?></span>
+			<span><i class="ri-timer-line"></i><?php echo docspress_get_reading_time(); ?></span>
 		</div>
 		<!-- /.vlt-post-meta -->
 
@@ -35,30 +35,23 @@
 
 	<footer class="vlt-post-footer">
 
-		<?php
+		<div class="vlt-post-modified">
 
-			if ( get_the_tags() ) {
-				echo '<div class="vlt-tags">';
-				the_tags();
-				echo '</div>';
-			}
+			<div itemprop="author" itemscope itemtype="https://schema.org/Person">
+				<meta itemprop="name" content="<?php echo esc_attr( get_the_author() ); ?>" />
+				<meta itemprop="url" content="<?php echo esc_attr( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" />
+			</div>
 
-		?>
+			<meta itemprop="datePublished" content="<?php echo esc_attr( get_the_time( 'c' ) ); ?>"/>
+			<time itemprop="dateModified" datetime="<?php echo esc_attr( get_the_modified_date( 'c' ) ); ?>">
+				<?php
+				// translators: %s - last time modified.
+				printf( esc_html__( 'Last modified %s', '@@textdomain' ), esc_html( get_the_modified_date() ) );
+				?>
+			</time>
 
-		<?php
-
-			wp_link_pages( array(
-				'before' => '<div class="vlt-link-pages"><h5>' . esc_html__( 'Pages: ', '@@textdomain' ) . '</h5>',
-				'after' => '</div>',
-				'separator' => '<span class="sep">|</span>',
-				'nextpagelink' => esc_html__( 'Next page', '@@textdomain' ),
-				'previouspagelink' => esc_html__( 'Previous page', '@@textdomain' ),
-				'next_or_number' => 'next'
-			) );
-
-		?>
-
-		<?php edit_post_link( __( 'Edit', '@@textdomain' ), '<span class="vlt-edit-link">', '</span>' ); ?>
+		</div>
+		<!-- /.vlt-post-modified -->
 
 	</footer>
 	<!-- /.vlt-post-footer -->

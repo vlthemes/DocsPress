@@ -1,88 +1,95 @@
 /* PLUGIN: FANCYBOX
 -------------------------------------------- */
 
+.fancybox-container {
+	transition: backdrop-filter var(--vlt-transition-duration) var(--vlt-transition-easing);
+	z-index: z("fancybox");
+
+	&.fancybox-is-open {
+		backdrop-filter: blur(5px);
+	}
+
+}
+
+
 .fancybox-bg {
-	background-color: var(--vlt-color-1);
+	background-color: var(--vlt-background-2);
 }
 
 .fancybox-is-open .fancybox-bg {
-	opacity: .8;
-}
-
-.fancybox-button {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	width: 45px;
-	height: 45px;
-	padding: 0;
-	overflow: hidden;
-	font-size: 22px;
-	color: var(--vlt-color-6);
-	cursor: pointer;
-	background: none;
 	opacity: .5;
-	transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
-
-	&:hover {
-		opacity: .8;
-	}
-
-	&.fancybox-close-small {
-		font-size: 16px;
-		color: var(--vlt-color-1);
-	}
-
 }
 
 .fancybox-loading {
-	border: 2px solid var(--vlt-color-6-0p1);
+	border: 2px solid var(--vlt-border-color-2);
 	border-top-color: var(--vlt-accent-2);
 }
 
-.fancybox-slide--image {
-	padding: 10%;
-}
+/* BUTTONS
+-------------------------------------------- */
 
+.fancybox-navigation,
+.fancybox-toolbar,
 .fancybox-content {
-	padding: 2em;
-}
 
-@media (min-width: 783px) {
+	.fancybox-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: px2rem(45px);
+		height: px2rem(45px);
+		padding: 0;
+		overflow: hidden;
+		font-size: px2rem(22px);
+		color: var(--vlt-text-1);
+		cursor: pointer;
+		background: none;
+		opacity: .5;
+		transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
 
-	.admin-bar {
-
-		.fancybox-infobar,
-		.fancybox-toolbar {
-			top: 32px !important;
+		&:hover {
+			opacity: .8;
 		}
 
 	}
 
-}
-
-@media (max-width: 782px) {
-
-	.admin-bar {
-
-		.fancybox-infobar,
-		.fancybox-toolbar {
-			top: 46px !important;
-		}
-
+	.fancybox-close-small {
+		font-size: px2rem(16px);
+		color: var(--vlt-text-1);
 	}
 
 }
 
-@media (max-width: 600px) {
+.fancybox-infobar {
+	top: px2rem(16px);
+	left: px2rem(16px);
+}
 
-	.admin-bar {
+.fancybox-toolbar {
+	top: px2rem(16px);
+	right: px2rem(16px);
+}
 
-		.fancybox-infobar,
-		.fancybox-toolbar {
-			top: 0 !important;
-		}
+.fancybox-caption {
+	color: var(--vlt-text-2);
+	background: linear-gradient(to bottom,rgba(0, 0, 0, 0) 0%,var(--vlt-background-4));
+	@include vlt_primary_regular_14;
+}
 
+.fancybox-navigation .fancybox-button--arrow_left {
+	left: px2rem(16px);
+
+	&:hover i {
+		animation: vlt_animate_icon_left var(--vlt-transition-duration) var(--vlt-transition-easing) forwards;
+	}
+
+}
+
+.fancybox-navigation .fancybox-button--arrow_right {
+	right: px2rem(16px);
+
+	&:hover i {
+		animation: vlt_animate_icon_right var(--vlt-transition-duration) var(--vlt-transition-easing) forwards;
 	}
 
 }

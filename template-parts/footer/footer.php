@@ -5,26 +5,8 @@
  * @version: @@version
  */
 
-?>
+$acf_footer = docspress_get_theme_mod( 'page_custom_footer', true );
 
-
-<footer class="vlt-footer">
-
-	<div class="vlt-footer-copyright"><?php echo sprintf( docs_get_theme_mod( 'footer_copyright' ), date( 'Y' ) ); ?></div>
-	<!-- /.vlt-footer-copyright -->
-
-</footer>
-<!-- /.vlt-footer -->
-
-
-<?php if ( docs_get_theme_mod( 'back_to_top' ) == 'show' ) : ?>
-
-	<div class="d-none d-sm-block">
-
-		<a href="#" class="vlt-back-to-top hidden"><i class="fas fa-caret-square-up"></i></a>
-		<!-- /.vlt-back-to-top -->
-
-	</div>
-	<!-- /.d-none d-sm-block -->
-
-<?php endif; ?>
+if ( docspress_get_theme_mod( 'footer_show', $acf_footer ) == 'show' ) {
+	get_template_part( 'template-parts/footer/footer', 'template' );
+}

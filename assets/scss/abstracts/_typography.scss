@@ -1,0 +1,56 @@
+/* SECTION: REGULAR
+-------------------------------------------- */
+
+@mixin vlt_primary_medium_16 {
+	font-family: var(--vlt-primary-font);
+	font-size: px2rem(16px);
+	font-weight: 500;
+	font-style: normal;
+	line-height: 1.7;
+	letter-spacing: 0;
+}
+
+@mixin vlt_primary_medium_13 {
+	font-family: var(--vlt-primary-font);
+	font-size: px2rem(13px);
+	font-weight: 500;
+	font-style: normal;
+	line-height: 1.7;
+	letter-spacing: 0;
+}
+
+@mixin vlt_primary_regular_12 {
+	font-family: var(--vlt-primary-font);
+	font-size: px2rem(12px);
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.6;
+	letter-spacing: 0;
+}
+
+@mixin vlt_primary_regular_13 {
+	font-family: var(--vlt-primary-font);
+	font-size: px2rem(13px);
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.6;
+	letter-spacing: 0;
+}
+
+@mixin vlt_primary_medium_14 {
+	font-family: var(--vlt-primary-font);
+	font-size: px2rem(14px);
+	font-weight: 500;
+	font-style: normal;
+	line-height: 1.75;
+	letter-spacing: 0;
+}
+
+@mixin vlt_primary_regular_14 {
+	font-family: var(--vlt-primary-font);
+	font-size: px2rem(14px);
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.75;
+	letter-spacing: 0;
+}

@@ -1,201 +1,100 @@
 /* LAYOUT: HEADER
 -------------------------------------------- */
 
-.vlt-header {
+.vlt-header--default,
+.vlt-header--mobile {
 	position: relative;
+	color: var(--vlt-text-1);
+	z-index: z("header");
+
+	.vlt-no-menu-message {
+		margin-bottom: 0;
+	}
+
+}
+
+// navbar logo
+.vlt-navbar-logo {
 	display: flex;
 	align-items: center;
-	margin: 2.5em 0;
-	z-index: 2;
-	flex-wrap: wrap;
+	line-height: 1;
+	color: currentColor;
+	text-decoration: none;
 
-	@include media-breakpoint-down(md) {
-		margin: 2em 0;
+	&:hover {
+		color: currentColor;
 	}
 
-	// logo
-	.vlt-logo {
-		display: inline-flex;
-		align-items: center;
-		margin-right: auto;
-		text-decoration: none;
+	h2 {
+		color: currentColor;
+	}
 
-		&__icon {
-			margin-right: 16px;
-			color: var(--vlt-color-1);
-		}
+	img {
+		display: block;
+		width: auto;
+		max-width: none;
 
-		&__description {
-
-			span:nth-child(1) {
-				display: block;
-				font-size: 24px;
-				font-weight: 700;
-				line-height: 1;
-				color: var(--vlt-color-1);
-			}
-
-			span:nth-child(2) {
-				display: block;
-				font-size: 12px;
-				color: var(--vlt-color-5);
-			}
-
+		.night-mode & {
+			display: none;
 		}
 
 	}
 
-	// navigation
-	.vlt-default-navigation {
-		margin-left: 3em;
+	img.white {
+		display: none;
 
-		.vlt-no-menu-message {
-			margin: 0;
-		}
-
-		.sf-menu {
-			font-size: 0;
-
-			> li {
-				display: inline-flex;
-				float: none;
-			}
-
-			> li > a {
-				padding: 20px 15px;
-				font-size: 16px;
-				font-weight: 500;
-				line-height: 1;
-				color: var(--vlt-color-1);
-				text-decoration: none;
-			}
-
-			> li:last-child > a {
-				padding-right: 0;
-			}
-
-			> li:hover > a,
-			> li.current-menu-item > a,
-			> li.sfHover > a {
-				color: var(--vlt-accent-2);
-			}
-
-			ul.sub-menu {
-				min-width: 150px;
-				padding: 12px 0;
-				font-size: 13px;
-				background-color: var(--vlt-color-2);
-				border-radius: var(--vlt-radius-2);
-
-				ul.sub-menu {
-					top: -12px;
-				}
-
-				li {
-					display: block;
-					padding: 6px 16px;
-				}
-
-				a {
-					display: flex;
-					line-height: 1.4;
-					color: var(--vlt-color-6-0p8);
-					text-decoration: none;
-					white-space: nowrap;
-				}
-
-				li:hover > a,
-				li.sfHover > a {
-					color: var(--vlt-color-6);
-				}
-
-			}
-
-		}
-
-	}
-
-	.vlt-btn {
-		margin-left: 2.5em;
-	}
-
-	.vlt-subscribe-form-toggle {
-		margin-left: 2.5em;
-		font-size: 18px;
-		color: var(--vlt-color-5);
-
-		svg {
-			position: relative;
-			top: 2px;
-		}
-
-		&:hover {
-			color: var(--vlt-accent-2);
-		}
-
-	}
-
-	.vlt-subscribe-form-toggle + .vlt-btn {
-		margin-left: 2em;
-	}
-
-}
-
-/* MOBILE MENU
--------------------------------------------- */
-
-.vlt-mobile-navigation {
-	display: flex;
-	margin-top: 2em;
-	flex-basis: 100%;
-
-	@include media-breakpoint-down(md) {
-		margin-top: 1.5em;
-	}
-
-	.sf-menu {
-		width: 100%;
-		text-align: left;
-
-		li {
+		.night-mode & {
 			display: block;
-			float: none;
 		}
 
-		a {
-			padding: 10px 0;
-			font-size: 16px;
-			font-weight: 500;
-			line-height: 1;
-			color: var(--vlt-color-1);
-			text-decoration: none;
-		}
+	}
 
-		li:hover > a,
-		li.current-menu-item > a,
-		li.sfHover > a {
-			color: var(--vlt-accent-2);
-		}
+	&__icon {
+		margin-right: px2rem(16px);
+		color: var(--vlt-text-1);
+	}
 
-		ul.sub-menu {
-			position: static;
-			padding-left: 10px;
-		}
+	&__description {
 
-		li.menu-item-has-children > a::after {
-			content: '\f054';
-			position: relative;
-			top: 2px;
-			float: right;
-			font-family: var(--vlt-font-awesome-5-free);
-			font-size: 12px;
-			font-weight: 900;
-		}
-
-		li.sfHover > a::after {
-			content: '\f078';
+		span {
+			display: block;
+			font-size: px2rem(12px);
+			color: var(--vlt-text-3);
 		}
 
 	}
 
 }
+
+// navbar
+.vlt-navbar {
+	position: relative;
+	z-index: z("navbar");
+
+	// navbar inner
+	.vlt-navbar-inner {
+		padding: px2rem(40px) 0;
+		background-color: transparent;
+
+		@include media-breakpoint-down(md) {
+			padding: px2rem(30px) 0;
+		}
+
+	}
+
+	// buttons
+	&-buttons {
+		display: flex;
+		align-items: center;
+
+		.vlt-btn {
+			margin-left: px2rem(25px);
+		}
+
+	}
+
+}
+
+// import
+@import "header/default";
+@import "header/mobile";

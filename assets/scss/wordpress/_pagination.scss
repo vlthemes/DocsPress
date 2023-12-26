@@ -1,0 +1,15 @@
+/* WORDPRESS: PAGINATION
+-------------------------------------------- */
+
+.vlt-pagination {
+	margin-top: px2rem(40px);
+
+	.nav-links {
+
+		* + * {
+			margin-left: px2rem(10px);
+		}
+
+	}
+
+}

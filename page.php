@@ -9,15 +9,25 @@ get_header();
 
 ?>
 
-<main class="vlt-main vlt-main--padding">
+<main class="vlt-main">
 
-	<?php
+	<div class="vlt-page-content vlt-page-content--padding">
 
-		while ( have_posts() ) : the_post();
-			get_template_part( 'template-parts/content/content', 'page' );
-		endwhile;
+		<?php get_template_part( 'template-parts/page-title/page-title', 'page' ); ?>
 
-	?>
+		<?php
+
+			while ( have_posts() ) : the_post();
+				get_template_part( 'template-parts/content/content', 'page' );
+			endwhile;
+
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
+
+		?>
+
+	</div>
 
 </main>
 <!-- /.vlt-main -->

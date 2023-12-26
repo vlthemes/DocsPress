@@ -2,10 +2,13 @@
 -------------------------------------------- */
 
 .docspress-search-form {
-	font-size: 14px;
 
 	.docspress-search-field {
 		padding: 15px 30px;
+		border-top: 0;
+		border-right: 0;
+		border-left: 0;
+		border-radius: 0;
 		outline: none;
 
 		&:focus {
@@ -13,7 +16,7 @@
 		}
 
 		&::placeholder {
-			color: var(--vlt-color-5);
+			color: var(--vlt-text-3);
 		}
 
 	}
@@ -58,6 +61,11 @@
 	// Single Doc Sidebar
 	.docspress-single-sidebar {
 		padding-bottom: 30px;
+		border-color: var(--vlt-border-color-1);
+
+		@media screen and (max-width: 800px) {
+			border-right: none;
+		}
 
 		.docspress-single-sidebar-wrap {
 			max-height: calc(100vh - 30px);
@@ -93,9 +101,9 @@
 
 			> li li.current_page_item > a,
 			li.current_page_item > a {
-				text-decoration: underline;
 				font-weight: 500;
 				color: var(--vlt-accent-1);
+				text-decoration: underline;
 			}
 
 		}

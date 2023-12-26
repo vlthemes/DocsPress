@@ -1,59 +1,69 @@
 /* DOCSPRESS: GLOBAL
 -------------------------------------------- */
 
-// anchor link
+/* PRELOADER
+-------------------------------------------- */
 
-.anchorjs-link {
-	position: static !important;
-	float: right;
-	margin-left: 0 !important;
-	padding-right: 0 !important;
+.docspress-preloader::before {
+	content: "";
+	position: absolute;
+	top: calc(50% - #{px2rem(16px)});
+	left: calc(50% - #{px2rem(16px)});
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: px2rem(32px);
+	height: px2rem(32px);
+	border: 2px solid var(--vlt-border-color-2);
+	border-bottom-color: var(--vlt-accent-2);
+	border-radius: 50%;
+	animation: vlt_spin 1s linear infinite;
 }
 
-// button
-
-.docspress-btn {
-	@extend .vlt-btn, .vlt-btn--secondary;
-
-	.badge {
-		background-color: var(--vlt-accent-1);
-		line-height: 16px;
-	}
-
-	&[data-type="positive"],
-	&[data-type="negative"] {
-
-		&::before {
-			margin-right: 4px;
-			font-family: var(--vlt-font-awesome-5-free);
-			line-height: 1;
-		}
-
-		&::before {
-			content: '\f164';
-		}
-
-	}
-
-	&[data-type="negative"] {
-
-		&::before {
-			content: '\f165';
-		}
-
-	}
-
+.docspress-single.docspress-single-ajax-loading .docspress-single-sidebar > *,
+.docspress-single.docspress-single-ajax-loading .docspress-single-content > * {
+	opacity: .15;
 }
 
-// Preloader block
+.docspress-single.docspress-single-ajax-loading .docspress-single-content > .docspress-preloader {
+	opacity: 1;
+}
 
-.docspress-preloader {
+/* BREADCRUMBS
+-------------------------------------------- */
 
-	> span {
-		box-shadow: inset 0 0 0 2px var(--vlt-color-1-0p1);
+.vlt-docspress-single-breadcrumbs {
+	display: flex;
+	padding: 0;
+	margin: 0;
+	color: var(--vlt-text-2);
+	list-style-type: none;
+	@include vlt_primary_regular_14;
 
-		> span::after {
-			box-shadow: inset 0 0 0 2px var(--vlt-accent-2);
+	li {
+		margin-right: px2rem(4px);
+		margin-left: px2rem(4px);
+
+		&:last-of-type {
+			color: var(--vlt-text-3);
+		}
+
+		&:first-of-type {
+			margin-left: 0;
+		}
+
+	}
+
+	.delimiter {
+		opacity: .2;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:hover {
+			color: var(--vlt-accent-1);
+			text-decoration: underline;
 		}
 
 	}

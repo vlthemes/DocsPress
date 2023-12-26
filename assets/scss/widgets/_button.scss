@@ -1,0 +1,103 @@
+/* WIDGET: BUTTON
+-------------------------------------------- */
+
+.vlt-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	letter-spacing: 0;
+	cursor: pointer;
+	border: none;
+	border-radius: var(--vlt-radius-1);
+	outline: 0;
+	box-shadow: inset 0 -2px 0 var(--vlt-box-shadow);
+	transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
+
+	&:disabled,
+	&.disabled {
+		pointer-events: none;
+		cursor: not-allowed;
+	}
+
+	&--block {
+		width: 100%;
+	}
+
+	&--rounded {
+		border-radius: px2rem(100px);
+	}
+
+	&:focus {
+		outline: none;
+	}
+
+	i.left {
+		margin-right: .5em;
+	}
+
+	i.right {
+		margin-left: .5em;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+
+}
+
+/* BUTTON PRIMARY
+-------------------------------------------- */
+
+.vlt-btn--primary {
+	color: var(--vlt-color-white);
+	background-color: var(--vlt-accent-2);
+	border: 1px solid var(--vlt-accent-2);
+
+	&:hover,
+	&.hover {
+		color: var(--vlt-color-white);
+		background-color: var(--vlt-background-3-force-dark);
+		border-color: var(--vlt-background-3-force-dark);
+	}
+
+}
+
+/* BUTTON SECONDARY
+-------------------------------------------- */
+
+.vlt-btn--secondary {
+	color: var(--vlt-accent-2);
+	background-color: transparent;
+	border: 1px solid var(--vlt-border-color-1);
+
+	&:hover,
+	&.hover {
+		color: var(--vlt-text-1);
+		background-color: var(--vlt-background-3);
+		border-color: var(--vlt-background-3);
+	}
+
+}
+
+/* BUTTON SIZES
+-------------------------------------------- */
+
+.vlt-btn,
+.vlt-btn.vlt-btn--md {
+	padding: px2rem(6px) px2rem(12px);
+}
+
+.vlt-btn.vlt-btn--lg {
+	padding: px2rem(10px) px2rem(16px);
+}
+
+.vlt-btn.vlt-btn--sm {
+	padding: px2rem(5px) px2rem(10px);
+	@include vlt_primary_regular_12;
+}
+
+.vlt-btn.vlt-btn--xs {
+	padding: px2rem(4px) px2rem(8px);
+	@include vlt_primary_regular_12;
+}

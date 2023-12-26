@@ -8,9 +8,9 @@
 /**
  * TGM
  */
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/helper/class-tgm-plugin-activation.php';
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/helper/class-tgm-plugin-activation.php';
 
 /**
  * Breadcrumbs
  */
-require_once DOCS_REQUIRE_DIRECTORY . 'inc/helper/breadcrumbs.php';
+require_once DOCSPRESS_REQUIRE_DIRECTORY . 'inc/helper/breadcrumbs.php';

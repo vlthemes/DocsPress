@@ -1,44 +1,71 @@
 /* LAYOUT: GRID
 -------------------------------------------- */
 
-html {
-	padding: 0;
-	margin: 0;
-}
+/* WRAPPER
+-------------------------------------------- */
 
 .vlt-site-wrapper {
-	max-width: 1015px;
-	padding: 0 15px;
+	max-width: px2rem(1015px);
+	padding: 0 px2rem(15px);
 	margin: 0 auto;
 }
+
+/* MAIN
+-------------------------------------------- */
 
 .vlt-main {
 	position: relative;
 	overflow: hidden;
-	background-color: var(--vlt-color-6);
+	background-color: var(--vlt-background-2);
 	border-radius: var(--vlt-radius-2);
-	box-shadow: 0 10px 20px var(--vlt-color-2-0p1);
+	box-shadow: var(--vlt-box-shadow-md);
+}
+
+/* PAGE CONTENT
+-------------------------------------------- */
+
+.vlt-page-content {
 
 	&--padding {
-		padding: 3em 4em;
+		padding: px2rem(50px) px2rem(65px);
 
 		@include media-breakpoint-down(md) {
-			padding: 2em;
+			padding: px2rem(30px);
 		}
 
 	}
 
-	&-header {
-		padding-bottom: 1em;
-		margin: 0 0 2em;
-		border-bottom: 1px solid var(--vlt-color-4);
+	&--padding-horizontal {
+		padding: 0 px2rem(65px);
+
+		@include media-breakpoint-down(md) {
+			padding: 0 px2rem(30px);
+		}
+
+	}
+
+	&--padding-sm {
+		padding: px2rem(40px);
+
+		@include media-breakpoint-down(md) {
+			padding: px2rem(30px);
+		}
+
 	}
 
 }
 
+.vlt-page {
+	position: relative;
+	z-index: 1;
+}
+
+/* GRID LAYOUT
+-------------------------------------------- */
+
 .vlt-grid {
 	display: grid;
-	grid-gap: 1.5em;
+	grid-gap: px2rem(25px);
 
 	&[data-col="2"] {
 		grid-template-columns: repeat(2, 1fr);

@@ -1,0 +1,21 @@
+/* PARTIAL: INFO BAR
+-------------------------------------------- */
+
+.vlt-info-bar {
+	padding: px2rem(10px) 0;
+	color: var(--vlt-color-white);
+	text-align: center;
+	background-color: var(--vlt-accent-1);
+	box-shadow: var(--vlt-box-shadow-sm);
+	@include vlt_primary_medium_13;
+
+	a {
+		color: inherit;
+
+		&:hover {
+			color: inherit;
+		}
+
+	}
+
+}

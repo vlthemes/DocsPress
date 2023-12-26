@@ -1,0 +1,94 @@
+/* WIDGET: CHANGELOG
+-------------------------------------------- */
+
+.vlt-changelog {
+	--vlt-badge-min-width: #{px2rem(60px)};
+	--vlt-date-margin-left: #{px2rem(25px)};
+	position: relative;
+	display: flex;
+	align-items: center;
+	z-index: 0;
+	flex-wrap: wrap;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: calc(var(--vlt-badge-min-width) / 2);
+		display: block;
+		width: 1px;
+		background-color: var(--vlt-border-color-1);
+		z-index: -1;
+	}
+
+	&__version {
+		min-width: var(--vlt-badge-min-width);
+	}
+
+	&__date {
+		margin: 0;
+		margin-left: var(--vlt-date-margin-left);
+	}
+
+	&__more {
+		width: 100%;
+		min-width: 100%;
+		padding-bottom: px2rem(40px);
+		padding-left: calc(var(--vlt-badge-min-width) + var(--vlt-date-margin-left));
+		margin-top: px2rem(16px);
+
+		small {
+			display: block;
+			margin-bottom: px2rem(16px);
+			color: var(--vlt-text-3);
+			@include vlt_primary_regular_14;
+		}
+
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+
+			li {
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+
+				& + li {
+					margin-top: .6em;
+				}
+
+				.badge {
+					min-width: var(--vlt-badge-min-width);
+					margin-right: 1em;
+
+					&.added {
+						background-color: var(--vlt-color-green);
+					}
+
+					&.changed {
+						background-color: var(--vlt-color-blue);
+					}
+
+					&.removed {
+						background-color: var(--vlt-color-purple);
+					}
+
+					&.fixed {
+						background-color: var(--vlt-color-red);
+					}
+
+					&.updated {
+						background-color: var(--vlt-color-gray);
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}

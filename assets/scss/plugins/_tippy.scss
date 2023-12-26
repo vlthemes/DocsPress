@@ -1,0 +1,35 @@
+/* PLUGIN: TIPPY
+-------------------------------------------- */
+
+[data-theme="vlt"] {
+
+	&.tippy-box {
+		color: var(--vlt-text-2);
+		background-color: var(--vlt-background-3);
+		border-radius: px2rem(4px);
+		box-shadow: var(--vlt-box-shadow-sm);
+		@include vlt_primary_regular_12;
+
+		.tippy-content {
+			padding: px2rem(4px) px2rem(13px);
+		}
+
+		&[data-placement^=top]>.tippy-arrow::before {
+			border-top-color: var(--vlt-background-3);
+		}
+
+		&[data-placement^=right]>.tippy-arrow::before {
+			border-right-color: var(--vlt-background-3);
+		}
+
+		&[data-placement^=bottom]>.tippy-arrow::before {
+			border-bottom-color: var(--vlt-background-3);
+		}
+
+		&[data-placement^=left]>.tippy-arrow::before {
+			border-left-color: var(--vlt-background-3);
+		}
+
+	}
+
+}

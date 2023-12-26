@@ -1,27 +1,43 @@
 /* PARTIAL: BACK TO TOP
 -------------------------------------------- */
 
-.vlt-back-to-top {
+.vlt-site-back-to-top {
 	position: fixed;
-	right: 30px;
-	bottom: 1.5em;
-	font-size: 20px;
-	line-height: 1;
-	color: var(--vlt-color-5);
-	transition: all var(--vlt-transition-duration) var(--vlt-transition-easing);
-	z-index: 5;
+	right: px2rem(25px);
+	bottom: px2rem(25px);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: px2rem(30px);
+	height: px2rem(30px);
+	overflow: hidden;
+	font-size: px2rem(16px);
+	color: var(--vlt-color-white);
+	text-decoration: none;
+	background-color: var(--vlt-accent-2);
+	border-radius: var(--vlt-radius-1);
+	z-index: z("back-to-top");
 
-	@include media-breakpoint-down(md) {
+	@include media-breakpoint-down(xl) {
 		display: none;
 	}
 
-	&.hidden {
-		visibility: hidden;
-		opacity: 0;
-		transform: translateY(100%);
+	&:hover {
+		color: var(--vlt-color-white);
+
+		i {
+			animation: vlt_animate_icon_top calc(var(--vlt-transition-duration) * 2) var(--vlt-transition-easing) forwards;
+		}
+
 	}
 
-	&.visible {
+	&.is-hidden {
+		visibility: hidden;
+		opacity: 0;
+		transform: translateY(#{px2rem(15px)});
+	}
+
+	&.is-visible {
 		visibility: visible;
 		opacity: 1;
 		transform: translateY(0);

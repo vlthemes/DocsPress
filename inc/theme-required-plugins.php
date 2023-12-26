@@ -8,10 +8,10 @@
 /**
  * Required plugins
  */
-if ( ! function_exists( 'docs_tgm_plugins' ) ) {
-	function docs_tgm_plugins() {
+if ( ! function_exists( 'docspress_tgm_plugins' ) ) {
+	function docspress_tgm_plugins() {
 
-		$source = 'https://vlthemes.com/plugins/';
+		$source = 'https://vlthemes.me/plugins/';
 
 		$plugins = array(
 			array(
@@ -23,6 +23,12 @@ if ( ! function_exists( 'docs_tgm_plugins' ) ) {
 				'name' => esc_html__( 'Advanced Custom Fields', '@@textdomain' ),
 				'slug' => 'advanced-custom-fields-pro',
 				'source' => esc_url( $source . 'advanced-custom-fields-pro.zip' ),
+				'required' => true,
+			),
+			array(
+				'name' => esc_html__( 'DocsPress Helper Plugin', '@@textdomain' ),
+				'slug' => 'docspress_helper_plugin',
+				'source' => esc_url( $source . 'docspress_helper_plugin.zip' ),
 				'required' => true,
 			),
 			array(
@@ -56,11 +62,6 @@ if ( ! function_exists( 'docs_tgm_plugins' ) ) {
 				'required' => false,
 			),
 			array(
-				'name' => esc_html__( 'MailChimp for WordPress', '@@textdomain' ),
-				'slug' => 'mailchimp-for-wp',
-				'required' => false,
-			),
-			array(
 				'name' => esc_html__( 'Classic Widgets', '@@textdomain' ),
 				'slug' => 'classic-widgets',
 				'required' => false,
@@ -71,4 +72,4 @@ if ( ! function_exists( 'docs_tgm_plugins' ) ) {
 
 	}
 }
-add_action( 'tgmpa_register', 'docs_tgm_plugins' );
+add_action( 'tgmpa_register', 'docspress_tgm_plugins' );

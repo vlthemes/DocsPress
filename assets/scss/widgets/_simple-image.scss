@@ -1,0 +1,15 @@
+/* WIDGET: SIMPLE IMAGE
+-------------------------------------------- */
+
+.vlt-simple-image {
+	position: relative;
+
+	&-caption {
+		display: block;
+		margin: px2rem(16px) 0 0;
+		color: var(--vlt-text-3);
+		text-align: center;
+		@include vlt_primary_regular_12;
+	}
+
+}

@@ -1,0 +1,20 @@
+@function z($layer) {
+	@if not map-has-key($z-indexes, $layer) {
+		@error "There is no layer named `#{$layer}` in $z-indexes. Layer should be one of #{map-keys($z-indexes)}.";
+	}
+
+	@return map-get($z-indexes, $layer);
+}
+
+@function px2rem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}
+
+@function hsl-str($color) {
+	@return unquote("hsl(#{$color})");
+}
+
+@function hsla-str($color) {
+	@return unquote("hsla(#{$color})");
+}

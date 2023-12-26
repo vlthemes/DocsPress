@@ -2,12 +2,11 @@
 -------------------------------------------- */
 
 .vlt-post--single {
-	padding-bottom: 2em;
 
 	.vlt-post-header {
-		padding-bottom: 1em;
-		margin: 0 0 2em;
-		border-bottom: 1px solid var(--vlt-color-4);
+		padding-bottom: px2rem(16px);
+		margin-bottom: px2rem(30px);
+		border-bottom: 1px solid var(--vlt-border-color-1);
 	}
 
 	.vlt-post-title {
@@ -15,7 +14,7 @@
 		i {
 			margin-right: .4em;
 			font-size: 90%;
-			color: var(--vlt-color-5);
+			color: var(--vlt-text-3);
 		}
 
 		a {
@@ -31,16 +30,16 @@
 	}
 
 	.vlt-post-meta {
-		margin-top: 1em;
-		font-size: 14px;
-		color: var(--vlt-color-5);
+		margin-top: px2rem(10px);
+		color: var(--vlt-text-3);
+		@include vlt_primary_regular_14;
 
 		span + span {
-			margin-left: 1em;
+			margin-left: px2rem(16px);
 		}
 
 		i {
-			margin-right: 6px;
+			margin-right: .4em;
 		}
 
 		a {
@@ -57,24 +56,27 @@
 
 	.vlt-post-thumbnail {
 		position: relative;
+		margin-bottom: px2rem(30px);
+		overflow: hidden;
+		border-radius: var(--vlt-radius-2);
+	}
 
-		a {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: 1;
+	.vlt-post-excerpt {
+		margin-top: px2rem(16px);
+	}
+
+	.vlt-post-footer {
+		margin-top: px2rem(30px);
+
+		.vlt-post-modified {
+			color: var(--vlt-text-3);
+			@include vlt_primary_regular_12;
 		}
 
 	}
 
-	.vlt-post-excerpt {
-		margin-top: 1em;
-	}
+}
 
-	.vlt-post-footer {
-		margin-top: 1em;
-	}
-
+.vlt-post--single + .vlt-comments {
+	margin-top: px2rem(30px);
 }

@@ -2,9 +2,9 @@
 -------------------------------------------- */
 
 .vlt-sidebar {
-	padding-top: 2em;
-	margin-top: 2.5em;
-	border-top: 1px solid var(--vlt-color-4);
+	padding-top: px2rem(30px);
+	margin-top: px2rem(40px);
+	border-top: 1px solid var(--vlt-border-color-1);
 }
 
 .vlt-widget {
@@ -12,37 +12,35 @@
 }
 
 .vlt-widget ~ .vlt-widget {
-	margin-top: 2.5em;
+	margin-top: px2rem(40px);
 }
 
 .vlt-widget ul {
 	list-style-type: none;
 
 	.children {
-		margin-left: 10px;
+		margin-left: px2rem(10px);
 	}
 
 }
 
 .vlt-widget__title {
 	padding: 0;
-	margin: 0 0 1em;
-	font-size: 16px;
-	font-weight: 500;
-	color: var(--vlt-color-2);
+	margin: 0 0 px2rem(16px);
+	color: var(--vlt-text-2);
+	@include vlt_primary_medium_16;
 }
 
 // import
-@import
-	"widgets/search",
-	"widgets/categories",
-	"widgets/archive",
-	"widgets/pages",
-	"widgets/meta",
-	"widgets/recent-comments",
-	"widgets/recent-entries",
-	"widgets/nav-menu",
-	"widgets/tag-cloud",
-	"widgets/text",
-	"widgets/rss",
-	"widgets/calendar";
+@import "widgets/search";
+@import "widgets/categories";
+@import "widgets/archive";
+@import "widgets/pages";
+@import "widgets/meta";
+@import "widgets/recent-comments";
+@import "widgets/recent-entries";
+@import "widgets/nav-menu";
+@import "widgets/tag-cloud";
+@import "widgets/text";
+@import "widgets/rss";
+@import "widgets/calendar";

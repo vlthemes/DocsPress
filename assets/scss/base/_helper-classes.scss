@@ -7,7 +7,7 @@
 }
 
 .has-gray-color {
-	color: var(--vlt-color-4);
+	color: var(--vlt-border-color-1);
 }
 
 .has-success-color {
@@ -20,4 +20,10 @@
 
 .has-danger-color {
 	color: var(--vlt-danger-color);
+}
+
+.no-transition *,
+.no-transition *::after,
+.no-transition *::before {
+	transition: none !important;
 }

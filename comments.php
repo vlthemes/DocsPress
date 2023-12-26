@@ -15,7 +15,7 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 
-		<h3 class="vlt-comments__title" ><?php comments_number( esc_html__( 'No Comments', '@@textdomain' ) , esc_html__( 'One Comment', '@@textdomain' ), esc_html__( '% Comments', '@@textdomain' ) ); ?></h3>
+		<h3 class="vlt-comments__title"><?php comments_number( esc_html__( 'No Comments', '@@textdomain' ) , esc_html__( 'One Comment', '@@textdomain' ), esc_html__( '% Comments', '@@textdomain' ) ); ?></h3>
 
 		<ul class="vlt-comments__list">
 
@@ -26,14 +26,14 @@ if ( post_password_required() ) {
 					'style' => 'ul',
 					'short_ping' => true,
 					'reply_text' => esc_html__( 'Reply', '@@textdomain' ),
-					'callback' => 'docs_callback_custom_comment',
+					'callback' => 'docspress_callback_custom_comment',
 				) );
 
 			?>
 
 		</ul>
 
-		<?php echo docs_get_comment_navigation(); ?>
+		<?php echo docspress_get_comment_navigation(); ?>
 
 	<?php endif; ?>
 
@@ -42,6 +42,8 @@ if ( post_password_required() ) {
 		<?php
 
 			$commenter = wp_get_current_commenter();
+			$consent = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+
 			$args = array(
 				'label_submit' => esc_html__( 'Submit Comment', '@@textdomain' ),
 				'title_reply' => esc_html__( 'Leave a Comment', '@@textdomain' ),
@@ -58,6 +60,7 @@ if ( post_password_required() ) {
 					'author' => '<div class="vlt-form-row three-col"><div class="vlt-form-group"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="'.esc_attr__( 'Name*', '@@textdomain' ).'"></div>',
 					'email' => '<div class="vlt-form-group"><input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) . '" placeholder="' . esc_attr__( 'E-mail*', '@@textdomain' ) . '"></div>',
 					'url' => '<div class="vlt-form-group"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" placeholder="' . esc_attr__( 'Website', '@@textdomain' ) . '"></div></div>',
+					'cookies' => '<div class="vlt-form-group"><label class="vlt-checkbox" for="wp-comment-cookies-consent">' . sprintf( '<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" class="d-none" value="yes"%s />', $consent ) .'<span class="vlt-checkbox__checkmark"></span>' . esc_attr__( 'Save my name &amp; email in this browser for next time I comment.', '@@textdomain' ) . '</label></div>',
 				),
 			);
 

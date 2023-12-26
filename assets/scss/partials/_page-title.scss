@@ -4,19 +4,24 @@
 .vlt-page-title {
 	display: flex;
 	align-items: flex-start;
-	padding-bottom: 1em;
-	margin: 0 0 2em;
-	border-bottom: 1px solid var(--vlt-color-4);
+	padding-bottom: px2rem(16px);
+	margin-bottom: px2rem(30px);
+	border-bottom: 1px solid var(--vlt-border-color-1);
 
 	h1 {
+		max-width: 70%;
 		margin-right: auto;
 
 		i {
 			margin-right: .4em;
 			font-size: 90%;
-			color: var(--vlt-color-5);
+			color: var(--vlt-text-3);
 		}
 
+	}
+
+	.vlt-btn {
+		margin-top: .25em;
 	}
 
 }

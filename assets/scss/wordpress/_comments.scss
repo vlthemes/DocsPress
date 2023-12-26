@@ -2,29 +2,24 @@
 -------------------------------------------- */
 
 .vlt-comments {
-	padding-top: 2em;
-	border-top: 1px solid var(--vlt-color-4);
-}
-
-.single-docs .vlt-comments {
-	margin: 0 -29px;
-	padding: 30px;
+	padding-top: px2rem(30px);
+	border-top: 1px solid var(--vlt-border-color-1);
 }
 
 .vlt-comments__title,
 .vlt-comment-form__title {
-	margin: 0 0 1em;
+	margin: 0 0 px2rem(16px);
 
 	#cancel-comment-reply-link {
-		margin-left: 1.5em;
-		font-size: 12px;
+		margin-left: px2rem(20px);
+		@include vlt_primary_regular_12;
 	}
 
 }
 
 .comment-notes {
-	margin-top: -10px;
-	margin-bottom: 1em;
+	margin-top: px2rem(-10px);
+	margin-bottom: px2rem(16px);
 }
 
 p.form-submit {
@@ -33,12 +28,12 @@ p.form-submit {
 
 .vlt-comments__list,
 .vlt-comments__list ul.children {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	list-style-type: none;
 
 	li.vlt-comment-item {
-		padding: 30px 0;
+		padding: px2rem(30px) 0;
 
 		&:first-child {
 			padding-top: 0;
@@ -53,25 +48,25 @@ p.form-submit {
 }
 
 .vlt-comments__list ul.children {
-	margin-top: 40px;
-	padding-left: 80px;
-
-	li.vlt-comment-item:last-child {
-		padding-bottom: 0;
-	}
+	padding-left: px2rem(80px);
+	margin-top: px2rem(40px);
 
 	@include media-breakpoint-down(md) {
 		padding-left: 0;
 	}
+
+	li.vlt-comment-item:last-child {
+		padding-bottom: 0;
+	}
 }
 
 .vlt-comments__list .comment-respond {
-	margin: 40px 0 0;
+	margin: px2rem(40px) 0 0;
 }
 
 .vlt-comments__list + .vlt-comment-form,
 .vlt-comments-navigation + .vlt-comment-form {
-	margin-top: 4em;
+	margin-top: px2rem(40px);
 }
 
 // comment item
@@ -80,8 +75,8 @@ p.form-submit {
 
 	.vlt-comment-avatar {
 		display: block;
+		margin-right: px2rem(25px);
 		flex-shrink: 0;
-		margin-right: 1.5em;
 
 		@include media-breakpoint-down(md) {
 			display: none;
@@ -98,23 +93,21 @@ p.form-submit {
 		width: 100%;
 
 		.vlt-comment-header {
-			margin-bottom: 15px;
+			margin-bottom: px2rem(16px);
 
 			h5 {
 				max-width: 80%;
 				margin: 0;
-				font-size: 16px;
-				font-weight: 500;
 			}
 
 			&__metas {
 				display: block;
-				margin-top: 5px;
-				font-size: 14px;
-				color: var(--vlt-color-4);
+				margin-top: px2rem(5px);
+				color: var(--vlt-border-color-1);
+				@include vlt_primary_regular_14;
 
 				a + a {
-					margin-left: 1em;
+					margin-left: px2rem(16px);
 				}
 
 			}
@@ -127,10 +120,10 @@ p.form-submit {
 
 // comment navigation
 .vlt-comments-navigation {
-	margin-top: 2em;
+	margin-top: px2rem(20px);
 
 	a + a {
-		margin-left: 30px;
+		margin-left: px2rem(30px);
 	}
 
 }

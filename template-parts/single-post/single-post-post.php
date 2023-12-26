@@ -11,15 +11,15 @@
 
 	<header class="vlt-post-header">
 
-		<h1 class="vlt-post-title"><i class="far fa-file-alt"></i><?php the_title(); ?></h1>
+		<h1 class="vlt-post-title"><?php the_title(); ?></h1>
 		<!-- /.vlt-post-title -->
 
 		<div class="vlt-post-meta">
-			<span><i class="fas fa-calendar-alt"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
-			<?php if ( docs_get_post_taxonomy( get_the_ID(), 'category', ', ' ) ) : ?>
-				<span><i class="fas fa-tag"></i><?php echo docs_get_post_taxonomy( get_the_ID(), 'category', ', ' ); ?></span>
+			<span><i class="ri-calendar-2-line"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
+			<?php if ( docspress_get_post_taxonomy( get_the_ID(), 'category', ', ' ) ) : ?>
+				<span><i class="ri-price-tag-3-line"></i><?php echo docspress_get_post_taxonomy( get_the_ID(), 'category', ', ' ); ?></span>
 			<?php endif; ?>
-			<span><i class="fas fa-clock"></i><?php echo docs_get_reading_time(); ?></span>
+			<span><i class="ri-timer-line"></i><?php echo docspress_get_reading_time(); ?></span>
 		</div>
 		<!-- /.vlt-post-meta -->
 
@@ -30,10 +30,9 @@
 
 		<div class="vlt-post-thumbnail clearfix">
 
-			<?php echo docs_get_attachment_image( get_post_thumbnail_id( get_the_ID() ) ); ?>
+			<?php the_post_thumbnail( 'docs-950x633_crop', array( 'loading' => 'lazy' ) ); ?>
 
-			<a class="vlt-post-thumbnail__link" href="<?php the_permalink(); ?>"></a>
-			<!-- /.vlt-post-thumbnail__link -->
+			<a class="stretced-link" href="<?php the_permalink(); ?>"></a>
 
 		</div>
 		<!-- /.vlt-post-thumbnail -->
@@ -71,8 +70,6 @@
 			) );
 
 		?>
-
-		<?php edit_post_link( __( 'Edit', '@@textdomain' ), '<span class="vlt-edit-link">', '</span>' ); ?>
 
 	</footer>
 	<!-- /.vlt-post-footer -->

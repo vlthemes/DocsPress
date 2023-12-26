@@ -1,36 +1,103 @@
 // VARIABLES
 $smooth_font: false;
+$base_font_size: 16px;
 
 :root {
 	--vlt-transition-duration: 250ms;
 	--vlt-transition-easing: linear;
 
-	--vlt-font-awesome-5-free: "Font Awesome 5 Free";
+	--vlt-remixicon: 'remixicon';
 
-	--vlt-radius-1: 3px;
-	--vlt-radius-2: 6px;
+	--vlt-radius-1: #{px2rem(5px)};
+	--vlt-radius-2: #{px2rem(8px)};
 
+	--vlt-color-white: #fff;
+
+	--vlt-background-3-force-dark: #2e2e33;
+	--vlt-box-shadow: rgba(14, 19, 21, .05);
+
+	--vlt-box-shadow-sm: 0 #{px2rem(5px)} #{px2rem(10px)} var(--vlt-box-shadow);
+	--vlt-box-shadow-md: 0 #{px2rem(10px)} #{px2rem(20px)} var(--vlt-box-shadow);
+	// @include defineColorHSL(--vlt-text-1, 197, 19%, 7%); // #0f1416
+	// @include defineColorHSL(--vlt-text-2, 197, 19%, 15%); // #1e282c
+	// @include defineColorHSL(--vlt-color-3, 200, 18%, 26%); // #37474F
+	// @include defineColorHSL(--vlt-border-color, 0, 0%, 93%); // #eeeeee
+	// // @include defineColorHSL(--vlt-text-3, 200, 4%, 59%); // #92989b
+	// @include defineColorHSL(--vlt-color-6, 0, 100%, 100%); // #ffffff
+	// @include defineColorHSL(--vlt-color-7, 210, 15%, 95%); // #f0f2f4
+
+
+	// @include defineColorHSLA(--vlt-text-1-0p1, 197, 19%, 7%, .1); // #0f1416, op .1
+	// @include defineColorHSLA(--vlt-text-2-0p1, 197, 19%, 15%, .1); // #1e282c, op .1
+	// @include defineColorHSLA(--vlt-color-6-0p1, 0, 100%, 100%, .1); // #ffffff, op .1
+	// @include defineColorHSLA(--vlt-color-6-0p8, 0, 100%, 100%, .8); // #ffffff, op .8
+
+	--vlt-info-color: #2194d5;
+	--vlt-warning-color: #d54e21;
+	--vlt-success-color: #49bc77;
+	--vlt-danger-color: #e74f42;
 	@include defineColorHSL(--vlt-accent-1, var(--vlt-accent-1-h), var(--vlt-accent-1-s), var(--vlt-accent-1-l)); // #d54e21
 	@include defineColorHSL(--vlt-accent-2, var(--vlt-accent-2-h), var(--vlt-accent-2-s), var(--vlt-accent-2-l)); // #1e8cbe
-	@include defineColorHSL(--vlt-color-1, 197, 19%, 7%); // #0f1416
-	@include defineColorHSL(--vlt-color-2, 197, 19%, 15%); // #1e282c
-	@include defineColorHSL(--vlt-color-3, 200, 18%, 26%); // #37474F
-	@include defineColorHSL(--vlt-color-4, 0, 0%, 93%); // #eeeeee
-	@include defineColorHSL(--vlt-color-5, 200, 4%, 59%); // #92989b
-	@include defineColorHSL(--vlt-color-6, 0, 100%, 100%); // #ffffff
-	@include defineColorHSL(--vlt-color-7, 210, 15%, 95%); // #f0f2f4
-	@include defineColorHSLA(--vlt-color-1-0p1, 197, 19%, 7%, .1); // #0f1416, op .1
-	@include defineColorHSLA(--vlt-color-2-0p1, 197, 19%, 15%, .1); // #1e282c, op .1
-	@include defineColorHSLA(--vlt-color-6-0p1, 0, 100%, 100%, .1); // #ffffff, op .1
-	@include defineColorHSLA(--vlt-color-6-0p8, 0, 100%, 100%, .8); // #ffffff, op .8
+	@include defineColorHSL(--vlt-color-green, 144deg, 58%, 51%); // #3acb74
+	@include defineColorHSL(--vlt-color-blue, 202deg, 73%, 48%); // #2194d5
+	@include defineColorHSL(--vlt-color-red, 15deg, 73%, 48%); // #d54e21
+	@include defineColorHSL(--vlt-color-purple, 271deg, 78%, 43%); // #7218c4
+	@include defineColorHSL(--vlt-color-gray, 0deg, 0%, 44%); // #707070
+}
 
-	@include defineColorHSL(--vlt-success-color, 144, 46%, 51%); // #49bc77
-	@include defineColorHSL(--vlt-warning-color, 25, 78%, 55%); // #e67c30
-	@include defineColorHSL(--vlt-danger-color, 5, 77%, 58%); // #e74f42
+:root {
+
+	--vlt-text-1: #0f1416;
+	--vlt-text-2: #1f292e;
+	--vlt-text-3: #92989b;
+
+	--vlt-border-color-1: #eee;
+	--vlt-border-color-2: #e0e2e5;
+
+	--vlt-background-1: #f0f1f3;
+	--vlt-background-2: #fff;
+	--vlt-background-3: #f0f2f4;
+	--vlt-background-4: #dfdfdf;
+	--vlt-select-icon: #{escape-svg(url('data:image/svg+xml;utf8,<svg fill="#0f1416" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'))};
+
 
 }
 
-// :root {
-// 	@include defineColorHSL(--vlt-accent-1, 159, 73%, 53%); // #31dfa2
-// 	@include defineColorHSL(--vlt-accent-2, 244, 81%, 59%); // #4a40eb
-// }
+.night-mode {
+	// @include defineColorHSL(--vlt-text-1, 197, 19%, 7%); // #1a1a1c
+	// @include defineColorHSL(--vlt-text-2, 197, 19%, 15%); // #1e282c
+	// @include defineColorHSL(--vlt-color-3, 200, 18%, 26%); // #37474F
+	// @include defineColorHSL(--vlt-border-color, 0, 0%, 93%); // #eeeeee
+	// @include defineColorHSL(--vlt-text-3, 200, 4%, 59%); // #92989b
+	// @include defineColorHSL(--vlt-color-6, 0, 100%, 100%); // #000
+	// @include defineColorHSL(--vlt-color-7, 210, 15%, 95%); // #1a1a1c
+	// @include defineColorHSLA(--vlt-text-1-0p1, 197, 19%, 7%, .1); // #0f1416, op .1
+	// @include defineColorHSLA(--vlt-text-2-0p1, 197, 19%, 15%, .1); // #1e282c, op .1
+	// @include defineColorHSLA(--vlt-color-6-0p1, 0, 100%, 100%, .1); // #ffffff, op .1
+	// @include defineColorHSLA(--vlt-color-6-0p8, 0, 100%, 100%, .8); // #ffffff, op .8
+
+	--vlt-text-1: #feffff;
+	--vlt-text-2: #EDF6FB;
+	--vlt-text-3: #a9b0b4;
+
+	--vlt-border-color-1: #3f4248;
+	--vlt-border-color-2: #37393d;
+
+	--vlt-background-1: #27272B;
+	--vlt-background-2: #2f3138;
+	--vlt-background-3: #2b2b33;
+	--vlt-background-4: #2f3134;
+	--vlt-select-icon: #{escape-svg(url('data:image/svg+xml;utf8,<svg fill="#feffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'))};
+
+
+}
+
+// Z-INDEXES
+$z-indexes: (
+	"default": 1,
+	"header": 2,
+	"navbar": 5,
+	"back-to-top": 70,
+	"fancybox": 90,
+	"site-preloader": 210
+);

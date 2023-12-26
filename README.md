@@ -3,7 +3,7 @@
 # DocsPress
 This is the knowledge base documentation theme for WordPress (v2.0).
 
-## [Demo](https://docs.vlthemes.com/)
+## [Demo](https://docs.vlthemes.me/)
 
 ## Development
 * `gulp` - start files watcher

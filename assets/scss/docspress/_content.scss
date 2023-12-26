@@ -1,56 +1,22 @@
 /* DOCSPRESS: CONTENT
 -------------------------------------------- */
 
-// Single Doc Breadcrumbs
 
-.docspress-single-breadcrumbs {
-	margin: -30px -30px 0;
-	padding: 30px 30px 15px;
-	font-size: 14px;
-	color: var(--vlt-color-2);
-
-	li {
-		margin-right: 4px;
-		margin-left: 4px;
-
-		&:last-of-type {
-			color: var(--vlt-color-5);
-		}
-
-		&:first-of-type {
-			margin-left: 0;
-		}
-
-	}
-
-	.delimiter {
-		opacity: .2;
-	}
-
-	a {
-		text-decoration: none;
-	}
-
-	a:hover,
-	a:focus,
-	a:active {
-		color: var(--vlt-accent-2);
-	}
-
-}
 
 // Single Doc Feedback
 
 .docspress-single-feedback {
-	margin: 0 -29px;
 	padding: 15px 19px;
+	margin: 0 -29px;
+	border-color: var(--vlt-border-color-1);
 }
 
 // Single Doc Adjacent Navigation
 
 .docspress-single-adjacent-nav {
-	margin: 0 -29px;
 	padding: 25px 29px;
+	margin: 0 -29px;
+	border-color: var(--vlt-border-color-1);
 
 	.nav-previous,
 	.nav-next {
@@ -72,8 +38,8 @@
 .docspress-single-articles ul {
 
 	ul {
-		margin: 0 0 0 1em;
 		padding-left: 0;
+		margin: 0 0 0 1em;
 	}
 
 	li {
@@ -81,10 +47,10 @@
 		font-size: inherit;
 
 		&::before {
-			content: '\f15c';
+			content: '\ea7e';
 			margin-right: 10px;
-			font-family: var(--vlt-font-awesome-5-free);
-			color: var(--vlt-color-5);
+			font-family: var(--vlt-remixicon);
+			color: var(--vlt-text-3);
 		}
 
 		> a {
@@ -114,9 +80,9 @@
 		padding: 30px 30px 0;
 
 		.entry-header {
-			margin: 0 0 2em;
 			padding: 0 0 1em;
-			border-bottom: 1px solid var(--vlt-color-4);
+			margin: 0 0 2em;
+			border-bottom: 1px solid var(--vlt-border-color-1);
 		}
 
 		.entry-content {
@@ -129,9 +95,9 @@
 
 			time {
 				font-size: 12px;
-				font-style: normal;
 				font-weight: 400;
-				color: var(--vlt-color-5);
+				font-style: normal;
+				color: var(--vlt-text-3);
 			}
 
 		}
