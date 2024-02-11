@@ -5,7 +5,9 @@
  * @version: @@version
  */
 
-get_header(); ?>
+get_header();
+
+?>
 
 <main class="vlt-main">
 

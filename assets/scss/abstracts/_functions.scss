@@ -7,7 +7,7 @@
 }
 
 @function px2rem($size) {
-	$remSize: $size / 16px;
+	$remSize: calc($size / 16px);
 	@return #{$remSize}rem;
 }
 

@@ -16,8 +16,8 @@
 
 		<div class="vlt-post-meta">
 			<span><i class="ri-calendar-2-line"></i><a href="<?php the_permalink(); ?>"><time datetime="<?php the_time( 'c' ); ?>"><?php echo get_the_date(); ?></time></a></span>
-			<?php if ( docspress_get_post_taxonomy( get_the_ID(), 'category_knowbase', ', ' ) ) : ?>
-				<span><i class="ri-price-tag-3-line"></i><?php echo docspress_get_post_taxonomy( get_the_ID(), 'category_knowbase', ', ' ); ?></span>
+			<?php if ( docspress_get_post_taxonomy( get_the_ID(), 'knowbase_category', ', ' ) ) : ?>
+				<span><i class="ri-price-tag-3-line"></i><?php echo docspress_get_post_taxonomy( get_the_ID(), 'knowbase_category', ', ' ); ?></span>
 			<?php endif; ?>
 			<span><i class="ri-timer-line"></i><?php echo docspress_get_reading_time(); ?></span>
 		</div>

@@ -196,6 +196,7 @@ blockquote {
 	code,
 	.code {
 		color: var(--vlt-accent-1);
+		border: 1px solid var(--vlt-accent-1);
 	}
 
 	p {
@@ -215,6 +216,7 @@ code,
 	color: var(--vlt-text-1);
 	white-space: nowrap;
 	background-color: var(--vlt-background-3);
+	border: 1px solid var(--vlt-border-color-2);
 	border-radius: var(--vlt-radius-1);
 }
 

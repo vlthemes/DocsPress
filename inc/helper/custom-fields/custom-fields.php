@@ -153,6 +153,7 @@ add_action( 'init', function() {
 	'supports' => array(
 		0 => 'title',
 		1 => 'editor',
+		2 => 'thumbnail',
 	),
 	'has_archive' => 'changelog',
 	'rewrite' => array(
@@ -208,7 +209,7 @@ add_action( 'init', function() {
 } );
 
 add_action( 'init', function() {
-	register_taxonomy( 'category_knowbase', array(
+	register_taxonomy( 'knowbase_category', array(
 	0 => 'knowbase',
 ), array(
 	'labels' => array(

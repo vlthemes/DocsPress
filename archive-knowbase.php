@@ -33,13 +33,7 @@ get_header(); ?>
 
 			<?php
 
-				$knowbase_category_selected = docspress_get_theme_mod( 'knowbase_category_list' );
-
-				if ( empty( $knowbase_category_selected ) || $knowbase_category_selected[ 0 ] == 0 ) {
-					$knowbase_category_selected = [];
-				}
-
-				$atts = array( 'child_of' => false, 'hide_empty' => true, 'hierarchical' => false, 'taxonomy' => 'category_knowbase', 'pad_counts' => false );
+				$atts = array( 'child_of' => false, 'hide_empty' => true, 'hierarchical' => false, 'taxonomy' => 'knowbase_category', 'pad_counts' => false );
 				$cat = get_categories( $atts );
 
 				foreach ( $cat as $categories ) : ?>
@@ -71,7 +65,7 @@ get_header(); ?>
 									'tax_query' => array(
 										'relation' => 'AND',
 										array(
-											'taxonomy' => 'category_knowbase',
+											'taxonomy' => 'knowbase_category',
 											'field' => 'id',
 											'terms' => array( $categories->term_id ),
 										),

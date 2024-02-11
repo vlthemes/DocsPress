@@ -6,7 +6,7 @@
  */
 
 $post_type = get_post_type();
-$category_tax = $post_type == 'knowbase' ? 'category_knowbase' : 'category';
+$category_tax = $post_type == 'knowbase' ? 'knowbase_category' : 'category';
 
 ?>
 

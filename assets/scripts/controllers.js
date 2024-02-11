@@ -4,50 +4,57 @@
 (function ($) {
   'use strict';
 
+  /**
+   * Add button style to CF7 file
+   */
+  $('input[name*=zl-mfcf7-upld-btn]').addClass('vlt-btn vlt-btn--secondary');
+
+  /**
+   * Info bar
+   */
   $('.vlt-info-bar').on('click', function () {
     $(this).slideUp();
   });
+
   /**
    * Add nofollow to child menu link
    */
-
   $('.menu-item-has-children>a, .vlt-docspress-nav-list a').attr('rel', 'nofollow');
   VLTJS.document.on('docspress_ajax_loaded', function () {
     $('.menu-item-has-children>a, .vlt-docspress-nav-list a').attr('rel', 'nofollow');
   });
+
   /**
    * Widget RSS
    */
-
   $('.vlt-widget.widget_rss .rsswidget').addClass('h6');
+
   /**
    * Back button
    */
-
   $('.btn-go-back').on('click', function (e) {
     e.preventDefault();
     window.history.back();
   });
+
   /**
    * Highlight JS
    */
-
   var highlight = document.querySelectorAll("pre");
   "undefined" !== typeof hljs && highlight && [].forEach.call(highlight, function (highlight) {
     hljs.highlightBlock(highlight);
   });
+
   /**
    * Fitvids
    */
-
   if (typeof $.fn.fitVids !== 'undefined') {
     VLTJS.body.fitVids();
   }
+
   /**
    * Widget menu
    */
-
-
   if (typeof $.fn.superclick !== 'undefined') {
     $('.widget_pages > ul, .widget_nav_menu ul.menu').superclick({
       delay: 300,
@@ -62,11 +69,10 @@
       }
     });
   }
+
   /**
    * Fancybox
    */
-
-
   if (typeof $.fn.fancybox !== 'undefined') {
     $.fancybox.defaults.btnTpl = {
       close: '<button data-fancybox-close class="fancybox-button fancybox-button--close">' + '<i class="ri-close-line"></i>' + '</button>',
@@ -83,12 +89,12 @@
  * HEADER: MENU DEFAULT
  ***********************************************/
 (function ($) {
-  'use strict'; // check if plugin defined
+  'use strict';
 
+  // check if plugin defined
   if (typeof $.fn.superfish == 'undefined') {
     return;
   }
-
   VLTJS.menuDefault = {
     init: function () {
       const $menu = $('.vlt-nav--default ');
@@ -114,12 +120,12 @@
  * HEADER: MENU MOBILE
  ***********************************************/
 (function ($) {
-  'use strict'; // check if plugin defined
+  'use strict';
 
+  // check if plugin defined
   if (typeof $.fn.superclick == 'undefined') {
     return;
   }
-
   VLTJS.menuMobile = {
     init: function () {
       const $menu = $('.vlt-nav--mobile');
@@ -149,7 +155,6 @@
     constructor() {
       this.bindEvents();
     }
-
     getElements() {
       return {
         $form: $('.vlt-deactivate-form'),
@@ -158,21 +163,18 @@
         $resultsArea: $('.vlt-deactivate-form__result')
       };
     }
-
     bindEvents() {
       this.getElements().$form.on('submit', function (event) {
         event.preventDefault();
         this.startDeactivate(event);
       }.bind(this));
     }
-
     startDeactivate(event) {
       var currentInput = $(event.target),
-          datas = [currentInput.find('input[name="your_domain"]').val(), currentInput.find('input[name="purchase_code"]').val()],
-          self = this;
+        datas = [currentInput.find('input[name="your_domain"]').val(), currentInput.find('input[name="purchase_code"]').val()],
+        self = this;
       self.runAjaxFiltering(datas);
     }
-
     runAjaxFiltering(datas) {
       var self = this;
       $.ajax({
@@ -198,9 +200,7 @@
         }
       });
     }
-
   }
-
   new AjaxDeactivateForm();
 })(jQuery);
 /***********************************************
@@ -214,7 +214,6 @@
       this.onInit();
       this.bindEvents();
     }
-
     getElements() {
       return {
         $form: $('.vlt-search-form--ajax'),
@@ -223,7 +222,6 @@
         ajaxURL: VLT_LOCALIZE_DATAS.admin_ajax
       };
     }
-
     bindEvents() {
       this.getElements().$input.on('keyup', VLTJS.debounce(this.startSearch.bind(this), 500));
       this.getElements().$form.on('submit', function (event) {
@@ -242,12 +240,10 @@
         }
       }.bind(this));
     }
-
     startSearch(event) {
       var currentInput = $(event.target),
-          datas = [currentInput.siblings('input[name="post_type"]').val(), currentInput.siblings('input[name="post_taxonomy"]').val(), currentInput.siblings('input[name="post_term_id"]').val()],
-          self = this;
-
+        datas = [currentInput.siblings('input[name="post_type"]').val(), currentInput.siblings('input[name="post_taxonomy"]').val(), currentInput.siblings('input[name="post_term_id"]').val()],
+        self = this;
       if (currentInput.val().length >= 3) {
         self.getElements().$resultsArea.fadeIn();
         self.runAjaxFiltering(currentInput.val(), datas);
@@ -257,7 +253,6 @@
         self.visible = false;
       }
     }
-
     runAjaxFiltering(searchTarget, datas) {
       var self = this;
       $.ajax({
@@ -283,13 +278,10 @@
         error: function (request, status, error) {}
       });
     }
-
     onInit() {
       this.visible = false;
     }
-
   }
-
   new AjaxLiveSearchForm();
 })(jQuery);
 /***********************************************
@@ -299,12 +291,11 @@
   'use strict';
 
   const $backToTopBtn = $('.vlt-site-back-to-top');
-
   if (!$backToTopBtn.length) {
     return;
-  } // Back to top
+  }
 
-
+  // Back to top
   $backToTopBtn.on('click', function (e) {
     e.preventDefault();
     setTimeout(function () {
@@ -314,20 +305,15 @@
       });
     }, 2);
   });
-
   function _show_btn() {
     $backToTopBtn.removeClass('is-hidden').addClass('is-visible');
   }
-
   function _hide_btn() {
     $backToTopBtn.removeClass('is-visible').addClass('is-hidden');
   }
-
   _hide_btn();
-
   VLTJS.throttleScroll(function (type, scroll) {
     const offset = VLTJS.window.outerHeight() + 100;
-
     if (scroll > offset) {
       if (type === 'down') {
         _hide_btn();
@@ -346,26 +332,24 @@
   'use strict';
 
   const $preloader = $('.animsition'),
-        preloaderStyle = $preloader.data('animsition-style'); //animsition-bounce, animsition-image
+    preloaderStyle = $preloader.data('animsition-style'); //animsition-bounce, animsition-image
 
-  let preloaderMarkup = ''; // check if plugin defined
+  let preloaderMarkup = '';
 
+  // check if plugin defined
   if (typeof $.fn.animsition == 'undefined' || !$preloader.length) {
     VLTJS.window.trigger('vlt.site-loaded');
     VLTJS.html.addClass('vlt-is-page-loaded');
     return;
   }
-
   switch (preloaderStyle) {
     case 'animsition-spinner':
       preloaderMarkup = '<span class="spinner"></span>';
       break;
-
     case 'animsition-image':
       preloaderMarkup = '<img src="' + VLT_LOCALIZE_DATAS.preloader_image + '" alt="preloader">';
       break;
   }
-
   $preloader.animsition({
     inDuration: 500,
     outDuration: 500,
@@ -383,16 +367,15 @@
  * THEME: TIPPY
  ***********************************************/
 (function ($) {
-  'use strict'; // check if plugin defined
+  'use strict';
 
+  // check if plugin defined
   if (typeof tippy === 'undefined') {
     return;
   }
-
   VLTJS.tippy = {
     init: function () {
       tippy('[data-tippy-content]:not(.copy-shortlink)');
-
       function copyInput(el, text) {
         const copiedTippy = tippy(el);
         $(el).on('click', function (e) {
@@ -410,7 +393,6 @@
           return false;
         });
       }
-
       $('.copy-shortlink').each(function () {
         const target = $('input' + $(this).data('clipboard-target')).val();
         copyInput(this, target);
@@ -453,20 +435,19 @@
  * WIDGET: SIMPLE GIST
  ***********************************************/
 (function ($) {
-  'use strict'; // check if plugin defined
+  'use strict';
 
+  // check if plugin defined
   if (typeof $.fn.gistSimple === 'undefined') {
     return;
   }
-
   VLTJS.simpleGist = {
     init: function ($scope) {
       $scope = typeof $scope === 'undefined' ? VLTJS.body : $scope;
       const $gist = $scope.find('.vlt-gist-simple');
       $gist.each(function () {
         const $this = $(this),
-              match = /^https:\/\/gist.github.com?.+\/(.+)/g.exec($this.data('url'));
-
+          match = /^https:\/\/gist.github.com?.+\/(.+)/g.exec($this.data('url'));
         if (match && typeof match[1] !== 'undefined') {
           gistSimple($this, {
             id: match[1].split('#')[0],

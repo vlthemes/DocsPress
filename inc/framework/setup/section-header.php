@@ -90,7 +90,7 @@ VLT_Options::add_field( array(
 	'section' => 'section_header_general',
 	'label' => esc_html__( 'Logo Height', '@@textdomain' ),
 	'priority' => $priority++,
-	'default' => '100px',
+	'default' => '50px',
 	'output' => array(
 		array(
 			'element' => '.vlt-navbar-logo img',

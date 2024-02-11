@@ -88,7 +88,7 @@ function compileSCSS() {
 		.pipe(print(filepath => `Processing: ${filepath}`))
 		.pipe(sass())
 		.pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-		.pipe($.csscomb())
+		// .pipe($.csscomb())
 		.pipe(dest(cssFolder))
 
 		// minify

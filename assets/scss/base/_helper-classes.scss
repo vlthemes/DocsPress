@@ -22,6 +22,18 @@
 	color: var(--vlt-danger-color);
 }
 
+.has-text-1-color {
+	color: var(--vlt-text-1);
+}
+
+.has-text-2-color {
+	color: var(--vlt-text-2);
+}
+
+.has-text-3-color {
+	color: var(--vlt-text-3);
+}
+
 .no-transition *,
 .no-transition *::after,
 .no-transition *::before {

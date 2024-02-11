@@ -24,6 +24,8 @@
 
 	&__version {
 		min-width: var(--vlt-badge-min-width);
+		color: var(--vlt-text-3);
+		background-color: var(--vlt-background-1);
 	}
 
 	&__date {

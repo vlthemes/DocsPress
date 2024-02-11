@@ -3,11 +3,11 @@
     "title": "Category",
     "menu_order": 0,
     "active": true,
-    "taxonomy": "category_knowbase",
+    "taxonomy": "knowbase_category",
     "object_type": [
         "knowbase"
     ],
-    "advanced_configuration": 0,
+    "advanced_configuration": 1,
     "import_source": "",
     "import_date": "",
     "labels": {
@@ -58,7 +58,8 @@
     "show_in_quick_edit": 1,
     "show_admin_column": 0,
     "rewrite": {
-        "permalink_rewrite": "taxonomy_key",
+        "permalink_rewrite": "custom_permalink",
+        "slug": "knowbase-category",
         "with_front": "1",
         "rewrite_hierarchical": "0"
     },
@@ -71,5 +72,5 @@
     "meta_box": "default",
     "meta_box_cb": "",
     "meta_box_sanitize_cb": "",
-    "modified": 1702811863
+    "modified": 1703594192
 }

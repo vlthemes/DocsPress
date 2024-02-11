@@ -63,7 +63,8 @@
     "plural_capability_name": "posts",
     "supports": [
         "title",
-        "editor"
+        "editor",
+        "thumbnail"
     ],
     "taxonomies": "",
     "has_archive": true,

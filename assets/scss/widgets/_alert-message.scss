@@ -13,41 +13,59 @@
 	border-left-width: px2rem(3px);
 	border-radius: var(--vlt-radius-1);
 
+	a {
+		font-weight: 500;
+		color: inherit;
+		text-decoration: underline !important;
+	}
+
+	&::before {
+		content: '';
+		margin-right: px2rem(8px);
+		font-family: var(--vlt-remixicon);
+		font-size: 1.2em;
+		color: inherit;
+		align-self: flex-start;
+	}
+
+	&--warning {
+		color: var(--vlt-warning-color);
+
+		&::before {
+			content: '\eca1';
+		}
+
+	}
+
 	&--danger {
 		color: var(--vlt-danger-color);
+
+		&::before {
+			content: '\ea20';
+		}
+
 	}
 
 	&--success {
 		color: var(--vlt-success-color);
+
+		&::before {
+			content: '\eb80';
+		}
+
 	}
 
 	&--info {
 		color: var(--vlt-info-color);
+
+		&::before {
+			content: '\f448';
+		}
+
 	}
 
 	&--has-dismiss {
-
-		.vlt-alert-message__inner {
-			padding-right: px2rem(20px);
-		}
-
-	}
-
-	&__inner {
-		display: flex;
-
-		> i,
-		> svg {
-			margin-right: px2rem(16px);
-			font-size: 1.2em;
-			color: inherit;
-			align-self: flex-start;
-		}
-
-		svg {
-			height: 1em;
-		}
-
+		padding-right: px2rem(20px);
 	}
 
 	&__dismiss {

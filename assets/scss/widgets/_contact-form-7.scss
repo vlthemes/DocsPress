@@ -43,6 +43,10 @@
 		@include vlt_primary_regular_12;
 	}
 
+	.wpcf7-acceptance input[type=checkbox] {
+		margin-right: px2rem(5px);
+	}
+
 	form.init .wpcf7-response-output,
 	form.resetting .wpcf7-response-output,
 	form.submitting .wpcf7-response-output {
@@ -52,6 +56,14 @@
 	.wpcf7-response-output {
 		margin: px2rem(30px) 0 0 !important;
 		@extend .vlt-alert-message;
+	}
+
+	.wpcf7-form.sent .wpcf7-response-output {
+		@extend .vlt-alert-message--success;
+	}
+
+	.wpcf7-form.invalid .wpcf7-response-output {
+		@extend .vlt-alert-message--warning;
 	}
 
 	.wpcf7-spinner {

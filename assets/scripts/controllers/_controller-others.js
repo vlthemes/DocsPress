@@ -5,6 +5,14 @@
 
 	'use strict';
 
+	/**
+	 * Add button style to CF7 file
+	 */
+	$('input[name*=zl-mfcf7-upld-btn]').addClass('vlt-btn vlt-btn--secondary');
+
+	/**
+	 * Info bar
+	 */
 	$('.vlt-info-bar').on('click', function () {
 		$(this).slideUp();
 	});
